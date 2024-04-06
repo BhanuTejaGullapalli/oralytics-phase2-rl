@@ -102,7 +102,7 @@ class UpdatePosteriorAPI(MethodView):
             
             app.logger.info("Updated posterior")
             app.logger.info("policyid: " + str(policyid))
-            app.logger.info("params: " + str(params))
+            # app.logger.info("params: " + str(params))
 
             # Create a RLWeights object
             rl_weights = RLWeights(

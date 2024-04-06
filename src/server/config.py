@@ -42,6 +42,8 @@ LOGISTIC_SIGMA = config["ALLOCATION_FUNCTION"]["LOGISTIC_SIGMA"]
 
 B = float(LOGISTIC_B) / float(LOGISTIC_SIGMA)
 
+restart = bool(config["ALGORITHM"]["RESTART"])
+
 # Load the random variables
 random_vars_path = config["ALLOCATION_FUNCTION"]["RANDOM_VARS_PATH"]
 random_vars = smooth_allocation.load_random_vars(random_vars_path)
@@ -99,6 +101,7 @@ class BaseConfig:
     CANNABIS_USE_DATA_WINDOW = int(cannabis_use_backlog)
     STUDY_INDEX = 0
     HEADERS = headers
+    RESTART = restart
 
 
 class DevelopmentConfig(BaseConfig):
@@ -118,6 +121,7 @@ class DevelopmentConfig(BaseConfig):
         rng=np.random.default_rng(int(seed)),
         debug=True,
         logger_path="./data/logs",
+        restart=restart,
     )
 
 

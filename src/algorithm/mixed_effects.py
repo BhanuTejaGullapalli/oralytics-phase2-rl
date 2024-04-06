@@ -104,6 +104,7 @@ class MixedEffectsAlgorithm(RLAlgorithm):
         debug: bool = False,
         logger_path: str = None,
         param_size: list = [8, 8, 8],
+        restart: bool = False,
     ) -> None:
         """
         Initialize the mixed effects model based RL algorithm
@@ -159,18 +160,14 @@ class MixedEffectsAlgorithm(RLAlgorithm):
 
         self.posterior_mean = None
         self.posterior_cov = None
-        self.posterior_mean_history = []
-        self.posterior_cov_history = []
-        self.sigma_u_history = []
-        self.noise_var_history = []
-        self.theta_pop_posterior_mean_history = []
-        self.theta_pop_posterior_cov_history = []
         self.debug = debug
 
         self.last_update_users_list = []
         self.last_hyperparam_update_id = 0
 
         self.user_list = []
+
+        self.restart = restart
 
         # Logging stuff
         logfile = logger_path + "/RL_log.txt"
@@ -357,21 +354,6 @@ class MixedEffectsAlgorithm(RLAlgorithm):
 
         num_params = np.sum(self.param_size)
 
-        # If the user is new, add the user to the user list
-        # if user_id not in self.user_list:
-        #     self.user_list.append(user_id)
-        #     self.num_users += 1
-
-        #     user = self.user_list.index(user_id)
-
-        #     # Initialize the user data matrix
-        #     self.user_data[user] = {
-        #         "state": [[]],
-        #         "action": [None],
-        #         "act_prob": [None],
-        #         "reward": [],
-        #         "design_state": [None],
-        #     }
         if user_id not in self.last_update_users_list:
             # Since user is new, sample for the current posterior of theta pop
             posterior_mean_user = self.theta_pop_mean
@@ -465,7 +447,11 @@ class MixedEffectsAlgorithm(RLAlgorithm):
         return action, int(seed), act_prob, self.policyid
 
     def update_hyperparameters(
-        self, request_id: int, data: pd.DataFrame, use_data: bool = False, debug: bool = False
+        self,
+        request_id: int,
+        data: pd.DataFrame,
+        use_data: bool = False,
+        debug: bool = False,
     ) -> None:
         """
         Update the hyperparameters
@@ -712,10 +698,6 @@ class MixedEffectsAlgorithm(RLAlgorithm):
             self.noise_var = copy.deepcopy(self.noise_var_pending)
             self.ltu_flat = copy.deepcopy(self.ltu_flat_pending)
 
-            # Save in history
-            self.sigma_u_history.append(np.array(self.sigma_u))
-            self.noise_var_history.append(self.noise_var)
-
             # Reset the flag
             self.hyperparam_update_flag = False
             self.last_hyperparam_update_id = self.hyperparam_requestid_pending
@@ -797,12 +779,6 @@ class MixedEffectsAlgorithm(RLAlgorithm):
         # Compute the theta pop posterior covariance
         self.theta_pop_cov = m_inv * E_inv
 
-        # Update the posterior mean and covariance history
-        self.posterior_mean_history.append(self.posterior_mean)
-        self.posterior_cov_history.append(self.posterior_cov)
-        self.theta_pop_posterior_mean_history.append(self.theta_pop_mean)
-        self.theta_pop_posterior_cov_history.append(self.theta_pop_cov)
-
         self.last_update_users_list = update_user_list
 
     def update(
@@ -834,13 +810,27 @@ class MixedEffectsAlgorithm(RLAlgorithm):
             try:
                 raise NotImplementedError("use_data is not implemented yet")
             except Exception as e:
-                return False, "use_data is not implemented yet", self.policyid, {}, 405, [], None
+                return (
+                    False,
+                    "use_data is not implemented yet",
+                    self.policyid,
+                    {},
+                    405,
+                    [],
+                    None,
+                )
 
         # Check whether to update the hyperparameters or not
         if update_hyperparam:
             try:
-                self.update_hyperparameters(request_id=request_id, data=data, use_data=use_data)
-                self.logger.debug("Hyperparameters computed and staged for update with request id: {}".format(request_id))
+                self.update_hyperparameters(
+                    request_id=request_id, data=data, use_data=use_data
+                )
+                self.logger.debug(
+                    "Hyperparameters computed and staged for update with request id: {}".format(
+                        request_id
+                    )
+                )
             except Exception as e:
                 if self.debug:
                     self.logger.error(
@@ -866,7 +856,15 @@ class MixedEffectsAlgorithm(RLAlgorithm):
                     # Log traceback
                     self.logger.error(traceback.format_exc())
                 message = "Error while updating posteriors"
-                return False, message, self.policyid, {}, 404, [], self.last_hyperparam_update_id
+                return (
+                    False,
+                    message,
+                    self.policyid,
+                    {},
+                    404,
+                    [],
+                    self.last_hyperparam_update_id,
+                )
 
         # Return the parameters
         try:
@@ -886,9 +884,25 @@ class MixedEffectsAlgorithm(RLAlgorithm):
                 # Log traceback
                 self.logger.error(traceback.format_exc())
             message = "Error while returning parameters"
-            return False, message, self.policyid, {}, 406, [], self.last_hyperparam_update_id
+            return (
+                False,
+                message,
+                self.policyid,
+                {},
+                406,
+                [],
+                self.last_hyperparam_update_id,
+            )
 
-        return True, None, self.policyid, return_dict, None, self.last_update_users_list, self.last_hyperparam_update_id
+        return (
+            True,
+            None,
+            self.policyid,
+            return_dict,
+            None,
+            self.last_update_users_list,
+            self.last_hyperparam_update_id,
+        )
 
     @staticmethod
     def make_state(params: dict) -> list:
@@ -943,14 +957,14 @@ class MixedEffectsAlgorithm(RLAlgorithm):
         #     S3 = 0
         # elif np.all(recent_cannabis_use == 0):
         #     S3 = 1
-        
+
         if recent_cannabis_use.size == 0 and reward >= 2:
             # check if the user finished the current EMA
             # If they did, and no cannabis use was report, S3 = 1 (favorable)
             S3 = 1
         else:
             # If they did not, and hence did not report cb use we assume that they used.
-            S3 = 0 
+            S3 = 0
 
         return [S1, S2, S3]
 
@@ -1054,3 +1068,74 @@ class MixedEffectsAlgorithm(RLAlgorithm):
         :return: policy id
         """
         return self.policyid
+
+    def reset_rl(
+        self, params: dict, update_user_list: list, policyid: int, hp_update_id: int,
+        rl_action_selection: list
+    ) -> bool:
+        """
+        Set the RL weights
+        :return: True if weights are set, False otherwise
+        """
+
+        if not self.restart:
+            return False
+
+        # Check for the keys in the params
+        if "posterior_mean_array" not in params:
+            return False
+        if "posterior_var_array" not in params:
+            return False
+        if "posterior_theta_pop_mean_array" not in params:
+            return False
+        if "posterior_theta_pop_var_array" not in params:
+            return False
+        if "noise_var" not in params:
+            return False
+        if "random_eff_cov_array" not in params:
+            return False
+
+        # Get the parameters
+        posterior_mean_array = params["posterior_mean_array"]
+        posterior_var_array = params["posterior_var_array"]
+        posterior_theta_pop_mean_array = params["posterior_theta_pop_mean_array"]
+        posterior_theta_pop_var_array = params["posterior_theta_pop_var_array"]
+        noise_var = params["noise_var"]
+        random_eff_cov_array = params["random_eff_cov_array"]
+
+        # Format and set the parameters
+        self.posterior_mean = posterior_mean_array
+        self.posterior_cov = posterior_var_array
+        self.theta_pop_mean = posterior_theta_pop_mean_array
+        self.theta_pop_cov = posterior_theta_pop_var_array
+        self.noise_var = noise_var
+        self.sigma_u = random_eff_cov_array
+
+        cholesky = np.linalg.cholesky(self.sigma_u)
+        self.ltu_flat = cholesky[np.tril_indices(self.sigma_u.shape[0])].flatten()
+
+        # Set the last update users list
+        self.last_update_users_list = update_user_list
+
+        # Set the policy id
+        self.policyid = policyid
+
+        # Set the last hyperparam update id
+        self.last_hyperparam_update_id = hp_update_id
+
+        # For each record in the rl_action_selection, update the algorithm's design row
+        for record_dict in rl_action_selection:
+            # Get the user_id and the action
+            user_id = record_dict["user_id"]
+            state = record_dict["state"]
+            action = record_dict["action"]
+            act_prob = record_dict["act_prob"]
+            reward = record_dict["reward"]
+            decision_index = record_dict["decision_index"]
+
+            # Update the algorithm's design row
+            self.update_design_row(user_id, state, action, act_prob, reward, decision_index)
+
+        self.restart = False
+
+        return True

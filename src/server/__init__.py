@@ -35,3 +35,11 @@ from src.server.main import rlservice_blueprint
 app.register_blueprint(rlservice_blueprint)
 
 app.logger.info("Server started")
+
+# Check if the server is being restarted
+if app.config.get("RESTART"):
+    print("Server is being restarted")
+    app.logger.info("Server is being restarted")
+    from src.server.restart import restart_server
+    restart_server(app)
+    # app.config["RESTART"] = False
