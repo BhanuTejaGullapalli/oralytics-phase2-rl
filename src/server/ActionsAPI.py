@@ -40,6 +40,10 @@ class ActionsAPI(MethodView):
             post_data.get("app_use_flag"), bool
         ):
             return False, "Please provide a valid app use flag.", 202
+        if post_data.get("window_label") is None or not isinstance(
+            post_data.get("window_label"), str
+        ):
+            return False, "Please provide a valid window label.", 211
         if post_data.get("finished_ema") == True:
             if post_data.get("activity_question_response") is None or not isinstance(
                 post_data.get("activity_question_response"), bool
@@ -210,7 +214,21 @@ class ActionsAPI(MethodView):
 
                     # Get the decision index and time of day
                     decision_idx = user_status.current_decision_index + 1
-                    time_of_day = 1 - user_status.current_time_of_day
+                    # time_of_day = 1 - user_status.current_time_of_day
+
+                    # Get the time of day using window_label
+                    window_label = post_data.get("window_label")
+                    if window_label == "am":
+                        time_of_day = 0
+                    elif window_label == "pm":
+                        time_of_day = 1
+                    else:
+                        app.logger.error("Invalid window label")
+                        return return_fail_response(
+                            message="Invalid window label",
+                            code=202,
+                            error_code=212
+                        )
 
                     # Check if this is the last decision point for the user
                     if decision_idx == app.config.get("STUDY_LENGTH"):

@@ -92,9 +92,12 @@ class DecisionTimeEndAPI(MethodView):
                     user_status.current_decision_index += 1
 
                     # update the user's current time of day
-                    user_status.current_time_of_day = (
-                        1 - user_status.current_time_of_day
-                    )
+                    # user_status.current_time_of_day = (
+                    #     1 - user_status.current_time_of_day
+                    # )
+
+                    # update the user's current time of day using window_label
+                    # window_label = 
 
                     # if the current time of day is morning i.e. 0, update study day
                     if user_status.current_time_of_day == 0:
@@ -332,6 +335,19 @@ class DecisionTimeEndAPI(MethodView):
                             False,
                             "Some error occurred while checking if the decision index exists in the database.",
                             323,
+                        )
+                    
+                    # Update the time of day
+                    window_label = value.get("window_label")
+                    if window_label == "am":
+                        user_status.current_time_of_day = 0
+                    elif window_label == "pm":
+                        user_status.current_time_of_day = 1
+                    else:
+                        return (
+                            False,
+                            "Invalid window label returned by the backend api.",
+                            324,
                         )
 
                     # Update the algorithm with the data
