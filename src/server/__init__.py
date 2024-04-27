@@ -21,7 +21,8 @@ app_settings = os.getenv("APP_SETTINGS", "src.server.config.DevelopmentConfig")
 app.config.from_object(app_settings)
 
 bcrypt = Bcrypt(app)
-db = SQLAlchemy(app)
+db = SQLAlchemy(app,
+                engine_options={"query_cache_size": 0},)
 
 migrate = Migrate()
 migrate.init_app(app, db)
