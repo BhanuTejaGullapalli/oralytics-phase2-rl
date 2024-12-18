@@ -19,7 +19,6 @@ class User(db.Model):
     consent_end_date = db.Column(db.DateTime, nullable=True)
     rl_start_date = db.Column(db.DateTime, nullable=True)
     rl_end_date = db.Column(db.DateTime, nullable=True)
-    
     # TODO: Add columns for other baseline details of the user
 
     def __init__(

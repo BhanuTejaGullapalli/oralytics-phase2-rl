@@ -21,14 +21,7 @@ def check_all_fields_present(post_data) -> tuple[bool, str, int]:
         return False, "Please provide a valid rl start date.", 101
     if not post_data.get("rl_end_date"):
         return False, "Please provide a valid rl end date.", 102
-    if not post_data.get("consent_start_date"):
-        return False, "Please provide a valid consent start date.", 103
-    if not post_data.get("consent_end_date"):
-        return False, "Please provide a valid consent end date.", 104
-    if not post_data.get("morning_notification_time_start"):
-        return False, "Please provide a valid morning notification time.", 105
-    if not post_data.get("evening_notification_time_start"):
-        return False, "Please provide a valid evening notification time.", 106
+        
     return True, None, None
 
 
@@ -63,23 +56,14 @@ class RegisterAPI(MethodView):
                     rl_start_date=post_data.get(
                         "rl_start_date"
                     ),  # TODO: Change based on Pei-Yao's specification
-                    rl_end_date=post_data.get("rl_end_date"),
-                    consent_start_date=post_data.get(
-                        "rl_start_date"
-                    ),  # TODO: Change based on Pei-Yao's specification
-                    consent_end_date=post_data.get("rl_end_date"),
+                    rl_end_date=post_data.get("rl_end_date")
                 )
 
                 user_status = UserStatus(
                     user_id=str(post_data.get("user_id")),
                     study_phase=UserStudyPhaseEnum.REGISTERED,
                     study_day=0,
-                    morning_notification_time_start=post_data.get(
-                        "morning_notification_time_start"
-                    ),
-                    evening_notification_time_start=post_data.get(
-                        "evening_notification_time_start"
-                    ),
+
                 )
 
                 # insert the user and userstatus
