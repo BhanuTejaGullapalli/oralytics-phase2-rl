@@ -92,7 +92,10 @@ class Action(db.Model):
     action_prob = db.Column(db.Float, nullable=False, default=0.5)
     random_state = db.Column(db.Integer, nullable=True)
     state = db.Column(ARRAY(db.Float), nullable=True)
+<<<<<<< HEAD
     reward=db.Column(db.Float, nullable=False, default=0.0)
+=======
+>>>>>>> eec322160e066094b03a361f6664365262392458
     decision_timestamp= db.Column(db.DateTime, nullable=True)
     model_parameters= db.Column(ARRAY(db.Float), nullable=True)
     request_timestamp= db.Column(db.DateTime, nullable=True)
@@ -107,7 +110,10 @@ class Action(db.Model):
         action_prob: float,
         random_state:int,
         state: list,
+<<<<<<< HEAD
         reward: float,
+=======
+>>>>>>> eec322160e066094b03a361f6664365262392458
         decision_timestamp: datetime.datetime,
         model_parameters: list,
         request_timestamp: datetime.datetime,
@@ -119,11 +125,15 @@ class Action(db.Model):
         self.action_prob = action_prob
         self.random_state=random_state
         self.state = state
+<<<<<<< HEAD
         self.reward = reward
+=======
+>>>>>>> eec322160e066094b03a361f6664365262392458
         self.decision_timestamp = decision_timestamp
         self.model_parameters = model_parameters
         self.request_timestamp = request_timestamp
 
+<<<<<<< HEAD
     def __repr__(self):
         return (
             f"<Action user_id={self.user_id}, decision_idx={self.decision_idx}, "
@@ -131,6 +141,8 @@ class Action(db.Model):
             f"action_prob={self.action_prob}>"
         )
 
+=======
+>>>>>>> eec322160e066094b03a361f6664365262392458
 
 class Engagement(db.Model):
     """User Model for storing user engagments"""
@@ -156,6 +168,7 @@ class Engagement(db.Model):
         self.upload_time = upload_time
 
 
+<<<<<<< HEAD
 class StudyData(db.Model):
     """
     Database table to store study data.
@@ -205,6 +218,8 @@ class StudyData(db.Model):
         self.request_timestamp = request_timestamp
         self.created_at = created_at
 
+=======
+>>>>>>> eec322160e066094b03a361f6664365262392458
 
 
 

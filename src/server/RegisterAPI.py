@@ -1,6 +1,10 @@
 from src.server import app, db
 from src.server.auth.auth import token_required
+<<<<<<< HEAD
 from src.server.tables import User,UserStatus,UserStudyPhaseEnum,StudyData
+=======
+from src.server.tables import User,UserStatus,UserStudyPhaseEnum
+>>>>>>> eec322160e066094b03a361f6664365262392458
 
 
 from flask import jsonify, make_response, request
@@ -51,10 +55,14 @@ def check_all_fields_present(post_data) -> tuple[bool, str, int]:
     if not (16 <= evening_end_hour <= 24 or 0 <= evening_end_hour <= 4):
         return False, "Evening end hour must be between 16 and 4.", 110
     
+<<<<<<< HEAD
     if(morning_start_hour>=morning_end_hour):
         return False, "Morning start hour must be less than Morning end hour.", 111
     if(evening_start_hour>=evening_end_hour):
         return False, "Evening start hour must be less than Evening end hour.", 112
+=======
+        
+>>>>>>> eec322160e066094b03a361f6664365262392458
     return True, None, None
 
 
