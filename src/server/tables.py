@@ -15,26 +15,35 @@ class User(db.Model):
     __tablename__ = "users"
 
     user_id = db.Column(db.String, primary_key=True, nullable=False)
-    consent_start_date = db.Column(db.DateTime, nullable=True)
-    consent_end_date = db.Column(db.DateTime, nullable=True)
     rl_start_date = db.Column(db.DateTime, nullable=True)
     rl_end_date = db.Column(db.DateTime, nullable=True)
+    morning_start_hour = db.Column(db.Integer, nullable=False, default=6)
+    morning_ending_hour = db.Column(db.Integer, nullable=False, default=11)
+    evening_start_hour = db.Column(db.Integer, nullable=False, default=18)
+    evening_ending_hour = db.Column(db.Integer, nullable=False, default=23) 
+
     
     # TODO: Add columns for other baseline details of the user
 
     def __init__(
         self,
         user_id: str,
-        consent_start_date: datetime.date,
-        consent_end_date: datetime.date,
         rl_start_date: datetime.date,
         rl_end_date: datetime.date,
+        morning_start_hour:int,
+        morning_ending_hour:int,
+        evening_start_hour:int,
+        evening_ending_hour:int
     ):
         self.user_id = user_id
-        self.consent_start_date = consent_start_date
-        self.consent_end_date = consent_end_date
         self.rl_start_date = rl_start_date
         self.rl_end_date = rl_end_date
+        self.morning_start_hour = morning_start_hour
+        self.morning_ending_hour = morning_ending_hour
+        self.evening_start_hour = evening_start_hour
+        self.evening_ending_hour=evening_ending_hour
+
+
 
 
 class UserStudyPhaseEnum(enum.Enum):
@@ -42,8 +51,7 @@ class UserStudyPhaseEnum(enum.Enum):
 
     REGISTERED = 1
     STARTED = 2
-    COMPLETED_AWAITING_REVIEW = 3
-    ENDED = 4
+    ENDED = 3
 
 
 class UserStatus(db.Model):
@@ -55,29 +63,154 @@ class UserStatus(db.Model):
         db.String, db.ForeignKey("users.user_id"), primary_key=True, nullable=False
     )
     study_phase = db.Column(db.Enum(UserStudyPhaseEnum), nullable=False)
-    morning_notification_time_start = db.Column(ARRAY(db.Integer), nullable=False)
-    evening_notification_time_start = db.Column(ARRAY(db.Integer), nullable=False)
     current_decision_index = db.Column(db.Integer, nullable=False, default=0)
-    current_time_of_day = db.Column(db.Integer, nullable=False, default=0)
-    study_day = db.Column(db.Integer, nullable=False, default=0)
+
 
     def __init__(
         self,
         user_id: str,
         study_phase: UserStudyPhaseEnum,
-        morning_notification_time_start: list,
-        evening_notification_time_start: list,
         current_decision_index: int = 0,
-        current_time_of_day: int = 1,
-        study_day: int = 0,
+
     ):
         self.user_id = user_id
         self.study_phase = study_phase
-        self.morning_notification_time_start = morning_notification_time_start
-        self.evening_notification_time_start = evening_notification_time_start
-        self.current_decision_index = current_decision_index
-        self.current_time_of_day = current_time_of_day
-        self.study_day = study_day
+        self.current_decision_index=current_decision_index
+
+
+
+class Action(db.Model):
+    """User Status Model for storing user status related details"""
+
+    __tablename__ = "actions"
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    user_id = db.Column(db.String, nullable=False)
+    decision_idx = db.Column(db.Integer, nullable=True)
+    decision_time = db.Column(db.Integer, nullable=True)
+    action = db.Column(db.Integer, nullable=False, default=0)
+    action_prob = db.Column(db.Float, nullable=False, default=0.5)
+    random_state = db.Column(db.Integer, nullable=True)
+    state = db.Column(ARRAY(db.Float), nullable=True)
+    reward=db.Column(db.Float, nullable=False, default=0.0)
+    decision_timestamp= db.Column(db.DateTime, nullable=True)
+    model_parameters= db.Column(ARRAY(db.Float), nullable=True)
+    request_timestamp= db.Column(db.DateTime, nullable=True)
+
+
+    def __init__(
+        self,
+        user_id: str,
+        decision_idx: int,
+        decision_time: int,
+        action: int,
+        action_prob: float,
+        random_state:int,
+        state: list,
+        reward: float,
+        decision_timestamp: datetime.datetime,
+        model_parameters: list,
+        request_timestamp: datetime.datetime,
+    ):
+        self.user_id = user_id
+        self.decision_idx = decision_idx
+        self.decision_time = decision_time
+        self.action = action
+        self.action_prob = action_prob
+        self.random_state=random_state
+        self.state = state
+        self.reward = reward
+        self.decision_timestamp = decision_timestamp
+        self.model_parameters = model_parameters
+        self.request_timestamp = request_timestamp
+
+    def __repr__(self):
+        return (
+            f"<Action user_id={self.user_id}, decision_idx={self.decision_idx}, "
+            f"decision_time={self.decision_time}, action={self.action}, "
+            f"action_prob={self.action_prob}>"
+        )
+
+
+class Engagement(db.Model):
+    """User Model for storing user engagments"""
+
+    __tablename__ = "engagements"
+
+    # user_id = db.Column(
+    #     db.String, db.ForeignKey("users.user_id"), primary_key=True, nullable=False
+    # )
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    user_id = db.Column(db.String, nullable=False)
+    engagement_time = db.Column(db.DateTime, nullable=True)
+    upload_time= db.Column(db.DateTime, nullable=True) 
+
+    def __init__(
+        self,
+        user_id: str,
+        engagement_time: datetime.datetime,
+        upload_time: datetime.datetime,
+    ):
+        self.user_id = user_id
+        self.engagement_time = engagement_time
+        self.upload_time = upload_time
+
+
+class StudyData(db.Model):
+    """
+    Database table to store study data.
+    """
+
+    __tablename__ = "study_data"
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    user_id = db.Column(db.String(255), nullable=False)
+    decision_idx = db.Column(db.Integer, nullable=False)
+    action = db.Column(db.Integer, nullable=False)
+    action_prob = db.Column(db.Float, nullable=False)
+    decision_time = db.Column(db.Integer, nullable=False)
+    state = db.Column(db.ARRAY(db.Float), nullable=False)
+    raw_context = db.Column(db.JSON, nullable=False)
+    outcome = db.Column(db.JSON, nullable=False)
+    reward = db.Column(db.Float, nullable=True)
+    request_timestamp = db.Column(db.DateTime, nullable=False)
+    created_at = db.Column(db.DateTime, nullable=False)
+
+    def __init__(
+        self,
+        user_id: str,
+        decision_idx: int,
+        action: int,
+        action_prob: float,
+        decision_time: int,
+        state: list,
+        raw_context: dict,
+        outcome: dict,
+        reward: float,
+        request_timestamp: datetime.datetime,
+        created_at: datetime.datetime = datetime.datetime.now().isoformat(),
+    ):
+        """
+        Initialize the StudyData object.
+        """
+        self.user_id = user_id
+        self.decision_idx = decision_idx
+        self.action = action
+        self.action_prob = action_prob
+        self.decision_time = decision_time
+        self.state = state
+        self.raw_context = raw_context
+        self.outcome = outcome
+        self.reward = reward
+        self.request_timestamp = request_timestamp
+        self.created_at = created_at
+
+
+
+
+
+
+
 
 
 class AlgorithmStatus(db.Model):

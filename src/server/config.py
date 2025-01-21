@@ -63,13 +63,12 @@ headers = {
 headers["Authorization"] = "Bearer " + backend_auth_token
 
 database_name = "flask_jwt_auth"
-postgres_local_base = (
-    "postgresql://"
-    + str(database_username)
-    + ":"
-    + str(database_password)
-    + "@localhost/"
-)
+if database_password:
+    postgres_local_base = f"postgresql://{database_username}:{database_password}@localhost/"
+else:
+    postgres_local_base = f"postgresql://{database_username}@localhost/"
+    #postgres_local_base = f"postgresql://{database_username}@{config['DATABASE']['POSTGRES_HOST']}/"
+
 backend_api = backend_host
 ema_api = backend_api + ema_route
 action_api = backend_api + action_route

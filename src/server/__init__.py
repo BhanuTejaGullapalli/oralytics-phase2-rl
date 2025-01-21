@@ -14,7 +14,9 @@ logging.basicConfig(
     level=logging.DEBUG,
     format="%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s",
 )
+
 app = Flask(__name__)
+
 CORS(app)
 
 app_settings = os.getenv("APP_SETTINGS", "src.server.config.DevelopmentConfig")
@@ -36,11 +38,11 @@ from src.server.main import rlservice_blueprint
 app.register_blueprint(rlservice_blueprint)
 
 app.logger.info("Server started")
-
-# Check if the server is being restarted
-if app.config.get("RESTART"):
-    print("Server is being restarted")
-    app.logger.info("Server is being restarted")
-    from src.server.restart import restart_server
-    restart_server(app)
-    # app.config["RESTART"] = False
+print(app.config.get("RESTART"))
+# # Check if the server is being restarted
+# if app.config.get("RESTART"):
+#     print("Server is being restarted")
+#     app.logger.info("Server is being restarted")
+#     from src.server.restart import restart_server
+#     restart_server(app)
+#     # app.config["RESTART"] = False

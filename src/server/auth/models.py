@@ -46,6 +46,7 @@ class Client(db.Model):
         :return: integer|string
         """
         try:
+            #import pdb; pdb.set_trace()
             payload = jwt.decode(
                 auth_token, app.config.get("SECRET_KEY"), algorithms="HS256"
             )
