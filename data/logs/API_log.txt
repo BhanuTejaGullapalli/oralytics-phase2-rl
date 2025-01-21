@@ -4126,6 +4126,10 @@ NameError: name 'action' is not defined
 2025-01-20 23:41:52,575 INFO werkzeug MainThread :  * Debugger PIN: 126-915-544
 2025-01-20 23:41:57,760 INFO src.server Thread-2 (process_request_thread) : Actions API called for user oralytics_042@oralytics.app
 2025-01-20 23:41:57,780 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [20/Jan/2025 23:41:57] "[35m[1mPOST /actions HTTP/1.1[0m" 201 -
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> dcfa7f93f1763432f41c2691a4589cdd02c7bded
 2025-01-21 00:04:08,126 INFO src.server Thread-3 (process_request_thread) : Actions API called for user oralytics_099@oralytics.app
 2025-01-21 00:04:08,139 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [21/Jan/2025 00:04:08] "[35m[1mPOST /actions HTTP/1.1[0m" 202 -
 2025-01-21 07:25:53,844 INFO werkzeug MainThread :  * Detected change in '/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/tables.py', reloading
@@ -4969,6 +4973,7 @@ NameError: name 'asd' is not defined
 2025-01-21 13:57:54,160 INFO src.server Thread-8 (process_request_thread) : Brushing time at 2025-01-24T16:30:34 is for decision index: 12
 2025-01-21 13:57:54,161 ERROR src.server Thread-8 (process_request_thread) : No user action found for user_id: oralytics_042@oralytics.app and decision_idx: 12
 2025-01-21 13:57:54,162 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [21/Jan/2025 13:57:54] "[35m[1mPOST /upload HTTP/1.1[0m" 202 -
+<<<<<<< HEAD
 2025-01-21 14:02:26,054 INFO werkzeug MainThread :  * Detected change in '/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/UploadAPI.py', reloading
 2025-01-21 14:02:26,307 INFO werkzeug MainThread :  * Restarting with stat
 2025-01-21 14:02:26,805 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
@@ -5023,3 +5028,11 @@ NameError: name 'asd' is not defined
 2025-01-21 15:24:51,342 INFO src.server MainThread : Server started
 2025-01-21 15:24:51,355 WARNING werkzeug MainThread :  * Debugger is active!
 2025-01-21 15:24:51,366 INFO werkzeug MainThread :  * Debugger PIN: 126-915-544
+=======
+=======
+>>>>>>> eec322160e066094b03a361f6664365262392458
+>>>>>>> dcfa7f93f1763432f41c2691a4589cdd02c7bded
+2025-01-21 15:30:38,933 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-01-21 15:30:39,333 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-01-21 15:30:39,569 WARNING werkzeug MainThread :  * Debugger is active!
+2025-01-21 15:30:39,576 INFO werkzeug MainThread :  * Debugger PIN: 131-179-395
