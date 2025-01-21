@@ -5036,3 +5036,18 @@ NameError: name 'asd' is not defined
 2025-01-21 15:30:39,333 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
 2025-01-21 15:30:39,569 WARNING werkzeug MainThread :  * Debugger is active!
 2025-01-21 15:30:39,576 INFO werkzeug MainThread :  * Debugger PIN: 131-179-395
+2025-01-21 15:35:01,145 INFO werkzeug MainThread :  * Detected change in '/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/RegisterAPI.py', reloading
+2025-01-21 15:35:01,940 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-01-21 15:35:02,316 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-01-21 15:35:02,637 WARNING werkzeug MainThread :  * Debugger is active!
+2025-01-21 15:35:02,646 INFO werkzeug MainThread :  * Debugger PIN: 131-179-395
+2025-01-21 15:37:15,580 INFO werkzeug MainThread :  * Detected change in '/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/ActionsAPI.py', reloading
+2025-01-21 15:37:16,307 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-01-21 15:37:16,683 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-01-21 15:37:16,915 WARNING werkzeug MainThread :  * Debugger is active!
+2025-01-21 15:37:16,923 INFO werkzeug MainThread :  * Debugger PIN: 131-179-395
+2025-01-21 15:38:54,275 INFO werkzeug MainThread :  * Detected change in '/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/ActionsAPI.py', reloading
+2025-01-21 15:38:54,983 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-01-21 15:38:55,359 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-01-21 15:38:55,597 WARNING werkzeug MainThread :  * Debugger is active!
+2025-01-21 15:38:55,604 INFO werkzeug MainThread :  * Debugger PIN: 131-179-395
