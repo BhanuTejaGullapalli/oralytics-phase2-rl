@@ -34,8 +34,11 @@ def token_required(f):
                 "error_code": 1,
             }, 401
         try:
+            print(token)
             data = Client.decode_auth_token(token)
+            print(data)
             current_client = None
+            # import pdb; pdb.set_trace()
             if not isinstance(data, str):
                 current_client = Client.query.filter_by(id = data).first()
             if current_client is None:

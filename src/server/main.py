@@ -3,7 +3,7 @@
 # Server code that hosts the main RL API
 
 from src.server.ActionsAPI import ActionsAPI
-from src.server.DecisionTimeEndAPI import DecisionTimeEndAPI
+from src.server.UploadAPI import UploadAPI  
 from src.server.RegisterAPI import RegisterAPI
 from src.server.UpdatePosteriorAPI import UpdatePosteriorAPI
 from src.server.UpdateHyperParamAPI import UpdateHyperParamAPI
@@ -23,9 +23,9 @@ rlservice_blueprint = Blueprint("rlservice", __name__)
 # define the API resources
 registration_view = RegisterAPI.as_view("user_register_api")
 action_selection_view = ActionsAPI.as_view("user_actions_api")
-decision_time_end_view = DecisionTimeEndAPI.as_view("decision_time_end_api")
+UploadAPI = UploadAPI.as_view("user_upload_api")
 update_posterior_view = UpdatePosteriorAPI.as_view("update_model_api")
-update_hyperparameters_view = UpdateHyperParamAPI.as_view("update_hyperparam_api")
+# update_hyperparameters_view = UpdateHyperParamAPI.as_view("update_hyperparam_api")
 # update_notification_time_view = UpdateNotificationTimeAPI.as_view(
 #     "update_notification_time_api"
 # )
@@ -38,14 +38,14 @@ rlservice_blueprint.add_url_rule(
     "/actions", view_func=action_selection_view, methods=["POST"]
 )
 rlservice_blueprint.add_url_rule(
-    "/end_decision_window", view_func=decision_time_end_view, methods=["POST"]
+    "/upload", view_func=UploadAPI, methods=["POST"]
 )
 rlservice_blueprint.add_url_rule(
     "/update_parameters", view_func=update_posterior_view, methods=["POST"]
 )
-rlservice_blueprint.add_url_rule(
-    "/update_hyperparameters", view_func=update_hyperparameters_view, methods=["POST"]
-)
+# rlservice_blueprint.add_url_rule(
+#     "/update_hyperparameters", view_func=update_hyperparameters_view, methods=["POST"]
+# )
 
 # rlservice_blueprint.add_url_rule(
 #     "/notif_time_change",

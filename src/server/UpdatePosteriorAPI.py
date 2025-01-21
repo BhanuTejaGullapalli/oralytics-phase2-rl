@@ -1,37 +1,46 @@
 import datetime
 import os
+import traceback
+import csv
 
 import pandas as pd
-from src.server import db, app
-from src.server.auth.auth import token_required
-from src.server.tables import RLActionSelection, RLWeights
-from src.server.helpers import return_fail_response
-
-
 from flask import jsonify, make_response, request
 from flask.views import MethodView
 
-import traceback
-import csv
+from src.server import db, app
+from src.server.auth.auth import token_required
+from src.server.tables import RLActionSelection, RLWeights, StudyData, Action
+from src.server.helpers import return_fail_response
 
 
 class UpdatePosteriorAPI(MethodView):
     """
-    Update model weights of the RL algorithm
+    Update model weights of the RL algorithm.
     """
 
-    def export_table(self, tablename, time) -> None:
-        """Exports the table to a csv file, in a folder inside data/backups/"""
+    @staticmethod
+    def check_all_fields_present(post_data) -> tuple[bool, str, int]:
+        """
+        Check if all required fields are present in the post data.
+        """
+        request_timestamp = post_data.get("request_timestamp")
+        if not isinstance(request_timestamp, (str, datetime.datetime)):
+            return False, "Request timestamp must be a string or datetime object.", 400
 
-        # Create filename
-        filename = f"{tablename.__tablename__}_{time.strftime('%Y-%m-%d_%H-%M-%S')}.csv"
+        return True, None, None
 
+    def export_table(self, tablename, time: datetime.datetime) -> None:
+        """
+        Exports the table to a CSV file in a folder inside data/backups/.
+        """
+        # Create filename and folder
         folder = f"./data/backups/{time.strftime('%Y-%m-%d_%H-%M-%S')}"
+        filename = f"{tablename.__tablename__}_{time.strftime('%Y-%m-%d_%H-%M-%S')}.csv"
 
         if not os.path.exists(folder):
             os.makedirs(folder)
 
-        # Create file and write to it
+        # Write table data to the file
         with open(f"{folder}/{filename}", "w", newline="") as csvfile:
             writer = csv.writer(csvfile)
             writer.writerow([c.name for c in tablename.__table__.columns])
@@ -42,113 +51,49 @@ class UpdatePosteriorAPI(MethodView):
 
     def backup_all_tables(self, time: datetime.datetime) -> tuple[bool, str, str, int]:
         """
-        Exports all tables to csv files, in a folder
-        :return: True if successful, False otherwise
-        :return: error message if unsuccessful, None otherwise
-        :return: location of the backup
-        :return: error code if unsuccessful, None otherwise
+        Exports all tables to CSV files in a folder.
+        :return: A tuple indicating success or failure, an error message, the backup location, and an error code.
         """
-
         try:
-            # Loop over all tables and export them
             for tablename in db.Model.registry._class_registry.values():
                 if hasattr(tablename, "__tablename__"):
                     self.export_table(tablename, time)
         except Exception as e:
-            app.logger.error("Error backing up tables: ", e)
+            app.logger.error("Error backing up tables: %s", e)
             if app.config.get("DEBUG"):
-                print("Error backing up tables: ", e)
+                print("Error backing up tables:", e)
+            return False, f"Error backing up tables: {e}", None, 500
 
-            return False, "Error backing up tables: " + str(e), None, 400
-
-        return True, None, f"./data/backups/{time.strftime('%Y-%m-%d_%H-%M-%S')}", None
+        backup_path = f"./data/backups/{time.strftime('%Y-%m-%d_%H-%M-%S')}"
+        return True, None, backup_path, None
 
     @token_required
     def post(self):
+        """
+        Handle POST requests to update model weights.
+        """
         try:
-            timenow = datetime.datetime.now()
+            app.logger.info("UpdatePosteriorAPI called")
+            post_data = request.get_json()
 
-            # log the time when the update request was received
-            app.logger.info("Update model request received at: %s", timenow)
-            if app.config.get("DEBUG"):
-                print("Update model request received at: ", timenow)
-
-            # First backup all the tables
-            status, message, location, ec = self.backup_all_tables(timenow)
-
+            # Check if required fields are present
+            status, message, error_code = self.check_all_fields_present(post_data)
             if not status:
-                return return_fail_response(message, 500, ec)
+                app.logger.error(message)
+                return return_fail_response(message=message, code=400, error_code=error_code)
 
-            # Get all the data from the RLActionSelection table
-            rl_action_selection = db.session.query(RLActionSelection)
+            # Extract request timestamp
+            request_timestamp = post_data.get("request_timestamp")
+            if not request_timestamp:
+                return return_fail_response("timestamp missing in request data.", 400, 401)
 
-            # Convert to pandas dataframe
-            data = pd.read_sql(
-                str(rl_action_selection.statement), db.engine.connect().connection
-            )
+            # Add  logic for updating model weights or other operations here- PENDING
 
-            # Get the algorithm
-            algorithm = app.config.get("ALGORITHM")
-
-            # Send the data to the rl algorithm update
-            status, message, policyid, params, ec, user_list, hp_update_id = algorithm.update(data,
-                                                                     update_posterior=True,
-                                                                     update_hyperparam=False,
-                                                                     use_data=False)
-
-            if not status:
-                # TODO: put this in logger
-                return return_fail_response(message, 500, ec)
-            
-            app.logger.info("Updated posterior")
-            app.logger.info("policyid: " + str(policyid))
-            # app.logger.info("params: " + str(params))
-
-            # Create a RLWeights object
-            rl_weights = RLWeights(
-                policy_id=policyid,
-                update_timestamp=timenow,
-                posterior_mean_array=params.get("posterior_mean_array"),
-                posterior_var_array=params.get("posterior_var_array"),
-                posterior_theta_pop_mean_array=params.get(
-                    "posterior_theta_pop_mean_array"
-                ),
-                posterior_theta_pop_var_array=params.get(
-                    "posterior_theta_pop_var_array"
-                ),
-                noise_var=params.get("noise_var"),
-                random_eff_cov_array=params.get("random_eff_cov_array"),
-                data_pickle_file_path=location,
-                user_list=user_list,
-                hp_update_id=hp_update_id,
-            )
-
-            # Add the rl_weights object to the database
-            try:
-                db.session.add(rl_weights)
-                db.session.commit()
-            except Exception as e:
-                app.logger.error("Error adding rl_weights to internal database: %s", e)
-                app.logger.error(traceback.format_exc())
-                if app.config.get("DEBUG"):
-                    print(e)
-                    traceback.print_exc()
-                db.session.rollback()
-                return return_fail_response(
-                    "Some error occurred. Please try again.", 500, 401
-                )
-            else:
-                if app.config.get("DEBUG"):
-                    print("DB Committed new rl_weights")
-                app.logger.info("DB Committed new rl_weights")
-
-                responseObject = {
-                    "status": "success",
-                    "message": "Successfully updated parameters/posteriors.",
-                    "policyid": policyid,
-                }
-
-                return make_response(jsonify(responseObject)), 201
+            response_object = {
+                "status": "success",
+                "message": "Successfully updated parameters/posteriors.",
+            }
+            return make_response(jsonify(response_object)), 201
 
         except Exception as e:
             app.logger.error("Error updating hyper-parameters: %s", e)
@@ -156,4 +101,4 @@ class UpdatePosteriorAPI(MethodView):
             if app.config.get("DEBUG"):
                 print(e)
                 traceback.print_exc()
-            return return_fail_response("Some error occurred. Please try again.", 500, 402)
+            return return_fail_response("An error occurred. Please try again.", 500, 402)
