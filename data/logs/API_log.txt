@@ -5051,3 +5051,80 @@ NameError: name 'asd' is not defined
 2025-01-21 15:38:55,359 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
 2025-01-21 15:38:55,597 WARNING werkzeug MainThread :  * Debugger is active!
 2025-01-21 15:38:55,604 INFO werkzeug MainThread :  * Debugger PIN: 131-179-395
+2025-01-21 15:40:57,380 INFO werkzeug MainThread :  * Detected change in '/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/tables.py', reloading
+2025-01-21 15:40:58,123 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-01-21 15:40:58,553 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-01-21 15:40:58,863 INFO src.server MainThread : Server started
+2025-01-21 15:40:58,878 WARNING werkzeug MainThread :  * Debugger is active!
+2025-01-21 15:40:58,888 INFO werkzeug MainThread :  * Debugger PIN: 126-915-544
+2025-01-21 15:40:59,909 INFO werkzeug MainThread :  * Detected change in '/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/tables.py', reloading
+2025-01-21 15:41:00,531 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-01-21 15:41:00,842 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-01-21 15:41:01,035 INFO src.server MainThread : Server started
+2025-01-21 15:41:01,047 WARNING werkzeug MainThread :  * Debugger is active!
+2025-01-21 15:41:01,054 INFO werkzeug MainThread :  * Debugger PIN: 126-915-544
+2025-01-21 15:41:24,940 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-01-21 15:41:25,343 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-01-21 15:41:25,631 INFO src.server MainThread : Server started
+2025-01-21 15:41:29,086 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-01-21 15:41:29,424 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-01-21 15:41:29,657 INFO src.server MainThread : Server started
+2025-01-21 15:41:37,647 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-01-21 15:41:37,999 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-01-21 15:41:38,242 INFO src.server MainThread : Server started
+2025-01-21 15:41:41,041 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-01-21 15:41:41,392 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-01-21 15:41:41,638 INFO src.server MainThread : Server started
+2025-01-21 15:41:46,861 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-01-21 15:41:47,198 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-01-21 15:41:47,436 INFO src.server MainThread : Server started
+2025-01-21 15:41:58,938 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-01-21 15:41:59,425 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-01-21 15:41:59,688 INFO src.server MainThread : Server started
+2025-01-21 15:41:59,709 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-21 15:41:59,709 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-01-21 15:41:59,709 INFO werkzeug MainThread :  * Restarting with stat
+2025-01-21 15:42:00,038 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-01-21 15:42:00,321 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-01-21 15:42:00,508 INFO src.server MainThread : Server started
+2025-01-21 15:42:00,520 WARNING werkzeug MainThread :  * Debugger is active!
+2025-01-21 15:42:00,533 INFO werkzeug MainThread :  * Debugger PIN: 126-915-544
+2025-01-21 15:42:16,027 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [21/Jan/2025 15:42:16] "[35m[1mPOST /auth/register HTTP/1.1[0m" 201 -
+2025-01-21 15:42:20,250 INFO src.server Thread-3 (process_request_thread) : RegisterAPI called
+2025-01-21 15:42:20,250 INFO src.server Thread-3 (process_request_thread) : post_data: {'user_id': 'oralytics_042@oralytics.app', 'rl_start_date': '2025-01-19', 'rl_end_date': '2025-04-02', 'morning_start_hour': 10, 'morning_end_hour': 13, 'evening_start_hour': 18, 'evening_end_hour': 23}
+2025-01-21 15:42:20,353 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [21/Jan/2025 15:42:20] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2025-01-21 15:42:23,994 INFO src.server Thread-4 (process_request_thread) : Actions API called for user oralytics_042@oralytics.app
+2025-01-21 15:42:24,009 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [21/Jan/2025 15:42:24] "[35m[1mPOST /actions HTTP/1.1[0m" 201 -
+2025-01-21 15:42:27,411 INFO src.server Thread-5 (process_request_thread) : UploadAPI called
+2025-01-21 15:42:27,412 INFO src.server Thread-5 (process_request_thread) : UploadAPI for User id: oralytics_042@oralytics.app
+2025-01-21 15:42:27,414 INFO src.server Thread-5 (process_request_thread) : Brushing time at 2025-01-24T16:30:34 is for decision index: 12
+2025-01-21 15:42:27,416 ERROR src.server Thread-5 (process_request_thread) : No user action found for user_id: oralytics_042@oralytics.app and decision_idx: 12
+2025-01-21 15:42:27,418 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [21/Jan/2025 15:42:27] "[35m[1mPOST /upload HTTP/1.1[0m" 202 -
+2025-01-21 15:43:52,197 INFO werkzeug MainThread :  * Detected change in '/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/UploadAPI.py', reloading
+2025-01-21 15:43:52,522 INFO werkzeug MainThread :  * Restarting with stat
+2025-01-21 15:43:53,000 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-01-21 15:43:53,369 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-01-21 15:43:53,648 INFO src.server MainThread : Server started
+2025-01-21 15:43:53,662 WARNING werkzeug MainThread :  * Debugger is active!
+2025-01-21 15:43:53,670 INFO werkzeug MainThread :  * Debugger PIN: 126-915-544
+2025-01-21 15:43:56,722 INFO werkzeug MainThread :  * Detected change in '/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/UploadAPI.py', reloading
+2025-01-21 15:43:56,916 INFO werkzeug MainThread :  * Restarting with stat
+2025-01-21 15:43:57,227 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-01-21 15:43:57,680 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-01-21 15:43:57,947 INFO src.server MainThread : Server started
+2025-01-21 15:43:57,963 WARNING werkzeug MainThread :  * Debugger is active!
+2025-01-21 15:43:57,970 INFO werkzeug MainThread :  * Debugger PIN: 126-915-544
+2025-01-21 15:43:58,611 INFO src.server Thread-2 (process_request_thread) : UploadAPI called
+2025-01-21 15:43:58,612 INFO src.server Thread-2 (process_request_thread) : UploadAPI for User id: oralytics_042@oralytics.app
+2025-01-21 15:43:58,617 INFO src.server Thread-2 (process_request_thread) : Brushing time at 2025-01-24T16:30:34 is for decision index: 12
+2025-01-21 15:43:58,620 ERROR src.server Thread-2 (process_request_thread) : No user action found for user_id: oralytics_042@oralytics.app and decision_idx: 12
+2025-01-21 15:43:58,622 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [21/Jan/2025 15:43:58] "[35m[1mPOST /upload HTTP/1.1[0m" 202 -
+2025-01-21 15:44:23,419 INFO src.server Thread-3 (process_request_thread) : UploadAPI called
+2025-01-21 15:44:23,419 INFO src.server Thread-3 (process_request_thread) : UploadAPI for User id: oralytics_042@oralytics.app
+2025-01-21 15:44:23,421 INFO src.server Thread-3 (process_request_thread) : Brushing time at 2025-01-25T16:30:34 is for decision index: 14
+2025-01-21 15:44:23,424 INFO src.server Thread-3 (process_request_thread) : Found user action: <Action user_id=oralytics_042@oralytics.app, decision_idx=14, decision_time=21, action=1, action_prob=0.5740517730149596, reward=0.28803959926251377>
+2025-01-21 15:44:23,436 INFO src.server Thread-3 (process_request_thread) : Brushing and engagement data updated successfully for user oralytics_042@oralytics.app
+2025-01-21 15:44:23,437 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [21/Jan/2025 15:44:23] "[35m[1mPOST /upload HTTP/1.1[0m" 201 -
+2025-01-21 15:44:34,694 INFO src.server Thread-4 (process_request_thread) : UpdatePosteriorAPI called
+2025-01-21 15:44:34,696 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [21/Jan/2025 15:44:34] "[35m[1mPOST /update_parameters HTTP/1.1[0m" 201 -

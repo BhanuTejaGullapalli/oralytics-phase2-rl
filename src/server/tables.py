@@ -4,13 +4,12 @@
 
 import datetime
 import enum
-
 from src.server import app, db
 from sqlalchemy.dialects.postgresql import ARRAY
 
 
 class User(db.Model):
-    """User Model for storing user related details"""
+    """User Model for storing user-related details"""
 
     __tablename__ = "users"
 
@@ -20,20 +19,17 @@ class User(db.Model):
     morning_start_hour = db.Column(db.Integer, nullable=False, default=6)
     morning_ending_hour = db.Column(db.Integer, nullable=False, default=11)
     evening_start_hour = db.Column(db.Integer, nullable=False, default=18)
-    evening_ending_hour = db.Column(db.Integer, nullable=False, default=23) 
-
-    
-    # TODO: Add columns for other baseline details of the user
+    evening_ending_hour = db.Column(db.Integer, nullable=False, default=23)
 
     def __init__(
         self,
         user_id: str,
         rl_start_date: datetime.date,
         rl_end_date: datetime.date,
-        morning_start_hour:int,
-        morning_ending_hour:int,
-        evening_start_hour:int,
-        evening_ending_hour:int
+        morning_start_hour: int,
+        morning_ending_hour: int,
+        evening_start_hour: int,
+        evening_ending_hour: int,
     ):
         self.user_id = user_id
         self.rl_start_date = rl_start_date
@@ -41,9 +37,7 @@ class User(db.Model):
         self.morning_start_hour = morning_start_hour
         self.morning_ending_hour = morning_ending_hour
         self.evening_start_hour = evening_start_hour
-        self.evening_ending_hour=evening_ending_hour
-
-
+        self.evening_ending_hour = evening_ending_hour
 
 
 class UserStudyPhaseEnum(enum.Enum):
@@ -55,7 +49,7 @@ class UserStudyPhaseEnum(enum.Enum):
 
 
 class UserStatus(db.Model):
-    """User Status Model for storing user status related details"""
+    """User Status Model for storing user status-related details"""
 
     __tablename__ = "user_status"
 
@@ -65,22 +59,16 @@ class UserStatus(db.Model):
     study_phase = db.Column(db.Enum(UserStudyPhaseEnum), nullable=False)
     current_decision_index = db.Column(db.Integer, nullable=False, default=0)
 
-
     def __init__(
-        self,
-        user_id: str,
-        study_phase: UserStudyPhaseEnum,
-        current_decision_index: int = 0,
-
+        self, user_id: str, study_phase: UserStudyPhaseEnum, current_decision_index: int = 0
     ):
         self.user_id = user_id
         self.study_phase = study_phase
-        self.current_decision_index=current_decision_index
-
+        self.current_decision_index = current_decision_index
 
 
 class Action(db.Model):
-    """User Status Model for storing user status related details"""
+    """Action Model for storing action-related details"""
 
     __tablename__ = "actions"
 
@@ -92,18 +80,10 @@ class Action(db.Model):
     action_prob = db.Column(db.Float, nullable=False, default=0.5)
     random_state = db.Column(db.Integer, nullable=True)
     state = db.Column(ARRAY(db.Float), nullable=True)
-<<<<<<< HEAD
-    reward=db.Column(db.Float, nullable=False, default=0.0)
-=======
-<<<<<<< HEAD
-    reward=db.Column(db.Float, nullable=False, default=0.0)
-=======
->>>>>>> eec322160e066094b03a361f6664365262392458
->>>>>>> dcfa7f93f1763432f41c2691a4589cdd02c7bded
-    decision_timestamp= db.Column(db.DateTime, nullable=True)
-    model_parameters= db.Column(ARRAY(db.Float), nullable=True)
-    request_timestamp= db.Column(db.DateTime, nullable=True)
-
+    reward = db.Column(db.Float, nullable=False, default=0.0)
+    decision_timestamp = db.Column(db.DateTime, nullable=True)
+    model_parameters = db.Column(ARRAY(db.Float), nullable=True)
+    request_timestamp = db.Column(db.DateTime, nullable=True)
 
     def __init__(
         self,
@@ -112,16 +92,9 @@ class Action(db.Model):
         decision_time: int,
         action: int,
         action_prob: float,
-        random_state:int,
+        random_state: int,
         state: list,
-<<<<<<< HEAD
         reward: float,
-=======
-<<<<<<< HEAD
-        reward: float,
-=======
->>>>>>> eec322160e066094b03a361f6664365262392458
->>>>>>> dcfa7f93f1763432f41c2691a4589cdd02c7bded
         decision_timestamp: datetime.datetime,
         model_parameters: list,
         request_timestamp: datetime.datetime,
@@ -131,69 +104,41 @@ class Action(db.Model):
         self.decision_time = decision_time
         self.action = action
         self.action_prob = action_prob
-        self.random_state=random_state
+        self.random_state = random_state
         self.state = state
-<<<<<<< HEAD
         self.reward = reward
-=======
-<<<<<<< HEAD
-        self.reward = reward
-=======
->>>>>>> eec322160e066094b03a361f6664365262392458
->>>>>>> dcfa7f93f1763432f41c2691a4589cdd02c7bded
         self.decision_timestamp = decision_timestamp
         self.model_parameters = model_parameters
         self.request_timestamp = request_timestamp
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> dcfa7f93f1763432f41c2691a4589cdd02c7bded
     def __repr__(self):
         return (
             f"<Action user_id={self.user_id}, decision_idx={self.decision_idx}, "
             f"decision_time={self.decision_time}, action={self.action}, "
-            f"action_prob={self.action_prob}>"
+            f"action_prob={self.action_prob}, reward={self.reward}>"
         )
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> eec322160e066094b03a361f6664365262392458
->>>>>>> dcfa7f93f1763432f41c2691a4589cdd02c7bded
 
 class Engagement(db.Model):
-    """User Model for storing user engagments"""
+    """Engagement Model for storing user engagement"""
 
     __tablename__ = "engagements"
 
-    # user_id = db.Column(
-    #     db.String, db.ForeignKey("users.user_id"), primary_key=True, nullable=False
-    # )
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     user_id = db.Column(db.String, nullable=False)
     engagement_time = db.Column(db.DateTime, nullable=True)
-    upload_time= db.Column(db.DateTime, nullable=True) 
+    upload_time = db.Column(db.DateTime, nullable=True)
 
     def __init__(
-        self,
-        user_id: str,
-        engagement_time: datetime.datetime,
-        upload_time: datetime.datetime,
+        self, user_id: str, engagement_time: datetime.datetime, upload_time: datetime.datetime
     ):
         self.user_id = user_id
         self.engagement_time = engagement_time
         self.upload_time = upload_time
 
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> dcfa7f93f1763432f41c2691a4589cdd02c7bded
 class StudyData(db.Model):
-    """
-    Database table to store study data.
-    """
+    """Database table to store study data"""
 
     __tablename__ = "study_data"
 
@@ -203,12 +148,12 @@ class StudyData(db.Model):
     action = db.Column(db.Integer, nullable=False)
     action_prob = db.Column(db.Float, nullable=False)
     decision_time = db.Column(db.Integer, nullable=False)
-    state = db.Column(db.ARRAY(db.Float), nullable=False)
+    state = db.Column(ARRAY(db.Float), nullable=False)
     raw_context = db.Column(db.JSON, nullable=False)
     outcome = db.Column(db.JSON, nullable=False)
     reward = db.Column(db.Float, nullable=True)
     request_timestamp = db.Column(db.DateTime, nullable=False)
-    created_at = db.Column(db.DateTime, nullable=False)
+    created_at = db.Column(db.DateTime, nullable=False, default=datetime.datetime.now)
 
     def __init__(
         self,
@@ -222,11 +167,8 @@ class StudyData(db.Model):
         outcome: dict,
         reward: float,
         request_timestamp: datetime.datetime,
-        created_at: datetime.datetime = datetime.datetime.now().isoformat(),
+        created_at: datetime.datetime = datetime.datetime.now(),
     ):
-        """
-        Initialize the StudyData object.
-        """
         self.user_id = user_id
         self.decision_idx = decision_idx
         self.action = action
@@ -238,12 +180,6 @@ class StudyData(db.Model):
         self.reward = reward
         self.request_timestamp = request_timestamp
         self.created_at = created_at
-
-<<<<<<< HEAD
-=======
-=======
->>>>>>> eec322160e066094b03a361f6664365262392458
->>>>>>> dcfa7f93f1763432f41c2691a4589cdd02c7bded
 
 
 

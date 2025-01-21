@@ -161,8 +161,10 @@ class UploadAPI(MethodView):
                         error_code=302
                     )
                 decision_idx=self.compute_decisionidx_number(user, dt)
+                print(f"decision_idx:{decision_idx}")
                 app.logger.info("Brushing time at %s is for decision index: %s", dt.isoformat(), decision_idx)
                 user_action = Action.query.filter_by(user_id=user_id,decision_idx=decision_idx).first()
+                
                 if not user_action:
                     app.logger.error(
                         "No user action found for user_id: %s and decision_idx: %s",
