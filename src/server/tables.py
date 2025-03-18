@@ -119,22 +119,22 @@ class Action(db.Model):
         )
 
 
-class Engagement(db.Model):
-    """Engagement Model for storing user engagement"""
+# class Engagement(db.Model):
+#     """Engagement Model for storing user engagement"""
 
-    __tablename__ = "engagements"
+#     __tablename__ = "engagements"
 
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    user_id = db.Column(db.String, nullable=False)
-    engagement_time = db.Column(db.DateTime, nullable=True)
-    upload_time = db.Column(db.DateTime, nullable=True)
+#     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+#     user_id = db.Column(db.String, nullable=False)
+#     engagement_time = db.Column(db.DateTime, nullable=True)
+#     upload_time = db.Column(db.DateTime, nullable=True)
 
-    def __init__(
-        self, user_id: str, engagement_time: datetime.datetime, upload_time: datetime.datetime
-    ):
-        self.user_id = user_id
-        self.engagement_time = engagement_time
-        self.upload_time = upload_time
+#     def __init__(
+#         self, user_id: str, engagement_time: datetime.datetime, upload_time: datetime.datetime
+#     ):
+#         self.user_id = user_id
+#         self.engagement_time = engagement_time
+#         self.upload_time = upload_time
 
 
 class StudyData(db.Model):

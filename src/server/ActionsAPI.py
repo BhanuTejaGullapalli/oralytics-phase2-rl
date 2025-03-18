@@ -5,7 +5,7 @@ from flask import jsonify, make_response, request
 from flask.views import MethodView
 from src.server import app, db
 from src.server.auth.auth import token_required
-from src.server.tables import User, UserStatus, Engagement, UserStudyPhaseEnum, Action
+from src.server.tables import User, UserStatus, UserStudyPhaseEnum, Action
 from src.server.helpers import return_fail_response
 import numpy as np
 
@@ -19,34 +19,45 @@ class ActionsAPI(MethodView):
     def check_all_fields_present(post_data: dict) -> tuple[bool, str, int]:
         """
         Check if all required fields are present and valid in the post data.
-        :param post_data: Dictionary containing the post data.
-        :return: Tuple indicating (status, message, error_code).
         """
-        required_fields = ["user_id", "request_timestamp", "decision_window_start"]
+        required_fields = ["user_id", "request_timestamp", "decision_window_start", "message_click_flag", "app_click_flag"]
 
-        # Check if all required fields are present
         for field in required_fields:
             if field not in post_data:
                 return False, f"'{field}' is missing.", 100 + required_fields.index(field)
 
         try:
-            # Parse datetime fields
+            # Convert request_timestamp and decision_window_start
             for field in ["request_timestamp", "decision_window_start"]:
                 if isinstance(post_data[field], str):
                     post_data[field] = datetime.strptime(post_data[field], "%Y-%m-%dT%H:%M:%S")
                 elif not isinstance(post_data[field], datetime):
                     return False, f"'{field}' must be a valid datetime string or object.", 105
 
-            # Check if request_timestamp is not later than decision_window_start
+            # Validate message_click_data and app_click_data (must be 0 or 1)
+            if post_data["message_click_flag"] not in [0, 1]:
+                return False, "'message_click_flag' must be 0 or 1.", 106
+            if post_data["app_click_flag"] not in [0, 1]:
+                return False, "'app_click_flag' must be 0 or 1.", 107
+
+            # Ensure that message_click_data = 1 and app_click_data = 0 is an error
+            if post_data["message_click_flag"] == 1 and post_data["app_click_flag"] == 0:
+                return False, "Invalid state: message_click_flag is 1 but app_click_flag is 0.", 108
+            
+            decision_hour = post_data["decision_window_start"].hour
+            if decision_hour not in [4, 16]:
+                return False, f"Invalid decision window hour: {decision_hour}. Must be 4 AM or 4 PM.", 109
+
+
             if post_data["request_timestamp"] > post_data["decision_window_start"]:
-                return False, "Request timestamp is later than decision window start.", 106
+                return False, "Request timestamp is later than decision window start.", 110
 
         except ValueError as e:
-            # Handle invalid datetime format
-            return False, f"Invalid date format: {e}", 107
+            return False, f"Invalid date format: {e}", 111
 
-        # All checks passed
-        return True, "All fields are valid.", 200
+        return True, "All fields are valid.",post_data, 200
+
+
 
     @staticmethod
     def compute_decisionidx_number(user, decision_window_start, actions_per_day=2) -> int:
@@ -68,11 +79,11 @@ class ActionsAPI(MethodView):
             return False, "User not found.", 203, None, None, None, None, None
 
         if post_data["decision_window_start"].hour == 4:
-            offset = random.randint(0, max(0, user.morning_ending_hour - user.morning_start_hour))
-            decision_time = user.morning_start_hour + offset
+            offset = random.randint(0, max(0, 10))
+            decision_time = 4 + offset
         elif post_data["decision_window_start"].hour == 16:
-            offset = random.randint(0, max(0, user.evening_ending_hour - user.evening_start_hour))
-            decision_time = user.evening_start_hour + offset
+            offset = random.randint(0, max(0, 7))
+            decision_time = 16 + offset
         else:
             return False, "Requested decision time is not 4 AM or 4 PM", 203, None, None, None, None, None
 
@@ -90,7 +101,7 @@ class ActionsAPI(MethodView):
             return return_fail_response(f"User {user_id} does not exist.", 202, 203)
 
         try:
-            status, message, ec = self.check_all_fields_present(post_data)
+            status, message,post_data, ec = self.check_all_fields_present(post_data)
             if not status:
                 return return_fail_response(message, 202, ec)
 
@@ -112,22 +123,12 @@ class ActionsAPI(MethodView):
 
             user_status.current_decision_index = decision_idx
 
-            engagement_times = post_data.get("engagement_data", [])
-            engagement_times = [
-                datetime.strptime(i, "%Y-%m-%dT%H:%M:%S") if isinstance(i, str) else i
-                for i in engagement_times
-            ]
-
-            for eng_time in engagement_times:
-                db.session.add(Engagement(user_id=user_id, upload_time=post_data["request_timestamp"], engagement_time=eng_time))
 
             model_params, state = np.zeros(10), np.zeros(10)
             status, message, ec, user_action_prob, user_action, user_decision_time, user_reward, random_state = self.get_user_action(
                 post_data, decision_idx
             )
 
-            if not status:
-                return return_fail_response(message, 202, ec)
 
             db.session.add(
                 Action(
