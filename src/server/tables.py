@@ -14,30 +14,30 @@ class User(db.Model):
     __tablename__ = "users"
 
     user_id = db.Column(db.String, primary_key=True, nullable=False)
-    rl_start_date = db.Column(db.DateTime, nullable=True)
-    rl_end_date = db.Column(db.DateTime, nullable=True)
-    morning_start_hour = db.Column(db.Integer, nullable=False, default=6)
-    morning_ending_hour = db.Column(db.Integer, nullable=False, default=11)
-    evening_start_hour = db.Column(db.Integer, nullable=False, default=18)
-    evening_ending_hour = db.Column(db.Integer, nullable=False, default=23)
+    rl_start_date = db.Column(db.Date, nullable=True)
+    rl_end_date = db.Column(db.Date, nullable=True)
+    morning_weekday = db.Column(db.Time, nullable=False, default=6)
+    morning_weekend = db.Column(db.Time, nullable=False, default=11)
+    evening_weekday = db.Column(db.Time, nullable=False, default=18)
+    evening_weekend = db.Column(db.Time, nullable=False, default=23)
 
     def __init__(
         self,
         user_id: str,
         rl_start_date: datetime.date,
         rl_end_date: datetime.date,
-        morning_start_hour: int,
-        morning_ending_hour: int,
-        evening_start_hour: int,
-        evening_ending_hour: int,
+        morning_weekday: datetime.time,
+        morning_weekend: datetime.time,
+        evening_weekday: datetime.time,
+        evening_weekend: datetime.time,
     ):
         self.user_id = user_id
         self.rl_start_date = rl_start_date
         self.rl_end_date = rl_end_date
-        self.morning_start_hour = morning_start_hour
-        self.morning_ending_hour = morning_ending_hour
-        self.evening_start_hour = evening_start_hour
-        self.evening_ending_hour = evening_ending_hour
+        self.morning_weekday = morning_weekday
+        self.morning_weekend = morning_weekend
+        self.evening_weekday = evening_weekday
+        self.evening_weekend = evening_weekend
 
 
 class UserStudyPhaseEnum(enum.Enum):

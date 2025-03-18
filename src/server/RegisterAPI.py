@@ -7,61 +7,75 @@ from src.server.tables import User,UserStatus,UserStudyPhaseEnum,StudyData
 
 from src.server.tables import User,UserStatus,UserStudyPhaseEnum
 
-
+from datetime import datetime
 
 from flask import jsonify, make_response, request
 from flask.views import MethodView
 from src.server.helpers import return_fail_response
 
 import traceback
-
-
+def parse_date(date_str: str):
+    """
+    Converts a string date (YYYY-MM-DD) into a datetime.date object.
+    Returns None if the format is invalid.
+    """
+    try:
+        return datetime.strptime(date_str, "%Y-%m-%d").date()
+    except ValueError:
+        return None
+    
+def parse_time(time_str: str):
+    """
+    Converts a string time like "9:30" or "09:30" into a datetime.time object.
+    """
+    try:
+        return datetime.strptime(time_str, "%H:%M").time()  # Parse "09:30"
+    except ValueError:
+        return None
+    
 def check_all_fields_present(post_data) -> tuple[bool, str, int]:
     """
     Check if all fields are present in the post data
     """
+    required_fields = ["user_id", "rl_start_date", "rl_end_date",
+                       "morning_weekday", "morning_weekend",
+                       "evening_weekday", "evening_weekend"]
+    for field in required_fields:
+        if not post_data.get(field):
+            return False, f"Please provide a valid {field.replace('_', ' ')}.", 100 + required_fields.index(field)
 
-    if not post_data.get("user_id") and not isinstance(post_data.get("user_id"), str):
-        return False, "Please provide a valid user id.", 100
-    if not post_data.get("rl_start_date"):
-        return False, "Please provide a valid rl start date.", 101
-    if not post_data.get("rl_end_date"):
-        return False, "Please provide a valid rl end date.", 102
     
-    if not post_data.get("morning_start_hour"):
-        return False, "Please provide a valid Morning start hour.", 103
-    
-    if not post_data.get("morning_end_hour"):
-        return False, "Please provide a valid Morning end hour.", 104
-    
-    if not post_data.get("evening_start_hour"):
-        return False, "Please provide a valid evening end hour.", 105
-    
-    if not post_data.get("evening_end_hour"):
-        return False, "Please provide a valid evening end hour.", 106
-    
+    rl_start_date = parse_date(post_data.get("rl_start_date"))
+    rl_end_date = parse_date(post_data.get("rl_end_date"))
+
+    if not rl_start_date:
+        return False, "Invalid rl_start_date format. Use YYYY-MM-DD.", 107
+    if not rl_end_date:
+        return False, "Invalid rl_end_date format. Use YYYY-MM-DD.", 108
+
     #validate time range
-    morning_start_hour=post_data.get("morning_start_hour")
-    morning_end_hour=post_data.get("morning_end_hour")
-    evening_start_hour=post_data.get("evening_start_hour")
-    evening_end_hour=post_data.get("evening_end_hour")
-    # Validate morning time range [4-16]
-    if not (4 <= morning_start_hour <= 16):
-        return False, "Morning start hour must be between 4 and 16.", 107
-    if not (4 <= morning_end_hour <= 16):
-        return False, "Morning end hour must be between 4 and 16.", 108
+    morning_weekday = parse_time(post_data.get("morning_weekday"))
+    morning_weekend = parse_time(post_data.get("morning_weekend"))
+    evening_weekday = parse_time(post_data.get("evening_weekday"))
+    evening_weekend = parse_time(post_data.get("evening_weekend"))
 
-    # Validate evening time range [16-4]
-    if not (16 <= evening_start_hour <= 24 or 0 <= evening_start_hour <= 4):
-        return False, "Evening start hour must be between 16 and 4.", 109
-    if not (16 <= evening_end_hour <= 24 or 0 <= evening_end_hour <= 4):
-        return False, "Evening end hour must be between 16 and 4.", 110
+    if not morning_weekday or not morning_weekend:
+        return False, "Invalid morning brushing time format. Use HH:MM (e.g., 09:30).", 109
+
+    if not evening_weekday or not evening_weekend:
+        return False, "Invalid evening brushing time format. Use HH:MM (e.g., 21:30).", 110
+
+    if not (4 <= morning_weekday.hour <= 16):
+        return False, "Morning brushing time must be between 04:00 and 16:00.", 111
+    if not (4 <= morning_weekend.hour <= 16):
+        return False, "Morning end brushing time must be between 04:00 and 16:00.", 112
     
+    if not (16 <= evening_weekday.hour <= 23 or 0 <= evening_weekday.hour < 4):
+        return False, "Evening brushing time must be between 16:00 and 04:00.", 113
+    if not (16 <= evening_weekend.hour <= 23 or 0 <= evening_weekend.hour < 4):
+        return False, "Evening brushing time must be between 16:00 and 04:00.", 114
 
-    if(morning_start_hour>=morning_end_hour):
-        return False, "Morning start hour must be less than Morning end hour.", 111
-    if(evening_start_hour>=evening_end_hour):
-        return False, "Evening start hour must be less than Evening end hour.", 112
+
 
     return True, None, None
 
@@ -92,19 +106,22 @@ class RegisterAPI(MethodView):
                 status, message, ec = check_all_fields_present(post_data)
                 if not status:
                     return return_fail_response(message, 202, ec)
-
-
+                
+                rl_start_date = parse_date(post_data.get("rl_start_date"))
+                rl_end_date = parse_date(post_data.get("rl_end_date"))
+                morning_weekday = parse_time(post_data.get("morning_weekday"))
+                morning_weekend = parse_time(post_data.get("morning_weekend"))
+                evening_weekday = parse_time(post_data.get("evening_weekday"))
+                evening_weekend = parse_time(post_data.get("evening_weekend"))
                 
                 user = User(
                     user_id=str(post_data.get("user_id")),
-                    rl_start_date=post_data.get(
-                        "rl_start_date"
-                    ),  
-                    rl_end_date=post_data.get("rl_end_date"),
-                    morning_start_hour=post_data.get("morning_start_hour"),
-                    morning_ending_hour=post_data.get("morning_ending_hour"),
-                    evening_start_hour=post_data.get("evening_start_hour"),
-                    evening_ending_hour=post_data.get("evening_ending_hour")
+                    rl_start_date=rl_start_date,  
+                    rl_end_date=rl_end_date,
+                    morning_weekday=morning_weekday,
+                    morning_weekend=morning_weekend,
+                    evening_weekday=evening_weekday,
+                    evening_weekend=evening_weekend
                 )
                 user_status = UserStatus(user_id=str(post_data.get("user_id")),
                                          study_phase=UserStudyPhaseEnum.REGISTERED)
@@ -115,6 +132,12 @@ class RegisterAPI(MethodView):
                 try:
                     db.session.add(user)
                     db.session.add(user_status)
+                    db.session.commit()
+                    responseObject = {
+                        "status": "success",
+                        "message": f"User {post_data.get('user_id')} was added!",
+                    }
+                    return make_response(jsonify(responseObject), 201)
                 except Exception as e:
                     db.session.rollback()
                     app.logger.error("Error adding user info to internal database: %s", e)
@@ -124,18 +147,12 @@ class RegisterAPI(MethodView):
                         traceback.print_exc()
                     error_message = "Some error occurred while adding user info to internal database. Please try again."
                     ec = 111
-                    return return_fail_response(error_message, 401, None)
-                else:
-                    db.session.commit()
-                    responseObject = {
-                        "status": "success",
-                        "message": f"User {post_data.get('user_id')} was added!",
-                    }
-                    return make_response(jsonify(responseObject)), 201, None
+                    return return_fail_response(error_message, 401, ec)
+
             else:
                 message = f"User {post_data.get('user_id')} already exists."
                 ec = 112
-                return return_fail_response(message, 202, None)
+                return return_fail_response(message, 202, ec)
             
         except Exception as e:
             if app.config.get("DEBUG"):
@@ -145,4 +162,4 @@ class RegisterAPI(MethodView):
             db.session.rollback()
             message = "Some error occurred while adding user info to internal database. Please try again."
             ec = 113
-            return return_fail_response(message, 401, None)
+            return return_fail_response(message, 401, ec)
