@@ -1,9 +1,7 @@
 from src.server import app, db
 from src.server.auth.auth import token_required
 
-from src.server.tables import User,UserStatus,UserStudyPhaseEnum,StudyData
 
-from src.server.tables import User,UserStatus,UserStudyPhaseEnum,StudyData
 
 from src.server.tables import User,UserStatus,UserStudyPhaseEnum
 
@@ -53,6 +51,9 @@ def check_all_fields_present(post_data) -> tuple[bool, str, int]:
     if not rl_end_date:
         return False, "Invalid rl_end_date format. Use YYYY-MM-DD.", 108
 
+    if(rl_end_date<=rl_start_date):
+        return False, "End data can't be earlier than start date",115
+
     #validate time range
     morning_weekday = parse_time(post_data.get("morning_weekday"))
     morning_weekend = parse_time(post_data.get("morning_weekend"))
@@ -65,14 +66,15 @@ def check_all_fields_present(post_data) -> tuple[bool, str, int]:
     if not evening_weekday or not evening_weekend:
         return False, "Invalid evening brushing time format. Use HH:MM (e.g., 21:30).", 110
 
-    if not (4 <= morning_weekday.hour <= 16):
+    if not (4 <= morning_weekday.hour < 16):
         return False, "Morning brushing time must be between 04:00 and 16:00.", 111
-    if not (4 <= morning_weekend.hour <= 16):
+    if not (4 <= morning_weekend.hour < 16):
         return False, "Morning end brushing time must be between 04:00 and 16:00.", 112
     
-    if not (16 <= evening_weekday.hour <= 23 or 0 <= evening_weekday.hour < 4):
+    if not (16 <= evening_weekday.hour <= 23 or (0 <= evening_weekday.hour < 4)):
         return False, "Evening brushing time must be between 16:00 and 04:00.", 113
-    if not (16 <= evening_weekend.hour <= 23 or 0 <= evening_weekend.hour < 4):
+
+    if not (16 <= evening_weekend.hour <= 23 or (0 <= evening_weekend.hour < 4)):
         return False, "Evening brushing time must be between 16:00 and 04:00.", 114
 
 
@@ -97,7 +99,6 @@ class RegisterAPI(MethodView):
 
         # check if user already exists
         user = User.query.filter_by(user_id=post_data.get("user_id")).first()
-
         # if user does not exist, add the user
         # needs user_id, rl_start_date, rl_end_date in post_data
         try:

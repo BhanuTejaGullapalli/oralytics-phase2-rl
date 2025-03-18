@@ -5213,3 +5213,1289 @@ NameError: name 'asd' is not defined
 2025-03-17 23:41:59,052 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [17/Mar/2025 23:41:59] "[33mPOST /auth/login HTTP/1.1[0m" 404 -
 2025-03-17 23:44:43,570 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [17/Mar/2025 23:44:43] "[33mPOST /auth/login HTTP/1.1[0m" 404 -
 2025-03-17 23:46:09,905 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [17/Mar/2025 23:46:09] "[33mPOST /auth/login HTTP/1.1[0m" 404 -
+2025-03-18 10:31:00,863 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 10:31:01,823 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 10:32:14,281 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 10:32:15,218 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 10:32:15,792 INFO src.server MainThread : Server started
+2025-03-18 10:32:24,752 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 10:32:25,483 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 10:32:26,157 INFO src.server MainThread : Server started
+2025-03-18 10:32:26,175 ERROR flask_migrate MainThread : Error: Directory migrations already exists and is not empty
+2025-03-18 10:32:34,565 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 10:32:35,396 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 10:32:35,877 INFO src.server MainThread : Server started
+2025-03-18 10:32:56,113 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 10:32:57,034 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 10:32:57,528 INFO src.server MainThread : Server started
+2025-03-18 10:32:57,560 DEBUG git.cmd MainThread : Popen(['git', 'cat-file', '--batch-check'], cwd=/Users/bhanuteja/Documents/oralytics-phase2-rl, stdin=<valid stream>, shell=False, universal_newlines=False)
+2025-03-18 10:33:03,706 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 10:33:04,249 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 10:33:04,669 INFO src.server MainThread : Server started
+2025-03-18 10:33:04,672 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 10:33:04,672 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 10:33:09,282 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:33:09] "[33mPOST /auth/login HTTP/1.1[0m" 404 -
+2025-03-18 10:37:30,761 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:37:30] "[33mPOST /auth/login HTTP/1.1[0m" 404 -
+2025-03-18 10:40:14,213 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:40:14] "[33mPOST /auth/login HTTP/1.1[0m" 404 -
+2025-03-18 10:40:59,530 ERROR src.server Thread-4 (process_request_thread) : Client not found. Invalid Authentication token!
+2025-03-18 10:40:59,533 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:40:59] "[31m[1mPOST /register HTTP/1.1[0m" 401 -
+2025-03-18 10:41:02,985 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:41:02] "[33mPOST /auth/login HTTP/1.1[0m" 404 -
+2025-03-18 10:44:45,597 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:44:45] "[35m[1mPOST /auth/register HTTP/1.1[0m" 201 -
+2025-03-18 10:44:54,719 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:44:54] "POST /auth/login HTTP/1.1" 200 -
+2025-03-18 10:45:01,198 INFO src.server Thread-8 (process_request_thread) : RegisterAPI called
+2025-03-18 10:45:01,198 INFO src.server Thread-8 (process_request_thread) : post_data: {'user_id': 'oralytics_045@oralytics.app', 'rl_start_date': '2025-01-19', 'rl_end_date': '2025-04-02', 'morning_start_hour': 10, 'morning_end_hour': 13, 'evening_start_hour': 18, 'evening_end_hour': 23}
+2025-03-18 10:45:01,208 ERROR src.server Thread-8 (process_request_thread) : Exception on /register [POST]
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column users.morning_weekday does not exist
+LINE 1: ...art_date, users.rl_end_date AS users_rl_end_date, users.morn...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask_cors/extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/views.py", line 191, in dispatch_request
+    return current_app.ensure_sync(meth)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/auth/auth.py", line 59, in decorated
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/RegisterAPI.py", line 99, in post
+    user = User.query.filter_by(user_id=post_data.get("user_id")).first()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2754, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2853, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/context.py", line 305, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column users.morning_weekday does not exist
+LINE 1: ...art_date, users.rl_end_date AS users_rl_end_date, users.morn...
+                                                             ^
+
+[SQL: SELECT users.user_id AS users_user_id, users.rl_start_date AS users_rl_start_date, users.rl_end_date AS users_rl_end_date, users.morning_weekday AS users_morning_weekday, users.morning_weekend AS users_morning_weekend, users.evening_weekday AS users_evening_weekday, users.evening_weekend AS users_evening_weekend 
+FROM users 
+WHERE users.user_id = %(user_id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'user_id_1': 'oralytics_045@oralytics.app', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-03-18 10:45:01,229 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:45:01] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
+2025-03-18 10:45:54,435 INFO src.server Thread-9 (process_request_thread) : RegisterAPI called
+2025-03-18 10:45:54,436 INFO src.server Thread-9 (process_request_thread) : post_data: {'user_id': 'oralytics_045@oralytics.app', 'rl_start_date': '2025-01-19', 'rl_end_date': '2025-04-02', 'morning_weekday': '09:30', 'morning_weekend': '10:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
+2025-03-18 10:45:54,440 ERROR src.server Thread-9 (process_request_thread) : Exception on /register [POST]
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column users.morning_weekday does not exist
+LINE 1: ...art_date, users.rl_end_date AS users_rl_end_date, users.morn...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask_cors/extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/views.py", line 191, in dispatch_request
+    return current_app.ensure_sync(meth)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/auth/auth.py", line 59, in decorated
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/RegisterAPI.py", line 99, in post
+    user = User.query.filter_by(user_id=post_data.get("user_id")).first()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2754, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2853, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/context.py", line 305, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column users.morning_weekday does not exist
+LINE 1: ...art_date, users.rl_end_date AS users_rl_end_date, users.morn...
+                                                             ^
+
+[SQL: SELECT users.user_id AS users_user_id, users.rl_start_date AS users_rl_start_date, users.rl_end_date AS users_rl_end_date, users.morning_weekday AS users_morning_weekday, users.morning_weekend AS users_morning_weekend, users.evening_weekday AS users_evening_weekday, users.evening_weekend AS users_evening_weekend 
+FROM users 
+WHERE users.user_id = %(user_id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'user_id_1': 'oralytics_045@oralytics.app', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-03-18 10:45:54,448 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:45:54] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
+2025-03-18 10:46:01,854 INFO src.server Thread-10 (process_request_thread) : RegisterAPI called
+2025-03-18 10:46:01,854 INFO src.server Thread-10 (process_request_thread) : post_data: {'user_id': 'oralytics_045@oralytics.app', 'rl_start_date': '2025-01-19', 'rl_end_date': '2025-04-02', 'morning_weekday': '09:30', 'morning_weekend': '10:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
+2025-03-18 10:46:01,856 ERROR src.server Thread-10 (process_request_thread) : Exception on /register [POST]
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column users.morning_weekday does not exist
+LINE 1: ...art_date, users.rl_end_date AS users_rl_end_date, users.morn...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask_cors/extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/views.py", line 191, in dispatch_request
+    return current_app.ensure_sync(meth)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/auth/auth.py", line 59, in decorated
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/RegisterAPI.py", line 99, in post
+    user = User.query.filter_by(user_id=post_data.get("user_id")).first()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2754, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2853, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/context.py", line 305, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column users.morning_weekday does not exist
+LINE 1: ...art_date, users.rl_end_date AS users_rl_end_date, users.morn...
+                                                             ^
+
+[SQL: SELECT users.user_id AS users_user_id, users.rl_start_date AS users_rl_start_date, users.rl_end_date AS users_rl_end_date, users.morning_weekday AS users_morning_weekday, users.morning_weekend AS users_morning_weekend, users.evening_weekday AS users_evening_weekday, users.evening_weekend AS users_evening_weekend 
+FROM users 
+WHERE users.user_id = %(user_id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'user_id_1': 'oralytics_045@oralytics.app', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-03-18 10:46:01,863 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:46:01] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
+2025-03-18 10:46:11,670 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:46:11] "POST /auth/login HTTP/1.1" 200 -
+2025-03-18 10:46:22,551 INFO src.server Thread-12 (process_request_thread) : RegisterAPI called
+2025-03-18 10:46:22,552 INFO src.server Thread-12 (process_request_thread) : post_data: {'user_id': 'oralytics_045@oralytics.app', 'rl_start_date': '2025-01-19', 'rl_end_date': '2025-04-02', 'morning_weekday': '09:30', 'morning_weekend': '10:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
+2025-03-18 10:46:22,555 ERROR src.server Thread-12 (process_request_thread) : Exception on /register [POST]
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column users.morning_weekday does not exist
+LINE 1: ...art_date, users.rl_end_date AS users_rl_end_date, users.morn...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask_cors/extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/views.py", line 191, in dispatch_request
+    return current_app.ensure_sync(meth)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/auth/auth.py", line 59, in decorated
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/RegisterAPI.py", line 99, in post
+    user = User.query.filter_by(user_id=post_data.get("user_id")).first()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2754, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2853, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/context.py", line 305, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column users.morning_weekday does not exist
+LINE 1: ...art_date, users.rl_end_date AS users_rl_end_date, users.morn...
+                                                             ^
+
+[SQL: SELECT users.user_id AS users_user_id, users.rl_start_date AS users_rl_start_date, users.rl_end_date AS users_rl_end_date, users.morning_weekday AS users_morning_weekday, users.morning_weekend AS users_morning_weekend, users.evening_weekday AS users_evening_weekday, users.evening_weekend AS users_evening_weekend 
+FROM users 
+WHERE users.user_id = %(user_id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'user_id_1': 'oralytics_045@oralytics.app', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-03-18 10:46:22,561 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:46:22] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
+2025-03-18 10:46:42,290 INFO src.server Thread-13 (process_request_thread) : RegisterAPI called
+2025-03-18 10:46:42,291 INFO src.server Thread-13 (process_request_thread) : post_data: {'user_id': 'oralytics_045@oralytics.app', 'rl_start_date': '2025-01-19', 'rl_end_date': '2025-04-02', 'morning_weekday': '09:30', 'morning_weekend': '10:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
+2025-03-18 10:46:42,293 ERROR src.server Thread-13 (process_request_thread) : Exception on /register [POST]
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column users.morning_weekday does not exist
+LINE 1: ...art_date, users.rl_end_date AS users_rl_end_date, users.morn...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask_cors/extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/views.py", line 191, in dispatch_request
+    return current_app.ensure_sync(meth)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/auth/auth.py", line 59, in decorated
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/RegisterAPI.py", line 99, in post
+    user = User.query.filter_by(user_id=post_data.get("user_id")).first()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2754, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2853, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/context.py", line 305, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column users.morning_weekday does not exist
+LINE 1: ...art_date, users.rl_end_date AS users_rl_end_date, users.morn...
+                                                             ^
+
+[SQL: SELECT users.user_id AS users_user_id, users.rl_start_date AS users_rl_start_date, users.rl_end_date AS users_rl_end_date, users.morning_weekday AS users_morning_weekday, users.morning_weekend AS users_morning_weekend, users.evening_weekday AS users_evening_weekday, users.evening_weekend AS users_evening_weekend 
+FROM users 
+WHERE users.user_id = %(user_id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'user_id_1': 'oralytics_045@oralytics.app', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-03-18 10:46:42,297 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:46:42] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
+2025-03-18 10:46:47,204 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:46:47] "[35m[1mPOST /auth/register HTTP/1.1[0m" 202 -
+2025-03-18 10:46:51,362 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:46:51] "POST /auth/login HTTP/1.1" 200 -
+2025-03-18 10:47:00,153 INFO src.server Thread-16 (process_request_thread) : RegisterAPI called
+2025-03-18 10:47:00,155 INFO src.server Thread-16 (process_request_thread) : post_data: {'user_id': 'oralytics_045@oralytics.app', 'rl_start_date': '2025-01-19', 'rl_end_date': '2025-04-02', 'morning_weekday': '09:30', 'morning_weekend': '10:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
+2025-03-18 10:47:00,157 ERROR src.server Thread-16 (process_request_thread) : Exception on /register [POST]
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column users.morning_weekday does not exist
+LINE 1: ...art_date, users.rl_end_date AS users_rl_end_date, users.morn...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask_cors/extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/views.py", line 191, in dispatch_request
+    return current_app.ensure_sync(meth)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/auth/auth.py", line 59, in decorated
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/RegisterAPI.py", line 99, in post
+    user = User.query.filter_by(user_id=post_data.get("user_id")).first()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2754, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2853, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/context.py", line 305, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column users.morning_weekday does not exist
+LINE 1: ...art_date, users.rl_end_date AS users_rl_end_date, users.morn...
+                                                             ^
+
+[SQL: SELECT users.user_id AS users_user_id, users.rl_start_date AS users_rl_start_date, users.rl_end_date AS users_rl_end_date, users.morning_weekday AS users_morning_weekday, users.morning_weekend AS users_morning_weekend, users.evening_weekday AS users_evening_weekday, users.evening_weekend AS users_evening_weekend 
+FROM users 
+WHERE users.user_id = %(user_id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'user_id_1': 'oralytics_045@oralytics.app', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-03-18 10:47:00,162 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:47:00] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
+2025-03-18 10:47:54,310 INFO src.server Thread-17 (process_request_thread) : RegisterAPI called
+2025-03-18 10:47:54,312 INFO src.server Thread-17 (process_request_thread) : post_data: {'user_id': 'oralytics_045@oralytics.app', 'rl_start_date': '2025-01-19', 'rl_end_date': '2025-04-02', 'morning_weekday': '09:30', 'morning_weekend': '10:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
+2025-03-18 10:47:54,316 ERROR src.server Thread-17 (process_request_thread) : Exception on /register [POST]
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column users.morning_weekday does not exist
+LINE 1: ...art_date, users.rl_end_date AS users_rl_end_date, users.morn...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask_cors/extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/views.py", line 191, in dispatch_request
+    return current_app.ensure_sync(meth)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/auth/auth.py", line 59, in decorated
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/RegisterAPI.py", line 99, in post
+    user = User.query.filter_by(user_id=post_data.get("user_id")).first()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2754, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2853, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/context.py", line 305, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column users.morning_weekday does not exist
+LINE 1: ...art_date, users.rl_end_date AS users_rl_end_date, users.morn...
+                                                             ^
+
+[SQL: SELECT users.user_id AS users_user_id, users.rl_start_date AS users_rl_start_date, users.rl_end_date AS users_rl_end_date, users.morning_weekday AS users_morning_weekday, users.morning_weekend AS users_morning_weekend, users.evening_weekday AS users_evening_weekday, users.evening_weekend AS users_evening_weekend 
+FROM users 
+WHERE users.user_id = %(user_id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'user_id_1': 'oralytics_045@oralytics.app', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-03-18 10:47:54,320 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:47:54] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
+2025-03-18 10:54:15,659 INFO src.server Thread-18 (process_request_thread) : RegisterAPI called
+2025-03-18 10:54:15,660 INFO src.server Thread-18 (process_request_thread) : post_data: {'user_id': 'oralytics_045@oralytics.app', 'rl_start_date': '2025-01-19', 'rl_end_date': '2025-04-02', 'morning_weekday': '09:30', 'morning_weekend': '10:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
+2025-03-18 10:54:15,663 ERROR src.server Thread-18 (process_request_thread) : Exception on /register [POST]
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column users.morning_weekday does not exist
+LINE 1: ...art_date, users.rl_end_date AS users_rl_end_date, users.morn...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask_cors/extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/views.py", line 191, in dispatch_request
+    return current_app.ensure_sync(meth)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/auth/auth.py", line 59, in decorated
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/RegisterAPI.py", line 99, in post
+    user = User.query.filter_by(user_id=post_data.get("user_id")).first()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2754, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2853, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/context.py", line 305, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column users.morning_weekday does not exist
+LINE 1: ...art_date, users.rl_end_date AS users_rl_end_date, users.morn...
+                                                             ^
+
+[SQL: SELECT users.user_id AS users_user_id, users.rl_start_date AS users_rl_start_date, users.rl_end_date AS users_rl_end_date, users.morning_weekday AS users_morning_weekday, users.morning_weekend AS users_morning_weekend, users.evening_weekday AS users_evening_weekday, users.evening_weekend AS users_evening_weekend 
+FROM users 
+WHERE users.user_id = %(user_id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'user_id_1': 'oralytics_045@oralytics.app', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-03-18 10:54:15,670 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:54:15] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
+2025-03-18 10:54:50,536 INFO src.server Thread-19 (process_request_thread) : RegisterAPI called
+2025-03-18 10:54:50,537 INFO src.server Thread-19 (process_request_thread) : post_data: {'user_id': 'oralytics_045@oralytics.app', 'rl_start_date': '2025-01-19', 'rl_end_date': '2025-04-02', 'morning_weekday': '09:30', 'morning_weekend': '10:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
+2025-03-18 10:54:50,540 ERROR src.server Thread-19 (process_request_thread) : Exception on /register [POST]
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column users.morning_weekday does not exist
+LINE 1: ...art_date, users.rl_end_date AS users_rl_end_date, users.morn...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask_cors/extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/views.py", line 191, in dispatch_request
+    return current_app.ensure_sync(meth)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/auth/auth.py", line 59, in decorated
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/RegisterAPI.py", line 99, in post
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2754, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2853, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/context.py", line 305, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column users.morning_weekday does not exist
+LINE 1: ...art_date, users.rl_end_date AS users_rl_end_date, users.morn...
+                                                             ^
+
+[SQL: SELECT users.user_id AS users_user_id, users.rl_start_date AS users_rl_start_date, users.rl_end_date AS users_rl_end_date, users.morning_weekday AS users_morning_weekday, users.morning_weekend AS users_morning_weekend, users.evening_weekday AS users_evening_weekday, users.evening_weekend AS users_evening_weekend 
+FROM users 
+WHERE users.user_id = %(user_id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'user_id_1': 'oralytics_045@oralytics.app', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-03-18 10:54:50,547 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:54:50] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
+2025-03-18 10:55:19,172 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:55:19] "POST /auth/logout HTTP/1.1" 200 -
+2025-03-18 10:55:41,976 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:55:41] "[35m[1mPOST /auth/register HTTP/1.1[0m" 202 -
+2025-03-18 10:55:45,953 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:55:45] "POST /auth/login HTTP/1.1" 200 -
+2025-03-18 10:55:49,263 INFO src.server Thread-23 (process_request_thread) : RegisterAPI called
+2025-03-18 10:55:49,264 INFO src.server Thread-23 (process_request_thread) : post_data: {'user_id': 'oralytics_045@oralytics.app', 'rl_start_date': '2025-01-19', 'rl_end_date': '2025-04-02', 'morning_weekday': '09:30', 'morning_weekend': '10:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
+2025-03-18 10:55:49,267 ERROR src.server Thread-23 (process_request_thread) : Exception on /register [POST]
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column users.morning_weekday does not exist
+LINE 1: ...art_date, users.rl_end_date AS users_rl_end_date, users.morn...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask_cors/extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/views.py", line 191, in dispatch_request
+    return current_app.ensure_sync(meth)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/auth/auth.py", line 59, in decorated
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/RegisterAPI.py", line 99, in post
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2754, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2853, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/context.py", line 305, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column users.morning_weekday does not exist
+LINE 1: ...art_date, users.rl_end_date AS users_rl_end_date, users.morn...
+                                                             ^
+
+[SQL: SELECT users.user_id AS users_user_id, users.rl_start_date AS users_rl_start_date, users.rl_end_date AS users_rl_end_date, users.morning_weekday AS users_morning_weekday, users.morning_weekend AS users_morning_weekend, users.evening_weekday AS users_evening_weekday, users.evening_weekend AS users_evening_weekend 
+FROM users 
+WHERE users.user_id = %(user_id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'user_id_1': 'oralytics_045@oralytics.app', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-03-18 10:55:49,272 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:55:49] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
+2025-03-18 10:55:56,874 INFO src.server Thread-24 (process_request_thread) : RegisterAPI called
+2025-03-18 10:55:56,874 INFO src.server Thread-24 (process_request_thread) : post_data: {'user_id': 'oralytics_045@oralytics.app', 'rl_start_date': '2025-01-19', 'rl_end_date': '2025-04-02', 'morning_weekday': '09:30', 'morning_weekend': '10:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
+2025-03-18 10:55:56,875 ERROR src.server Thread-24 (process_request_thread) : Exception on /register [POST]
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column users.morning_weekday does not exist
+LINE 1: ...art_date, users.rl_end_date AS users_rl_end_date, users.morn...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask_cors/extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/views.py", line 191, in dispatch_request
+    return current_app.ensure_sync(meth)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/auth/auth.py", line 59, in decorated
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/RegisterAPI.py", line 99, in post
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2754, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2853, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/context.py", line 305, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column users.morning_weekday does not exist
+LINE 1: ...art_date, users.rl_end_date AS users_rl_end_date, users.morn...
+                                                             ^
+
+[SQL: SELECT users.user_id AS users_user_id, users.rl_start_date AS users_rl_start_date, users.rl_end_date AS users_rl_end_date, users.morning_weekday AS users_morning_weekday, users.morning_weekend AS users_morning_weekend, users.evening_weekday AS users_evening_weekday, users.evening_weekend AS users_evening_weekend 
+FROM users 
+WHERE users.user_id = %(user_id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'user_id_1': 'oralytics_045@oralytics.app', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-03-18 10:55:56,877 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:55:56] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
+2025-03-18 10:56:30,293 INFO src.server Thread-25 (process_request_thread) : RegisterAPI called
+2025-03-18 10:56:30,295 INFO src.server Thread-25 (process_request_thread) : post_data: {'user_id': 'oralytics_045@oralytics.app', 'rl_start_date': '2025-01-19', 'rl_end_date': '2025-04-02', 'morning_weekday': '09:30', 'morning_weekend': '10:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
+2025-03-18 10:56:30,297 ERROR src.server Thread-25 (process_request_thread) : Exception on /register [POST]
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column users.morning_weekday does not exist
+LINE 1: ...art_date, users.rl_end_date AS users_rl_end_date, users.morn...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask_cors/extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/flask/views.py", line 191, in dispatch_request
+    return current_app.ensure_sync(meth)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/auth/auth.py", line 59, in decorated
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/RegisterAPI.py", line 99, in post
+    return 0
+           ^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2754, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2853, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/context.py", line 305, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column users.morning_weekday does not exist
+LINE 1: ...art_date, users.rl_end_date AS users_rl_end_date, users.morn...
+                                                             ^
+
+[SQL: SELECT users.user_id AS users_user_id, users.rl_start_date AS users_rl_start_date, users.rl_end_date AS users_rl_end_date, users.morning_weekday AS users_morning_weekday, users.morning_weekend AS users_morning_weekend, users.evening_weekday AS users_evening_weekday, users.evening_weekend AS users_evening_weekend 
+FROM users 
+WHERE users.user_id = %(user_id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'user_id_1': 'oralytics_045@oralytics.app', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-03-18 10:56:30,302 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:56:30] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
+2025-03-18 10:56:46,476 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:56:46] "POST /auth/logout HTTP/1.1" 200 -
+2025-03-18 10:57:06,383 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 10:57:07,321 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 10:57:07,922 INFO src.server MainThread : Server started
+2025-03-18 10:57:14,739 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 10:57:15,467 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 10:57:15,943 INFO src.server MainThread : Server started
+2025-03-18 10:57:19,529 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 10:57:20,120 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 10:57:20,542 INFO src.server MainThread : Server started
+2025-03-18 10:57:24,285 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 10:57:25,173 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 10:57:25,610 INFO src.server MainThread : Server started
+2025-03-18 10:57:30,105 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 10:57:30,635 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 10:57:31,053 INFO src.server MainThread : Server started
+2025-03-18 10:57:43,521 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 10:57:44,420 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 10:57:44,928 INFO src.server MainThread : Server started
+2025-03-18 10:57:48,445 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 10:57:49,009 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 10:57:49,469 INFO src.server MainThread : Server started
+2025-03-18 10:57:49,482 ERROR flask_migrate MainThread : Error: Directory migrations already exists and is not empty
+2025-03-18 10:57:53,629 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 10:57:54,225 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 10:57:54,660 INFO src.server MainThread : Server started
+2025-03-18 10:57:58,150 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 10:57:58,687 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 10:57:59,099 INFO src.server MainThread : Server started
+2025-03-18 10:57:59,126 DEBUG git.cmd MainThread : Popen(['git', 'cat-file', '--batch-check'], cwd=/Users/bhanuteja/Documents/oralytics-phase2-rl, stdin=<valid stream>, shell=False, universal_newlines=False)
+2025-03-18 10:58:05,024 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 10:58:05,473 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 10:58:05,824 INFO src.server MainThread : Server started
+2025-03-18 10:58:05,828 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 10:58:05,828 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 10:58:10,360 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:58:10] "[35m[1mPOST /auth/register HTTP/1.1[0m" 201 -
+2025-03-18 10:58:16,197 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:58:16] "POST /auth/login HTTP/1.1" 200 -
+2025-03-18 10:58:19,175 INFO src.server Thread-3 (process_request_thread) : RegisterAPI called
+2025-03-18 10:58:19,175 INFO src.server Thread-3 (process_request_thread) : post_data: {'user_id': 'oralytics_045@oralytics.app', 'rl_start_date': '2025-01-19', 'rl_end_date': '2025-04-02', 'morning_weekday': '09:30', 'morning_weekend': '10:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
+2025-03-18 10:58:19,189 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:58:19] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2025-03-18 10:58:32,976 INFO src.server Thread-4 (process_request_thread) : RegisterAPI called
+2025-03-18 10:58:32,977 INFO src.server Thread-4 (process_request_thread) : post_data: {'user_id': 'oralytics_045@oralytics.app', 'rl_start_date': '2025-01-19', 'rl_end_date': '2025-04-02', 'morning_weekday': '09:30', 'morning_weekend': '16:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
+2025-03-18 10:58:32,982 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:58:32] "[35m[1mPOST /register HTTP/1.1[0m" 202 -
+2025-03-18 10:58:37,927 INFO src.server Thread-5 (process_request_thread) : RegisterAPI called
+2025-03-18 10:58:37,927 INFO src.server Thread-5 (process_request_thread) : post_data: {'user_id': 'oralytics_046@oralytics.app', 'rl_start_date': '2025-01-19', 'rl_end_date': '2025-04-02', 'morning_weekday': '09:30', 'morning_weekend': '16:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
+2025-03-18 10:58:37,932 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:58:37] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2025-03-18 10:59:10,422 INFO src.server Thread-6 (process_request_thread) : RegisterAPI called
+2025-03-18 10:59:10,423 INFO src.server Thread-6 (process_request_thread) : post_data: {'user_id': 'oralytics_046@oralytics.app', 'rl_start_date': '2025-01-19', 'rl_end_date': '2025-04-02', 'morning_weekday': '09:30', 'morning_weekend': '16:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
+2025-03-18 10:59:10,426 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:59:10] "[35m[1mPOST /register HTTP/1.1[0m" 202 -
+2025-03-18 10:59:15,951 INFO src.server Thread-7 (process_request_thread) : RegisterAPI called
+2025-03-18 10:59:15,952 INFO src.server Thread-7 (process_request_thread) : post_data: {'user_id': 'oralytics_047@oralytics.app', 'rl_start_date': '2025-01-19', 'rl_end_date': '2025-04-02', 'morning_weekday': '09:30', 'morning_weekend': '16:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
+2025-03-18 10:59:15,958 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:59:15] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2025-03-18 10:59:35,038 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 10:59:35,616 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 10:59:36,036 INFO src.server MainThread : Server started
+2025-03-18 10:59:36,039 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 10:59:36,039 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 10:59:40,126 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:59:40] "[35m[1mPOST /auth/register HTTP/1.1[0m" 202 -
+2025-03-18 10:59:43,714 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:59:43] "POST /auth/login HTTP/1.1" 200 -
+2025-03-18 10:59:46,607 INFO src.server Thread-3 (process_request_thread) : RegisterAPI called
+2025-03-18 10:59:46,608 INFO src.server Thread-3 (process_request_thread) : post_data: {'user_id': 'oralytics_047@oralytics.app', 'rl_start_date': '2025-01-19', 'rl_end_date': '2025-04-02', 'morning_weekday': '09:30', 'morning_weekend': '16:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
+2025-03-18 10:59:46,612 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:59:46] "[35m[1mPOST /register HTTP/1.1[0m" 202 -
+2025-03-18 10:59:51,231 INFO src.server Thread-4 (process_request_thread) : RegisterAPI called
+2025-03-18 10:59:51,231 INFO src.server Thread-4 (process_request_thread) : post_data: {'user_id': 'oralytics_048@oralytics.app', 'rl_start_date': '2025-01-19', 'rl_end_date': '2025-04-02', 'morning_weekday': '09:30', 'morning_weekend': '16:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
+2025-03-18 10:59:51,236 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 10:59:51] "[35m[1mPOST /register HTTP/1.1[0m" 202 -
+2025-03-18 11:00:38,304 INFO src.server Thread-5 (process_request_thread) : RegisterAPI called
+2025-03-18 11:00:38,305 INFO src.server Thread-5 (process_request_thread) : post_data: {'user_id': 'oralytics_048@oralytics.app', 'rl_start_date': '2025-01-19', 'rl_end_date': '2025-04-02', 'morning_weekday': '09:30', 'morning_weekend': '16:30', 'evening_weekday': '4:30', 'evening_weekend': '23:30'}
+2025-03-18 11:00:38,313 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 11:00:38] "[35m[1mPOST /register HTTP/1.1[0m" 202 -
+2025-03-18 11:00:44,523 INFO src.server Thread-6 (process_request_thread) : RegisterAPI called
+2025-03-18 11:00:44,523 INFO src.server Thread-6 (process_request_thread) : post_data: {'user_id': 'oralytics_048@oralytics.app', 'rl_start_date': '2025-01-19', 'rl_end_date': '2025-04-02', 'morning_weekday': '09:30', 'morning_weekend': '15:30', 'evening_weekday': '4:30', 'evening_weekend': '23:30'}
+2025-03-18 11:00:44,527 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 11:00:44] "[35m[1mPOST /register HTTP/1.1[0m" 202 -
+2025-03-18 11:26:54,673 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 11:26:55,589 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 11:26:56,137 INFO src.server MainThread : Server started
+2025-03-18 11:27:02,734 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 11:27:03,362 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 11:27:03,857 INFO src.server MainThread : Server started
+2025-03-18 11:28:41,481 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 11:28:42,240 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 11:28:42,700 INFO src.server MainThread : Server started
+2025-03-18 11:28:42,704 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 11:28:42,704 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 11:28:51,368 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 11:28:51] "POST /auth/login HTTP/1.1" 200 -
+2025-03-18 11:29:02,688 INFO src.server Thread-2 (process_request_thread) : RegisterAPI called
+2025-03-18 11:29:02,689 INFO src.server Thread-2 (process_request_thread) : post_data: {'user_id': 'oralytics_098@oralytics.app', 'rl_start_date': '2025-01-19', 'rl_end_date': '2025-05-02', 'morning_weekday': '09:30', 'morning_weekend': '15:30', 'evening_weekday': '4:30', 'evening_weekend': '23:30'}
+2025-03-18 11:29:02,694 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 11:29:02] "[35m[1mPOST /register HTTP/1.1[0m" 202 -
+2025-03-18 11:29:13,091 INFO src.server Thread-3 (process_request_thread) : RegisterAPI called
+2025-03-18 11:29:13,092 INFO src.server Thread-3 (process_request_thread) : post_data: {'user_id': 'oralytics_098@oralytics.app', 'rl_start_date': '2025-01-19', 'rl_end_date': '2025-05-02', 'morning_weekday': '09:30', 'morning_weekend': '15:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
+2025-03-18 11:29:13,107 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 11:29:13] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2025-03-18 11:29:54,532 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 11:29:55,226 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 11:29:55,739 INFO src.server MainThread : Server started
+2025-03-18 11:30:48,963 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 11:30:49,661 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 11:30:50,140 INFO src.server MainThread : Server started
+2025-03-18 11:30:57,722 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 11:30:58,386 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 11:30:58,891 INFO src.server MainThread : Server started
+2025-03-18 11:31:06,558 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 11:31:07,234 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 11:31:07,726 INFO src.server MainThread : Server started
+2025-03-18 11:31:13,273 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 11:31:13,935 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 11:31:14,420 INFO src.server MainThread : Server started
+2025-03-18 11:31:20,599 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 11:31:21,132 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 11:31:21,541 INFO src.server MainThread : Server started
+2025-03-18 11:31:33,020 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 11:31:33,966 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 11:31:34,518 INFO src.server MainThread : Server started
+2025-03-18 11:31:37,465 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 11:31:38,062 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 11:31:38,622 INFO src.server MainThread : Server started
+2025-03-18 11:31:38,637 ERROR flask_migrate MainThread : Error: Directory migrations already exists and is not empty
+2025-03-18 11:31:45,124 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 11:31:45,683 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 11:31:46,135 INFO src.server MainThread : Server started
+2025-03-18 11:31:50,564 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 11:31:51,098 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 11:31:51,509 INFO src.server MainThread : Server started
+2025-03-18 11:31:51,538 DEBUG git.cmd MainThread : Popen(['git', 'cat-file', '--batch-check'], cwd=/Users/bhanuteja/Documents/oralytics-phase2-rl, stdin=<valid stream>, shell=False, universal_newlines=False)
+2025-03-18 12:37:32,374 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 12:37:33,245 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 12:37:33,763 INFO src.server MainThread : Server started
+2025-03-18 12:37:33,770 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 12:37:33,770 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 12:37:41,486 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 12:37:41] "[35m[1mPOST /auth/register HTTP/1.1[0m" 201 -
+2025-03-18 12:37:45,272 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 12:37:45] "POST /auth/login HTTP/1.1" 200 -
+2025-03-18 12:37:58,857 INFO src.server Thread-3 (process_request_thread) : RegisterAPI called
+2025-03-18 12:37:58,858 INFO src.server Thread-3 (process_request_thread) : post_data: {'user_id': 'oralytics_001@oralytics.app', 'rl_start_date': '2025-01-19', 'rl_end_date': '2025-05-02', 'morning_weekday': '09:30', 'morning_weekend': '15:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
+2025-03-18 12:37:58,876 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 12:37:58] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2025-03-18 12:38:38,920 INFO src.server Thread-4 (process_request_thread) : RegisterAPI called
+2025-03-18 12:38:38,921 INFO src.server Thread-4 (process_request_thread) : post_data: {'user_id': 'oralytics_001@oralytics.app', 'rl_start_date': '2025-A1-19', 'rl_end_date': '2025-05-02', 'morning_weekday': '09:30', 'morning_weekend': '15:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
+2025-03-18 12:38:38,924 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 12:38:38] "[35m[1mPOST /register HTTP/1.1[0m" 202 -
+2025-03-18 12:38:43,829 INFO src.server Thread-5 (process_request_thread) : RegisterAPI called
+2025-03-18 12:38:43,829 INFO src.server Thread-5 (process_request_thread) : post_data: {'user_id': 'oralytics_021@oralytics.app', 'rl_start_date': '2025-A1-19', 'rl_end_date': '2025-05-02', 'morning_weekday': '09:30', 'morning_weekend': '15:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
+2025-03-18 12:38:43,833 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 12:38:43] "[35m[1mPOST /register HTTP/1.1[0m" 202 -
+2025-03-18 12:39:00,798 INFO src.server Thread-6 (process_request_thread) : RegisterAPI called
+2025-03-18 12:39:00,799 INFO src.server Thread-6 (process_request_thread) : post_data: {'user_id': 'oralytics_021@oralytics.app', 'rl_start_date': '2025-01-19', 'rl_end_date': '2025-05-02', 'morning_weekday': '16:30', 'morning_weekend': '15:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
+2025-03-18 12:39:00,804 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 12:39:00] "[35m[1mPOST /register HTTP/1.1[0m" 202 -
+2025-03-18 12:39:54,474 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 12:39:55,231 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 12:39:55,709 INFO src.server MainThread : Server started
+2025-03-18 12:39:55,717 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 12:39:55,717 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 12:40:11,222 INFO src.server Thread-1 (process_request_thread) : RegisterAPI called
+2025-03-18 12:40:11,223 INFO src.server Thread-1 (process_request_thread) : post_data: {'user_id': 'oralytics_021@oralytics.app', 'rl_start_date': '2025-05-01', 'rl_end_date': '2025-05-02', 'morning_weekday': '05:30', 'morning_weekend': '15:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
+2025-03-18 12:40:11,237 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 12:40:11] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2025-03-18 12:40:34,433 INFO src.server Thread-2 (process_request_thread) : RegisterAPI called
+2025-03-18 12:40:34,434 INFO src.server Thread-2 (process_request_thread) : post_data: {'user_id': 'oralytics_022@oralytics.app', 'rl_start_date': '2025-05-03', 'rl_end_date': '2025-05-02', 'morning_weekday': '05:30', 'morning_weekend': '15:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
+2025-03-18 12:40:34,437 ERROR src.server Thread-2 (process_request_thread) : Error adding user info to internal database: not enough values to unpack (expected 3, got 2)
+2025-03-18 12:40:34,440 ERROR src.server Thread-2 (process_request_thread) : Traceback (most recent call last):
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/RegisterAPI.py", line 107, in post
+    status, message, ec = check_all_fields_present(post_data)
+    ^^^^^^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 3, got 2)
+
+2025-03-18 12:40:34,441 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 12:40:34] "[31m[1mPOST /register HTTP/1.1[0m" 401 -
+2025-03-18 12:40:42,614 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 12:40:43,204 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 12:40:43,639 INFO src.server MainThread : Server started
+2025-03-18 12:40:43,642 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 12:40:43,642 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 12:40:46,927 INFO src.server Thread-1 (process_request_thread) : RegisterAPI called
+2025-03-18 12:40:46,928 INFO src.server Thread-1 (process_request_thread) : post_data: {'user_id': 'oralytics_022@oralytics.app', 'rl_start_date': '2025-05-03', 'rl_end_date': '2025-05-02', 'morning_weekday': '05:30', 'morning_weekend': '15:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
+2025-03-18 12:40:46,932 ERROR src.server Thread-1 (process_request_thread) : Error adding user info to internal database: not enough values to unpack (expected 3, got 2)
+2025-03-18 12:40:46,934 ERROR src.server Thread-1 (process_request_thread) : Traceback (most recent call last):
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/RegisterAPI.py", line 107, in post
+    status, message, ec = check_all_fields_present(post_data)
+    ^^^^^^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 3, got 2)
+
+2025-03-18 12:40:46,936 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 12:40:46] "[31m[1mPOST /register HTTP/1.1[0m" 401 -
+2025-03-18 12:41:05,760 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 12:41:06,368 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 12:41:06,790 INFO src.server MainThread : Server started
+2025-03-18 12:41:06,793 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 12:41:06,793 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 12:41:13,064 INFO src.server Thread-1 (process_request_thread) : RegisterAPI called
+2025-03-18 12:41:13,065 INFO src.server Thread-1 (process_request_thread) : post_data: {'user_id': 'oralytics_022@oralytics.app', 'rl_start_date': '2025-05-03', 'rl_end_date': '2025-05-02', 'morning_weekday': '05:30', 'morning_weekend': '15:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
+2025-03-18 12:41:13,069 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 12:41:13] "[35m[1mPOST /register HTTP/1.1[0m" 202 -

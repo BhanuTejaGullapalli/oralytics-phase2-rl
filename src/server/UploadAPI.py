@@ -7,7 +7,6 @@ from src.server.tables import (
     RLActionSelection,
     User,
     StudyData,
-    Engagement,
     Action,
     UserActionHistory,
     UserStatus,

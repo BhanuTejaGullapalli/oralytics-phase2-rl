@@ -91,6 +91,7 @@ class AuthLoginAPI(MethodView):
             user = Client.query.filter_by(
                 username=post_data.get('api_user')
             ).first()
+            print(f"user:{user}")
             if user and bcrypt.check_password_hash(
                 user.password, post_data.get('api_pass')
             ):
