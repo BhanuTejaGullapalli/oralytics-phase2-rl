@@ -7974,3 +7974,37 @@ sqlalchemy.exc.ProgrammingError: (psycopg2.ProgrammingError) can't adapt type 'b
 2025-03-18 21:46:13,884 INFO src.server Thread-7 (process_request_thread) : UpdatePosteriorAPI called
 2025-03-18 21:46:13,887 INFO src.server Thread-7 (process_request_thread) : Created new entry in UpdateTable: Updating start
 2025-03-18 21:46:13,888 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 21:46:13] "[35m[1mPOST /update_parameters HTTP/1.1[0m" 201 -
+2025-03-19 15:42:59,633 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-19 15:43:00,293 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-19 15:43:00,706 INFO src.server MainThread : Server started
+2025-03-19 15:43:00,708 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-19 15:43:00,708 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-19 15:43:19,486 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [19/Mar/2025 15:43:19] "[35m[1mPOST /auth/register HTTP/1.1[0m" 202 -
+2025-03-19 15:43:23,289 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [19/Mar/2025 15:43:23] "POST /auth/login HTTP/1.1" 200 -
+2025-03-19 15:43:28,107 INFO src.server Thread-3 (process_request_thread) : RegisterAPI called
+2025-03-19 15:43:28,107 INFO src.server Thread-3 (process_request_thread) : post_data: {'user_id': 'oralytics_044@oralytics.app', 'rl_start_date': '2025-02-03', 'rl_end_date': '2025-05-02', 'morning_weekday': '08:30', 'morning_weekend': '09:30', 'evening_weekday': '18:30', 'evening_weekend': '21:30'}
+2025-03-19 15:43:28,232 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [19/Mar/2025 15:43:28] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2025-03-19 15:43:33,164 INFO src.server Thread-4 (process_request_thread) : Actions API called for user oralytics_044@oralytics.app
+2025-03-19 15:43:33,194 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [19/Mar/2025 15:43:33] "[35m[1mPOST /actions HTTP/1.1[0m" 201 -
+2025-03-19 15:43:38,820 INFO src.server Thread-5 (process_request_thread) : Actions API called for user oralytics_044@oralytics.app
+2025-03-19 15:43:38,824 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [19/Mar/2025 15:43:38] "[35m[1mPOST /actions HTTP/1.1[0m" 202 -
+2025-03-19 15:43:42,772 INFO src.server Thread-6 (process_request_thread) : Actions API called for user oralytics_044@oralytics.app
+2025-03-19 15:43:42,790 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [19/Mar/2025 15:43:42] "[35m[1mPOST /actions HTTP/1.1[0m" 201 -
+2025-03-19 15:43:54,967 INFO src.server Thread-7 (process_request_thread) : Actions API called for user oralytics_044@oralytics.app
+2025-03-19 15:43:54,973 ERROR src.server Thread-7 (process_request_thread) : Duplicate action request for user oralytics_044@oralytics.app and decision index 2
+2025-03-19 15:43:54,974 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [19/Mar/2025 15:43:54] "[35m[1mPOST /actions HTTP/1.1[0m" 202 -
+2025-03-19 15:44:06,265 INFO src.server Thread-8 (process_request_thread) : Actions API called for user oralytics_044@oralytics.app
+2025-03-19 15:44:06,276 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [19/Mar/2025 15:44:06] "[35m[1mPOST /actions HTTP/1.1[0m" 201 -
+2025-03-19 15:44:13,969 INFO src.server Thread-9 (process_request_thread) : Actions API called for user oralytics_044@oralytics.app
+2025-03-19 15:44:13,983 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [19/Mar/2025 15:44:13] "[35m[1mPOST /actions HTTP/1.1[0m" 201 -
+2025-03-19 15:44:39,703 INFO src.server Thread-10 (process_request_thread) : UploadAPI called
+2025-03-19 15:44:39,704 INFO src.server Thread-10 (process_request_thread) : UploadAPI for User id: oralytics_044@oralytics.app
+2025-03-19 15:44:39,707 INFO src.server Thread-10 (process_request_thread) : Brushing time at 2025-02-25T16:30:34 is for decision index: 46
+2025-03-19 15:44:39,709 ERROR src.server Thread-10 (process_request_thread) : No user action found for user_id: oralytics_044@oralytics.app and decision_idx: 46
+2025-03-19 15:44:39,711 INFO src.server Thread-10 (process_request_thread) : Found user action: <Action user_id=oralytics_044@oralytics.app, decision_idx=1, decision_time=12:00, action=1, action_prob=0.734630458656651, reward=0.7302593460078677>
+2025-03-19 15:44:39,722 INFO src.server Thread-10 (process_request_thread) : Brushing and engagement data updated successfully for user oralytics_044@oralytics.app
+2025-03-19 15:44:39,723 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [19/Mar/2025 15:44:39] "[35m[1mPOST /upload HTTP/1.1[0m" 201 -
+2025-03-19 15:44:44,825 INFO src.server Thread-11 (process_request_thread) : UpdatePosteriorAPI called
+2025-03-19 15:44:44,831 INFO src.server Thread-11 (process_request_thread) : Created new entry in UpdateTable: Updating start
+2025-03-19 15:44:44,832 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [19/Mar/2025 15:44:44] "[35m[1mPOST /update_parameters HTTP/1.1[0m" 201 -
