@@ -6499,3 +6499,1478 @@ ValueError: not enough values to unpack (expected 3, got 2)
 2025-03-18 12:41:13,064 INFO src.server Thread-1 (process_request_thread) : RegisterAPI called
 2025-03-18 12:41:13,065 INFO src.server Thread-1 (process_request_thread) : post_data: {'user_id': 'oralytics_022@oralytics.app', 'rl_start_date': '2025-05-03', 'rl_end_date': '2025-05-02', 'morning_weekday': '05:30', 'morning_weekend': '15:30', 'evening_weekday': '18:30', 'evening_weekend': '23:30'}
 2025-03-18 12:41:13,069 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 12:41:13] "[35m[1mPOST /register HTTP/1.1[0m" 202 -
+2025-03-18 12:44:15,999 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 12:44:16,869 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 12:44:17,316 INFO src.server MainThread : Server started
+2025-03-18 12:44:17,320 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 12:44:17,320 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 12:44:39,382 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 12:44:39] "[35m[1mPOST /auth/register HTTP/1.1[0m" 202 -
+2025-03-18 12:44:46,040 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 12:44:46] "POST /auth/login HTTP/1.1" 200 -
+2025-03-18 12:44:49,376 INFO src.server Thread-3 (process_request_thread) : RegisterAPI called
+2025-03-18 12:44:49,377 INFO src.server Thread-3 (process_request_thread) : post_data: {'user_id': 'oralytics_042@oralytics.app', 'rl_start_date': '2025-02-03', 'rl_end_date': '2025-05-02', 'morning_weekday': '08:30', 'morning_weekend': '09:30', 'evening_weekday': '18:30', 'evening_weekend': '21:30'}
+2025-03-18 12:44:49,395 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 12:44:49] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2025-03-18 13:49:38,592 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 13:49:39,170 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 13:49:39,474 INFO src.server MainThread : Server started
+2025-03-18 13:49:39,476 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 13:49:39,476 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 13:49:46,905 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 13:49:46] "[35m[1mPOST /auth/register HTTP/1.1[0m" 202 -
+2025-03-18 13:49:49,866 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 13:49:49] "POST /auth/login HTTP/1.1" 200 -
+2025-03-18 13:49:54,082 INFO src.server Thread-3 (process_request_thread) : RegisterAPI called
+2025-03-18 13:49:54,083 INFO src.server Thread-3 (process_request_thread) : post_data: {'user_id': 'oralytics_042@oralytics.app', 'rl_start_date': '2025-02-03', 'rl_end_date': '2025-05-02', 'morning_weekday': '08:30', 'morning_weekend': '09:30', 'evening_weekday': '18:30', 'evening_weekend': '21:30'}
+2025-03-18 13:49:54,089 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 13:49:54] "[35m[1mPOST /register HTTP/1.1[0m" 202 -
+2025-03-18 13:51:14,725 INFO src.server Thread-4 (process_request_thread) : Actions API called for user oralytics_042@oralytics.app
+2025-03-18 13:51:14,730 ERROR src.server Thread-4 (process_request_thread) : Error in Actions API
+Traceback (most recent call last):
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/ActionsAPI.py", line 113, in post
+    decision_idx = self.compute_decisionidx_number(user, decision_window_start)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/ActionsAPI.py", line 69, in compute_decisionidx_number
+    time_diff = (decision_window_start - user_start_date).total_seconds() // 3600
+                 ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'datetime.datetime' and 'datetime.date'
+2025-03-18 13:51:14,734 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 13:51:14] "[31m[1mPOST /actions HTTP/1.1[0m" 401 -
+2025-03-18 13:51:30,919 INFO src.server Thread-5 (process_request_thread) : Actions API called for user oralytics_042@oralytics.app
+2025-03-18 13:51:30,921 ERROR src.server Thread-5 (process_request_thread) : Error in Actions API
+Traceback (most recent call last):
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/ActionsAPI.py", line 113, in post
+    decision_idx = self.compute_decisionidx_number(user, decision_window_start)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/ActionsAPI.py", line 69, in compute_decisionidx_number
+    time_diff = (decision_window_start - user_start_date).total_seconds() // 3600
+                 ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'datetime.datetime' and 'datetime.date'
+2025-03-18 13:51:30,922 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 13:51:30] "[31m[1mPOST /actions HTTP/1.1[0m" 401 -
+2025-03-18 13:51:34,019 INFO src.server Thread-6 (process_request_thread) : RegisterAPI called
+2025-03-18 13:51:34,020 INFO src.server Thread-6 (process_request_thread) : post_data: {'user_id': 'oralytics_042@oralytics.app', 'rl_start_date': '2025-02-03', 'rl_end_date': '2025-05-02', 'morning_weekday': '08:30', 'morning_weekend': '09:30', 'evening_weekday': '18:30', 'evening_weekend': '21:30'}
+2025-03-18 13:51:34,034 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 13:51:34] "[35m[1mPOST /register HTTP/1.1[0m" 202 -
+2025-03-18 13:51:50,347 INFO src.server Thread-7 (process_request_thread) : Actions API called for user oralytics_042@oralytics.app
+2025-03-18 13:51:50,350 ERROR src.server Thread-7 (process_request_thread) : Error in Actions API
+Traceback (most recent call last):
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/ActionsAPI.py", line 113, in post
+    decision_idx = self.compute_decisionidx_number(user, decision_window_start)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/ActionsAPI.py", line 69, in compute_decisionidx_number
+    time_diff = (decision_window_start - user_start_date).total_seconds() // 3600
+                 ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'datetime.datetime' and 'datetime.date'
+2025-03-18 13:51:50,352 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 13:51:50] "[31m[1mPOST /actions HTTP/1.1[0m" 401 -
+2025-03-18 13:52:07,818 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 13:52:08,216 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 13:52:08,804 INFO src.server MainThread : Server started
+2025-03-18 13:52:08,806 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 13:52:08,806 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 13:52:19,280 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 13:52:19] "[35m[1mPOST /auth/register HTTP/1.1[0m" 202 -
+2025-03-18 13:52:22,955 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 13:52:22] "POST /auth/login HTTP/1.1" 200 -
+2025-03-18 13:52:26,515 INFO src.server Thread-3 (process_request_thread) : RegisterAPI called
+2025-03-18 13:52:26,516 INFO src.server Thread-3 (process_request_thread) : post_data: {'user_id': 'oralytics_043@oralytics.app', 'rl_start_date': '2025-02-03', 'rl_end_date': '2025-05-02', 'morning_weekday': '08:30', 'morning_weekend': '09:30', 'evening_weekday': '18:30', 'evening_weekend': '21:30'}
+2025-03-18 13:52:26,593 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 13:52:26] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2025-03-18 13:52:31,784 INFO src.server Thread-4 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 13:52:31,787 ERROR src.server Thread-4 (process_request_thread) : Error in Actions API
+Traceback (most recent call last):
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/ActionsAPI.py", line 113, in post
+    decision_idx = self.compute_decisionidx_number(user, decision_window_start)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/ActionsAPI.py", line 69, in compute_decisionidx_number
+    time_diff = (decision_window_start - user_start_date).total_seconds() // 3600
+                 ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'datetime.datetime' and 'datetime.date'
+2025-03-18 13:52:31,792 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 13:52:31] "[31m[1mPOST /actions HTTP/1.1[0m" 401 -
+2025-03-18 13:54:28,142 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 13:54:28,544 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 13:54:28,812 INFO src.server MainThread : Server started
+2025-03-18 13:54:28,813 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 13:54:28,814 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 13:54:35,519 INFO src.server Thread-1 (process_request_thread) : RegisterAPI called
+2025-03-18 13:54:35,520 INFO src.server Thread-1 (process_request_thread) : post_data: {'user_id': 'oralytics_043@oralytics.app', 'rl_start_date': '2025-02-03', 'rl_end_date': '2025-05-02', 'morning_weekday': '08:30', 'morning_weekend': '09:30', 'evening_weekday': '18:30', 'evening_weekend': '21:30'}
+2025-03-18 13:54:35,524 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 13:54:35] "[35m[1mPOST /register HTTP/1.1[0m" 202 -
+2025-03-18 13:54:38,296 INFO src.server Thread-2 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 13:54:38,301 ERROR src.server Thread-2 (process_request_thread) : Error in Actions API
+Traceback (most recent call last):
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/ActionsAPI.py", line 113, in post
+    decision_idx = self.compute_decisionidx_number(user, decision_window_start)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/ActionsAPI.py", line 69, in compute_decisionidx_number
+    time_diff = (decision_window_start - user_start_date).total_seconds() // 3600
+                 ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'datetime.datetime' and 'datetime.date'
+2025-03-18 13:54:38,304 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 13:54:38] "[31m[1mPOST /actions HTTP/1.1[0m" 401 -
+2025-03-18 13:55:53,975 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 13:55:54,356 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 13:55:54,599 INFO src.server MainThread : Server started
+2025-03-18 13:55:54,600 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 13:55:54,600 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 13:56:01,790 INFO src.server Thread-1 (process_request_thread) : RegisterAPI called
+2025-03-18 13:56:01,791 INFO src.server Thread-1 (process_request_thread) : post_data: {'user_id': 'oralytics_043@oralytics.app', 'rl_start_date': '2025-02-03', 'rl_end_date': '2025-05-02', 'morning_weekday': '08:30', 'morning_weekend': '09:30', 'evening_weekday': '18:30', 'evening_weekend': '21:30'}
+2025-03-18 13:56:01,796 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 13:56:01] "[35m[1mPOST /register HTTP/1.1[0m" 202 -
+2025-03-18 13:56:04,220 INFO src.server Thread-2 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 13:56:04,222 ERROR src.server Thread-2 (process_request_thread) : Error in Actions API
+Traceback (most recent call last):
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/ActionsAPI.py", line 113, in post
+    decision_idx = self.compute_decisionidx_number(user, decision_window_start)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/ActionsAPI.py", line 69, in compute_decisionidx_number
+    time_diff = (decision_window_start - user_start_date).total_seconds() // 3600
+                 ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'datetime.datetime' and 'datetime.date'
+2025-03-18 13:56:04,224 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 13:56:04] "[31m[1mPOST /actions HTTP/1.1[0m" 401 -
+2025-03-18 13:57:22,821 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 13:57:23,238 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 13:57:23,483 INFO src.server MainThread : Server started
+2025-03-18 13:57:23,485 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 13:57:23,485 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 13:57:27,477 INFO src.server Thread-1 (process_request_thread) : RegisterAPI called
+2025-03-18 13:57:27,478 INFO src.server Thread-1 (process_request_thread) : post_data: {'user_id': 'oralytics_043@oralytics.app', 'rl_start_date': '2025-02-03', 'rl_end_date': '2025-05-02', 'morning_weekday': '08:30', 'morning_weekend': '09:30', 'evening_weekday': '18:30', 'evening_weekend': '21:30'}
+2025-03-18 13:57:27,483 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 13:57:27] "[35m[1mPOST /register HTTP/1.1[0m" 202 -
+2025-03-18 13:57:29,289 INFO src.server Thread-2 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 13:57:29,294 ERROR src.server Thread-2 (process_request_thread) : Error in Actions API
+Traceback (most recent call last):
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/ActionsAPI.py", line 114, in post
+    decision_idx = self.compute_decisionidx_number(user, decision_window_start)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/ActionsAPI.py", line 70, in compute_decisionidx_number
+    time_diff = (decision_window_start - user_start_date).total_seconds() // 3600
+                 ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'datetime.datetime' and 'datetime.date'
+2025-03-18 13:57:29,297 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 13:57:29] "[31m[1mPOST /actions HTTP/1.1[0m" 401 -
+2025-03-18 13:59:59,450 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 13:59:59,833 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 14:00:00,097 INFO src.server MainThread : Server started
+2025-03-18 14:00:00,099 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 14:00:00,099 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 14:00:04,792 INFO src.server Thread-1 (process_request_thread) : RegisterAPI called
+2025-03-18 14:00:04,793 INFO src.server Thread-1 (process_request_thread) : post_data: {'user_id': 'oralytics_043@oralytics.app', 'rl_start_date': '2025-02-03', 'rl_end_date': '2025-05-02', 'morning_weekday': '08:30', 'morning_weekend': '09:30', 'evening_weekday': '18:30', 'evening_weekend': '21:30'}
+2025-03-18 14:00:04,796 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 14:00:04] "[35m[1mPOST /register HTTP/1.1[0m" 202 -
+2025-03-18 14:00:06,974 INFO src.server Thread-2 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 14:00:06,989 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 14:00:06] "[35m[1mPOST /actions HTTP/1.1[0m" 202 -
+2025-03-18 14:01:09,726 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 14:01:10,119 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 14:01:10,357 INFO src.server MainThread : Server started
+2025-03-18 14:01:10,359 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 14:01:10,359 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 14:01:17,058 INFO src.server Thread-1 (process_request_thread) : RegisterAPI called
+2025-03-18 14:01:17,059 INFO src.server Thread-1 (process_request_thread) : post_data: {'user_id': 'oralytics_043@oralytics.app', 'rl_start_date': '2025-02-03', 'rl_end_date': '2025-05-02', 'morning_weekday': '08:30', 'morning_weekend': '09:30', 'evening_weekday': '18:30', 'evening_weekend': '21:30'}
+2025-03-18 14:01:17,068 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 14:01:17] "[35m[1mPOST /register HTTP/1.1[0m" 202 -
+2025-03-18 14:01:19,578 INFO src.server Thread-2 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 14:01:19,592 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 14:01:19] "[35m[1mPOST /actions HTTP/1.1[0m" 202 -
+2025-03-18 14:07:08,802 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 14:07:09,200 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 14:07:09,470 INFO src.server MainThread : Server started
+2025-03-18 14:07:09,472 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 14:07:09,472 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 14:07:14,059 INFO src.server Thread-1 (process_request_thread) : RegisterAPI called
+2025-03-18 14:07:14,059 INFO src.server Thread-1 (process_request_thread) : post_data: {'user_id': 'oralytics_043@oralytics.app', 'rl_start_date': '2025-02-03', 'rl_end_date': '2025-05-02', 'morning_weekday': '08:30', 'morning_weekend': '09:30', 'evening_weekday': '18:30', 'evening_weekend': '21:30'}
+2025-03-18 14:07:14,063 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 14:07:14] "[35m[1mPOST /register HTTP/1.1[0m" 202 -
+2025-03-18 14:07:16,693 INFO src.server Thread-2 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 14:07:16,707 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 14:07:16] "[35m[1mPOST /actions HTTP/1.1[0m" 202 -
+2025-03-18 14:07:27,991 INFO src.server Thread-3 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 14:07:28,021 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 14:07:28] "[35m[1mPOST /actions HTTP/1.1[0m" 201 -
+2025-03-18 14:07:40,797 INFO src.server Thread-4 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 14:07:40,801 ERROR src.server Thread-4 (process_request_thread) : Duplicate action request for user oralytics_043@oralytics.app and decision index 1
+2025-03-18 14:07:40,803 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 14:07:40] "[35m[1mPOST /actions HTTP/1.1[0m" 202 -
+2025-03-18 14:07:51,010 INFO src.server Thread-5 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 14:07:51,018 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 14:07:51] "[35m[1mPOST /actions HTTP/1.1[0m" 202 -
+2025-03-18 14:08:05,583 INFO src.server Thread-6 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 14:08:05,591 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 14:08:05] "[35m[1mPOST /actions HTTP/1.1[0m" 202 -
+2025-03-18 14:08:10,864 INFO src.server Thread-7 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 14:08:10,879 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 14:08:10] "[35m[1mPOST /actions HTTP/1.1[0m" 201 -
+2025-03-18 15:52:20,986 INFO src.server Thread-8 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 15:52:20,993 ERROR src.server Thread-8 (process_request_thread) : Duplicate action request for user oralytics_043@oralytics.app and decision index 2
+2025-03-18 15:52:21,000 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 15:52:21] "[35m[1mPOST /actions HTTP/1.1[0m" 202 -
+2025-03-18 15:54:05,150 INFO src.server Thread-9 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 15:54:05,153 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 15:54:05] "[35m[1mPOST /actions HTTP/1.1[0m" 202 -
+2025-03-18 15:54:21,687 INFO src.server Thread-10 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 15:54:21,692 ERROR src.server Thread-10 (process_request_thread) : Duplicate action request for user oralytics_043@oralytics.app and decision index 1
+2025-03-18 15:54:21,693 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 15:54:21] "[35m[1mPOST /actions HTTP/1.1[0m" 202 -
+2025-03-18 16:06:03,545 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 16:06:04,146 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 16:06:04,437 INFO src.server MainThread : Server started
+2025-03-18 16:06:04,442 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 16:06:04,442 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 16:06:10,831 INFO src.server Thread-1 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 16:06:10,841 ERROR src.server Thread-1 (process_request_thread) : Duplicate action request for user oralytics_043@oralytics.app and decision index 1
+2025-03-18 16:06:10,843 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 16:06:10] "[35m[1mPOST /actions HTTP/1.1[0m" 202 -
+2025-03-18 16:06:22,229 INFO src.server Thread-2 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 16:06:22,231 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 16:06:22] "[35m[1mPOST /actions HTTP/1.1[0m" 202 -
+2025-03-18 16:06:29,375 INFO src.server Thread-3 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 16:06:29,412 ERROR src.server Thread-3 (process_request_thread) : Error in Actions API
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.InvalidTextRepresentation: invalid input syntax for type integer: "06:00"
+LINE 1: ...estamp) VALUES ('oralytics_043@oralytics.app', 3, '06:00', 0...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/ActionsAPI.py", line 174, in post
+    db.session.commit()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/scoping.py", line 599, in commit
+    return self._proxied.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4353, in flush
+    self._flush(objects)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4488, in _flush
+    with util.safe_reraise():
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4449, in _flush
+    flush_context.execute()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "06:00"
+LINE 1: ...estamp) VALUES ('oralytics_043@oralytics.app', 3, '06:00', 0...
+                                                             ^
+
+[SQL: INSERT INTO actions (user_id, decision_idx, decision_time, action, action_prob, random_state, state, reward, decision_timestamp, model_parameters, request_timestamp) VALUES (%(user_id)s, %(decision_idx)s, %(decision_time)s, %(action)s, %(action_prob)s, %(random_state)s, %(state)s::FLOAT[], %(reward)s, %(decision_timestamp)s, %(model_parameters)s::FLOAT[], %(request_timestamp)s) RETURNING actions.id]
+[parameters: {'user_id': 'oralytics_043@oralytics.app', 'decision_idx': 3, 'decision_time': '06:00', 'action': 0, 'action_prob': 0.1849024610881529, 'random_state': 37539, 'state': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'reward': 0.30381100344816436, 'decision_timestamp': datetime.datetime(2025, 2, 4, 4, 0), 'model_parameters': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'request_timestamp': datetime.datetime(2025, 2, 4, 1, 30, 30)}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2025-03-18 16:06:29,426 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 16:06:29] "[31m[1mPOST /actions HTTP/1.1[0m" 401 -
+2025-03-18 16:07:21,043 INFO src.server Thread-4 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 16:07:21,055 ERROR src.server Thread-4 (process_request_thread) : Error in Actions API
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.InvalidTextRepresentation: invalid input syntax for type integer: "07:00"
+LINE 1: ...estamp) VALUES ('oralytics_043@oralytics.app', 3, '07:00', 1...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/ActionsAPI.py", line 174, in post
+    db.session.commit()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/scoping.py", line 599, in commit
+    return self._proxied.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4353, in flush
+    self._flush(objects)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4488, in _flush
+    with util.safe_reraise():
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4449, in _flush
+    flush_context.execute()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "07:00"
+LINE 1: ...estamp) VALUES ('oralytics_043@oralytics.app', 3, '07:00', 1...
+                                                             ^
+
+[SQL: INSERT INTO actions (user_id, decision_idx, decision_time, action, action_prob, random_state, state, reward, decision_timestamp, model_parameters, request_timestamp) VALUES (%(user_id)s, %(decision_idx)s, %(decision_time)s, %(action)s, %(action_prob)s, %(random_state)s, %(state)s::FLOAT[], %(reward)s, %(decision_timestamp)s, %(model_parameters)s::FLOAT[], %(request_timestamp)s) RETURNING actions.id]
+[parameters: {'user_id': 'oralytics_043@oralytics.app', 'decision_idx': 3, 'decision_time': '07:00', 'action': 1, 'action_prob': 0.7910039359076863, 'random_state': 20590, 'state': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'reward': 0.3264192958773471, 'decision_timestamp': datetime.datetime(2025, 2, 4, 4, 0), 'model_parameters': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'request_timestamp': datetime.datetime(2025, 2, 4, 1, 30, 30)}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2025-03-18 16:07:21,059 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 16:07:21] "[31m[1mPOST /actions HTTP/1.1[0m" 401 -
+2025-03-18 16:08:04,409 INFO src.server Thread-5 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 16:08:04,422 ERROR src.server Thread-5 (process_request_thread) : Error in Actions API
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.InvalidTextRepresentation: invalid input syntax for type integer: "11:00"
+LINE 1: ...estamp) VALUES ('oralytics_043@oralytics.app', 3, '11:00', 1...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/ActionsAPI.py", line 174, in post
+    db.session.commit()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/scoping.py", line 599, in commit
+    return self._proxied.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4353, in flush
+    self._flush(objects)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4488, in _flush
+    with util.safe_reraise():
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4449, in _flush
+    flush_context.execute()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "11:00"
+LINE 1: ...estamp) VALUES ('oralytics_043@oralytics.app', 3, '11:00', 1...
+                                                             ^
+
+[SQL: INSERT INTO actions (user_id, decision_idx, decision_time, action, action_prob, random_state, state, reward, decision_timestamp, model_parameters, request_timestamp) VALUES (%(user_id)s, %(decision_idx)s, %(decision_time)s, %(action)s, %(action_prob)s, %(random_state)s, %(state)s::FLOAT[], %(reward)s, %(decision_timestamp)s, %(model_parameters)s::FLOAT[], %(request_timestamp)s) RETURNING actions.id]
+[parameters: {'user_id': 'oralytics_043@oralytics.app', 'decision_idx': 3, 'decision_time': '11:00', 'action': 1, 'action_prob': 0.7096750142249166, 'random_state': 32862, 'state': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'reward': 0.19022671657905854, 'decision_timestamp': datetime.datetime(2025, 2, 4, 4, 0), 'model_parameters': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'request_timestamp': datetime.datetime(2025, 2, 4, 1, 30, 30)}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2025-03-18 16:08:04,427 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 16:08:04] "[31m[1mPOST /actions HTTP/1.1[0m" 401 -
+2025-03-18 16:10:46,682 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 16:10:47,062 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 16:10:47,327 INFO src.server MainThread : Server started
+2025-03-18 16:10:47,329 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 16:10:47,329 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 16:10:52,389 INFO src.server Thread-1 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 16:10:52,411 ERROR src.server Thread-1 (process_request_thread) : Error in Actions API
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.InvalidTextRepresentation: invalid input syntax for type integer: "11:00"
+LINE 1: ...estamp) VALUES ('oralytics_043@oralytics.app', 3, '11:00', 1...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/ActionsAPI.py", line 174, in post
+    db.session.commit()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/scoping.py", line 599, in commit
+    return self._proxied.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4353, in flush
+    self._flush(objects)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4488, in _flush
+    with util.safe_reraise():
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4449, in _flush
+    flush_context.execute()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "11:00"
+LINE 1: ...estamp) VALUES ('oralytics_043@oralytics.app', 3, '11:00', 1...
+                                                             ^
+
+[SQL: INSERT INTO actions (user_id, decision_idx, decision_time, action, action_prob, random_state, state, reward, decision_timestamp, model_parameters, request_timestamp) VALUES (%(user_id)s, %(decision_idx)s, %(decision_time)s, %(action)s, %(action_prob)s, %(random_state)s, %(state)s::FLOAT[], %(reward)s, %(decision_timestamp)s, %(model_parameters)s::FLOAT[], %(request_timestamp)s) RETURNING actions.id]
+[parameters: {'user_id': 'oralytics_043@oralytics.app', 'decision_idx': 3, 'decision_time': '11:00', 'action': 1, 'action_prob': 0.8511787066788825, 'random_state': 40476, 'state': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'reward': 0.9613922144061572, 'decision_timestamp': datetime.datetime(2025, 2, 4, 4, 0), 'model_parameters': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'request_timestamp': datetime.datetime(2025, 2, 4, 1, 30, 30)}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2025-03-18 16:10:52,430 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 16:10:52] "[31m[1mPOST /actions HTTP/1.1[0m" 401 -
+2025-03-18 16:10:57,815 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 16:10:57] "POST /auth/login HTTP/1.1" 200 -
+2025-03-18 16:11:01,973 INFO src.server Thread-3 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 16:11:01,986 ERROR src.server Thread-3 (process_request_thread) : Error in Actions API
+Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.InvalidTextRepresentation: invalid input syntax for type integer: "09:00"
+LINE 1: ...estamp) VALUES ('oralytics_043@oralytics.app', 3, '09:00', 0...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/ActionsAPI.py", line 174, in post
+    db.session.commit()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/scoping.py", line 599, in commit
+    return self._proxied.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4353, in flush
+    self._flush(objects)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4488, in _flush
+    with util.safe_reraise():
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4449, in _flush
+    flush_context.execute()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "09:00"
+LINE 1: ...estamp) VALUES ('oralytics_043@oralytics.app', 3, '09:00', 0...
+                                                             ^
+
+[SQL: INSERT INTO actions (user_id, decision_idx, decision_time, action, action_prob, random_state, state, reward, decision_timestamp, model_parameters, request_timestamp) VALUES (%(user_id)s, %(decision_idx)s, %(decision_time)s, %(action)s, %(action_prob)s, %(random_state)s, %(state)s::FLOAT[], %(reward)s, %(decision_timestamp)s, %(model_parameters)s::FLOAT[], %(request_timestamp)s) RETURNING actions.id]
+[parameters: {'user_id': 'oralytics_043@oralytics.app', 'decision_idx': 3, 'decision_time': '09:00', 'action': 0, 'action_prob': 0.012995345940870373, 'random_state': 82696, 'state': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'reward': 0.698189449370003, 'decision_timestamp': datetime.datetime(2025, 2, 4, 4, 0), 'model_parameters': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'request_timestamp': datetime.datetime(2025, 2, 4, 1, 30, 30)}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2025-03-18 16:11:01,990 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 16:11:01] "[31m[1mPOST /actions HTTP/1.1[0m" 401 -
+2025-03-18 16:16:21,336 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 16:16:21,949 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 16:16:22,291 INFO src.server MainThread : Server started
+2025-03-18 16:16:29,120 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 16:16:29,538 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 16:16:29,836 INFO src.server MainThread : Server started
+2025-03-18 16:16:36,545 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 16:16:36,983 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 16:16:37,296 INFO src.server MainThread : Server started
+2025-03-18 16:16:42,958 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 16:16:43,408 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 16:16:43,793 INFO src.server MainThread : Server started
+2025-03-18 16:16:48,357 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 16:16:48,721 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 16:16:48,965 INFO src.server MainThread : Server started
+2025-03-18 16:17:04,467 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 16:17:04,966 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 16:17:05,218 INFO src.server MainThread : Server started
+2025-03-18 16:17:05,220 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 16:17:05,221 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 16:17:53,603 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 16:17:53] "[35m[1mPOST /auth/register HTTP/1.1[0m" 201 -
+2025-03-18 16:17:57,752 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 16:17:57] "POST /auth/login HTTP/1.1" 200 -
+2025-03-18 16:18:06,171 INFO src.server Thread-3 (process_request_thread) : RegisterAPI called
+2025-03-18 16:18:06,171 INFO src.server Thread-3 (process_request_thread) : post_data: {'user_id': 'oralytics_043@oralytics.app', 'rl_start_date': '2025-02-03', 'rl_end_date': '2025-05-02', 'morning_weekday': '08:30', 'morning_weekend': '09:30', 'evening_weekday': '18:30', 'evening_weekend': '21:30'}
+2025-03-18 16:18:06,187 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 16:18:06] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2025-03-18 16:18:14,739 INFO src.server Thread-4 (process_request_thread) : Actions API called for user oralytics_042@oralytics.app
+2025-03-18 16:18:14,743 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 16:18:14] "[35m[1mPOST /actions HTTP/1.1[0m" 202 -
+2025-03-18 16:19:00,552 INFO src.server Thread-5 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 16:19:00,574 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 16:19:00] "[35m[1mPOST /actions HTTP/1.1[0m" 201 -
+2025-03-18 16:24:28,867 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 16:24:29,292 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 16:24:29,559 INFO src.server MainThread : Server started
+2025-03-18 16:24:29,561 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 16:24:29,561 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 16:24:39,138 INFO src.server Thread-1 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 16:24:39,157 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 16:24:39] "[35m[1mPOST /actions HTTP/1.1[0m" 201 -
+2025-03-18 20:29:20,454 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 20:29:21,259 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 20:29:21,748 INFO src.server MainThread : Server started
+2025-03-18 20:29:21,751 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 20:29:21,751 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 20:29:29,807 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 20:29:29] "POST /auth/login HTTP/1.1" 200 -
+2025-03-18 20:29:33,673 INFO src.server Thread-2 (process_request_thread) : RegisterAPI called
+2025-03-18 20:29:33,673 INFO src.server Thread-2 (process_request_thread) : post_data: {'user_id': 'oralytics_043@oralytics.app', 'rl_start_date': '2025-02-03', 'rl_end_date': '2025-05-02', 'morning_weekday': '08:30', 'morning_weekend': '09:30', 'evening_weekday': '18:30', 'evening_weekend': '21:30'}
+2025-03-18 20:29:33,678 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 20:29:33] "[35m[1mPOST /register HTTP/1.1[0m" 202 -
+2025-03-18 20:29:39,384 INFO src.server Thread-3 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 20:29:39,390 ERROR src.server Thread-3 (process_request_thread) : Duplicate action request for user oralytics_043@oralytics.app and decision index 2
+2025-03-18 20:29:39,392 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 20:29:39] "[35m[1mPOST /actions HTTP/1.1[0m" 202 -
+2025-03-18 20:33:58,425 INFO src.server Thread-4 (process_request_thread) : UploadAPI called
+2025-03-18 20:33:58,426 INFO src.server Thread-4 (process_request_thread) : UploadAPI for User id: oralytics_043@oralytics.app
+2025-03-18 20:33:58,431 ERROR src.server Thread-4 (process_request_thread) : Some error occurred while uploading data
+2025-03-18 20:33:58,433 ERROR src.server Thread-4 (process_request_thread) : Traceback (most recent call last):
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/UploadAPI.py", line 140, in post
+    if dt < user.rl_start_date or dt > user.rl_end_date:
+       ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: can't compare datetime.datetime to datetime.date
+
+2025-03-18 20:33:58,433 ERROR src.server Thread-4 (process_request_thread) : can't compare datetime.datetime to datetime.date
+2025-03-18 20:33:58,434 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 20:33:58] "[31m[1mPOST /upload HTTP/1.1[0m" 401 -
+2025-03-18 20:36:26,042 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 20:36:26,628 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 20:36:27,062 INFO src.server MainThread : Server started
+2025-03-18 20:36:27,069 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 20:36:27,069 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 20:36:33,969 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 20:36:33] "POST /auth/login HTTP/1.1" 200 -
+2025-03-18 20:36:50,549 INFO src.server Thread-2 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 20:36:50,618 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 20:36:50] "[35m[1mPOST /actions HTTP/1.1[0m" 201 -
+2025-03-18 20:36:56,319 INFO src.server Thread-3 (process_request_thread) : UploadAPI called
+2025-03-18 20:36:56,320 INFO src.server Thread-3 (process_request_thread) : UploadAPI for User id: oralytics_043@oralytics.app
+2025-03-18 20:36:56,323 ERROR src.server Thread-3 (process_request_thread) : Some error occurred while uploading data
+2025-03-18 20:36:56,326 ERROR src.server Thread-3 (process_request_thread) : Traceback (most recent call last):
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/UploadAPI.py", line 141, in post
+    if dt < user.rl_start_date or dt > user.rl_end_date:
+       ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: can't compare datetime.datetime to datetime.date
+
+2025-03-18 20:36:56,326 ERROR src.server Thread-3 (process_request_thread) : can't compare datetime.datetime to datetime.date
+2025-03-18 20:36:56,327 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 20:36:56] "[31m[1mPOST /upload HTTP/1.1[0m" 401 -
+2025-03-18 20:39:20,515 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 20:39:21,352 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 20:39:21,818 INFO src.server MainThread : Server started
+2025-03-18 20:39:21,821 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 20:39:21,821 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 20:39:27,345 INFO src.server Thread-1 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 20:39:27,354 ERROR src.server Thread-1 (process_request_thread) : Duplicate action request for user oralytics_043@oralytics.app and decision index 3
+2025-03-18 20:39:27,356 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 20:39:27] "[35m[1mPOST /actions HTTP/1.1[0m" 202 -
+2025-03-18 20:39:31,173 INFO src.server Thread-2 (process_request_thread) : UploadAPI called
+2025-03-18 20:39:31,180 INFO src.server Thread-2 (process_request_thread) : UploadAPI for User id: oralytics_043@oralytics.app
+2025-03-18 20:39:31,184 ERROR src.server Thread-2 (process_request_thread) : Brushing Datetime not within user's study phase.
+2025-03-18 20:39:31,185 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 20:39:31] "[35m[1mPOST /upload HTTP/1.1[0m" 202 -
+2025-03-18 20:39:55,924 INFO src.server Thread-3 (process_request_thread) : UploadAPI called
+2025-03-18 20:39:55,925 INFO src.server Thread-3 (process_request_thread) : UploadAPI for User id: oralytics_043@oralytics.app
+2025-03-18 20:39:55,927 INFO src.server Thread-3 (process_request_thread) : Brushing time at 2025-02-25T16:30:34 is for decision index: 46
+2025-03-18 20:39:55,929 ERROR src.server Thread-3 (process_request_thread) : No user action found for user_id: oralytics_043@oralytics.app and decision_idx: 46
+2025-03-18 20:39:55,931 INFO src.server Thread-3 (process_request_thread) : Found user action: <Action user_id=oralytics_043@oralytics.app, decision_idx=1, decision_time=10:00, action=1, action_prob=0.9891625806714687, reward=0.9127319595882275>
+2025-03-18 20:39:55,942 ERROR src.server Thread-3 (process_request_thread) : Some error occurred while uploading data
+2025-03-18 20:39:55,973 ERROR src.server Thread-3 (process_request_thread) : Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.InvalidTextRepresentation: invalid input syntax for type integer: "10:00"
+LINE 1: ...cs_043@oralytics.app', 46, 1, 0.9891625806714687, '10:00', A...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/UploadAPI.py", line 191, in post
+    db.session.commit()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/scoping.py", line 599, in commit
+    return self._proxied.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4353, in flush
+    self._flush(objects)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4488, in _flush
+    with util.safe_reraise():
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4449, in _flush
+    flush_context.execute()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "10:00"
+LINE 1: ...cs_043@oralytics.app', 46, 1, 0.9891625806714687, '10:00', A...
+                                                             ^
+
+[SQL: INSERT INTO study_data (user_id, decision_idx, action, action_prob, decision_time, state, raw_context, outcome, reward, request_timestamp, created_at) VALUES (%(user_id)s, %(decision_idx)s, %(action)s, %(action_prob)s, %(decision_time)s, %(state)s::FLOAT[], %(raw_context)s::JSON, %(outcome)s::JSON, %(reward)s, %(request_timestamp)s, %(created_at)s) RETURNING study_data.id]
+[parameters: {'user_id': 'oralytics_043@oralytics.app', 'decision_idx': 46, 'action': 1, 'action_prob': 0.9891625806714687, 'decision_time': '10:00', 'state': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'raw_context': 'null', 'outcome': '100', 'reward': 0.9127319595882275, 'request_timestamp': datetime.datetime(2025, 2, 25, 9, 30, 30), 'created_at': datetime.datetime(2025, 3, 18, 20, 39, 21, 738196)}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+
+2025-03-18 20:39:55,973 ERROR src.server Thread-3 (process_request_thread) : (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "10:00"
+LINE 1: ...cs_043@oralytics.app', 46, 1, 0.9891625806714687, '10:00', A...
+                                                             ^
+
+[SQL: INSERT INTO study_data (user_id, decision_idx, action, action_prob, decision_time, state, raw_context, outcome, reward, request_timestamp, created_at) VALUES (%(user_id)s, %(decision_idx)s, %(action)s, %(action_prob)s, %(decision_time)s, %(state)s::FLOAT[], %(raw_context)s::JSON, %(outcome)s::JSON, %(reward)s, %(request_timestamp)s, %(created_at)s) RETURNING study_data.id]
+[parameters: {'user_id': 'oralytics_043@oralytics.app', 'decision_idx': 46, 'action': 1, 'action_prob': 0.9891625806714687, 'decision_time': '10:00', 'state': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'raw_context': 'null', 'outcome': '100', 'reward': 0.9127319595882275, 'request_timestamp': datetime.datetime(2025, 2, 25, 9, 30, 30), 'created_at': datetime.datetime(2025, 3, 18, 20, 39, 21, 738196)}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2025-03-18 20:39:55,975 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 20:39:55] "[31m[1mPOST /upload HTTP/1.1[0m" 401 -
+2025-03-18 20:41:08,727 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 20:41:09,627 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 20:41:10,170 INFO src.server MainThread : Server started
+2025-03-18 20:41:16,422 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 20:41:17,156 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 20:41:17,804 INFO src.server MainThread : Server started
+2025-03-18 20:41:27,630 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 20:41:28,473 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 20:41:28,979 INFO src.server MainThread : Server started
+2025-03-18 20:41:35,400 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 20:41:36,104 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 20:41:36,638 INFO src.server MainThread : Server started
+2025-03-18 20:41:42,848 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 20:41:43,526 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 20:41:44,122 INFO src.server MainThread : Server started
+2025-03-18 20:41:47,155 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 20:41:47,708 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 20:41:48,139 INFO src.server MainThread : Server started
+2025-03-18 20:41:52,435 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 20:41:52,907 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 20:41:53,245 INFO src.server MainThread : Server started
+2025-03-18 20:41:53,248 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 20:41:53,248 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 20:41:59,097 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 20:41:59] "[35m[1mPOST /auth/register HTTP/1.1[0m" 201 -
+2025-03-18 20:42:03,715 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 20:42:03] "POST /auth/login HTTP/1.1" 200 -
+2025-03-18 20:42:07,380 INFO src.server Thread-3 (process_request_thread) : RegisterAPI called
+2025-03-18 20:42:07,380 INFO src.server Thread-3 (process_request_thread) : post_data: {'user_id': 'oralytics_043@oralytics.app', 'rl_start_date': '2025-02-03', 'rl_end_date': '2025-05-02', 'morning_weekday': '08:30', 'morning_weekend': '09:30', 'evening_weekday': '18:30', 'evening_weekend': '21:30'}
+2025-03-18 20:42:07,393 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 20:42:07] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2025-03-18 20:42:12,314 INFO src.server Thread-4 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 20:42:12,326 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 20:42:12] "[35m[1mPOST /actions HTTP/1.1[0m" 202 -
+2025-03-18 20:42:23,836 INFO src.server Thread-5 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 20:42:23,857 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 20:42:23] "[35m[1mPOST /actions HTTP/1.1[0m" 201 -
+2025-03-18 20:42:44,565 INFO src.server Thread-6 (process_request_thread) : UploadAPI called
+2025-03-18 20:42:44,565 INFO src.server Thread-6 (process_request_thread) : UploadAPI for User id: oralytics_043@oralytics.app
+2025-03-18 20:42:44,570 INFO src.server Thread-6 (process_request_thread) : Brushing time at 2025-02-25T16:30:34 is for decision index: 46
+2025-03-18 20:42:44,572 ERROR src.server Thread-6 (process_request_thread) : No user action found for user_id: oralytics_043@oralytics.app and decision_idx: 46
+2025-03-18 20:42:44,574 INFO src.server Thread-6 (process_request_thread) : Found user action: <Action user_id=oralytics_043@oralytics.app, decision_idx=1, decision_time=06:00, action=0, action_prob=0.17273332059082802, reward=0.2061563396117062>
+2025-03-18 20:42:44,581 ERROR src.server Thread-6 (process_request_thread) : Some error occurred while uploading data
+2025-03-18 20:42:44,599 ERROR src.server Thread-6 (process_request_thread) : Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.InvalidTextRepresentation: invalid input syntax for type integer: "06:00"
+LINE 1: ...s_043@oralytics.app', 46, 0, 0.17273332059082802, '06:00', A...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/UploadAPI.py", line 191, in post
+    db.session.commit()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/scoping.py", line 599, in commit
+    return self._proxied.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4353, in flush
+    self._flush(objects)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4488, in _flush
+    with util.safe_reraise():
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4449, in _flush
+    flush_context.execute()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "06:00"
+LINE 1: ...s_043@oralytics.app', 46, 0, 0.17273332059082802, '06:00', A...
+                                                             ^
+
+[SQL: INSERT INTO study_data (user_id, decision_idx, action, action_prob, decision_time, state, raw_context, outcome, reward, request_timestamp, created_at) VALUES (%(user_id)s, %(decision_idx)s, %(action)s, %(action_prob)s, %(decision_time)s, %(state)s::FLOAT[], %(raw_context)s::JSON, %(outcome)s::JSON, %(reward)s, %(request_timestamp)s, %(created_at)s) RETURNING study_data.id]
+[parameters: {'user_id': 'oralytics_043@oralytics.app', 'decision_idx': 46, 'action': 0, 'action_prob': 0.17273332059082802, 'decision_time': '06:00', 'state': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'raw_context': 'null', 'outcome': '100', 'reward': 0.2061563396117062, 'request_timestamp': datetime.datetime(2025, 2, 25, 9, 30, 30), 'created_at': datetime.datetime(2025, 3, 18, 20, 41, 53, 183687)}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+
+2025-03-18 20:42:44,599 ERROR src.server Thread-6 (process_request_thread) : (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "06:00"
+LINE 1: ...s_043@oralytics.app', 46, 0, 0.17273332059082802, '06:00', A...
+                                                             ^
+
+[SQL: INSERT INTO study_data (user_id, decision_idx, action, action_prob, decision_time, state, raw_context, outcome, reward, request_timestamp, created_at) VALUES (%(user_id)s, %(decision_idx)s, %(action)s, %(action_prob)s, %(decision_time)s, %(state)s::FLOAT[], %(raw_context)s::JSON, %(outcome)s::JSON, %(reward)s, %(request_timestamp)s, %(created_at)s) RETURNING study_data.id]
+[parameters: {'user_id': 'oralytics_043@oralytics.app', 'decision_idx': 46, 'action': 0, 'action_prob': 0.17273332059082802, 'decision_time': '06:00', 'state': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'raw_context': 'null', 'outcome': '100', 'reward': 0.2061563396117062, 'request_timestamp': datetime.datetime(2025, 2, 25, 9, 30, 30), 'created_at': datetime.datetime(2025, 3, 18, 20, 41, 53, 183687)}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2025-03-18 20:42:44,600 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 20:42:44] "[31m[1mPOST /upload HTTP/1.1[0m" 401 -
+2025-03-18 20:44:01,105 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 20:44:01,804 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 20:44:02,317 INFO src.server MainThread : Server started
+2025-03-18 20:44:08,778 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 20:44:09,317 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 20:44:09,720 INFO src.server MainThread : Server started
+2025-03-18 20:44:17,449 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 20:44:18,029 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 20:44:18,448 INFO src.server MainThread : Server started
+2025-03-18 20:44:34,593 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 20:44:35,513 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 20:44:36,219 INFO src.server MainThread : Server started
+2025-03-18 20:44:40,437 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 20:44:40,990 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 20:44:41,401 INFO src.server MainThread : Server started
+2025-03-18 20:45:47,038 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 20:45:47,879 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 20:45:48,331 INFO src.server MainThread : Server started
+2025-03-18 20:45:48,334 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 20:45:48,334 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 20:45:52,808 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 20:45:52] "[35m[1mPOST /auth/register HTTP/1.1[0m" 201 -
+2025-03-18 20:45:55,895 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 20:45:55] "POST /auth/login HTTP/1.1" 200 -
+2025-03-18 20:45:57,667 INFO src.server Thread-3 (process_request_thread) : RegisterAPI called
+2025-03-18 20:45:57,668 INFO src.server Thread-3 (process_request_thread) : post_data: {'user_id': 'oralytics_043@oralytics.app', 'rl_start_date': '2025-02-03', 'rl_end_date': '2025-05-02', 'morning_weekday': '08:30', 'morning_weekend': '09:30', 'evening_weekday': '18:30', 'evening_weekend': '21:30'}
+2025-03-18 20:45:57,682 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 20:45:57] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2025-03-18 20:46:02,553 INFO src.server Thread-4 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 20:46:02,580 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 20:46:02] "[35m[1mPOST /actions HTTP/1.1[0m" 201 -
+2025-03-18 20:46:13,410 INFO src.server Thread-5 (process_request_thread) : UploadAPI called
+2025-03-18 20:46:13,412 INFO src.server Thread-5 (process_request_thread) : UploadAPI for User id: oralytics_043@oralytics.app
+2025-03-18 20:46:13,414 INFO src.server Thread-5 (process_request_thread) : Brushing time at 2025-02-25T16:30:34 is for decision index: 46
+2025-03-18 20:46:13,416 ERROR src.server Thread-5 (process_request_thread) : No user action found for user_id: oralytics_043@oralytics.app and decision_idx: 46
+2025-03-18 20:46:13,418 INFO src.server Thread-5 (process_request_thread) : Found user action: <Action user_id=oralytics_043@oralytics.app, decision_idx=1, decision_time=09:00, action=0, action_prob=0.13194495502088854, reward=0.3762362470390105>
+2025-03-18 20:46:13,424 ERROR src.server Thread-5 (process_request_thread) : Some error occurred while uploading data
+2025-03-18 20:46:13,442 ERROR src.server Thread-5 (process_request_thread) : Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.InvalidTextRepresentation: invalid input syntax for type integer: "09:00"
+LINE 1: ...s_043@oralytics.app', 46, 0, 0.13194495502088854, '09:00', A...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/UploadAPI.py", line 191, in post
+    db.session.commit()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/scoping.py", line 599, in commit
+    return self._proxied.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4353, in flush
+    self._flush(objects)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4488, in _flush
+    with util.safe_reraise():
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4449, in _flush
+    flush_context.execute()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "09:00"
+LINE 1: ...s_043@oralytics.app', 46, 0, 0.13194495502088854, '09:00', A...
+                                                             ^
+
+[SQL: INSERT INTO study_data (user_id, decision_idx, action, action_prob, decision_time, state, raw_context, outcome, reward, request_timestamp, created_at) VALUES (%(user_id)s, %(decision_idx)s, %(action)s, %(action_prob)s, %(decision_time)s, %(state)s::FLOAT[], %(raw_context)s::JSON, %(outcome)s::JSON, %(reward)s, %(request_timestamp)s, %(created_at)s) RETURNING study_data.id]
+[parameters: {'user_id': 'oralytics_043@oralytics.app', 'decision_idx': 46, 'action': 0, 'action_prob': 0.13194495502088854, 'decision_time': '09:00', 'state': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'raw_context': 'null', 'outcome': '100', 'reward': 0.3762362470390105, 'request_timestamp': datetime.datetime(2025, 2, 25, 9, 30, 30), 'created_at': datetime.datetime(2025, 3, 18, 20, 45, 48, 251545)}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+
+2025-03-18 20:46:13,442 ERROR src.server Thread-5 (process_request_thread) : (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "09:00"
+LINE 1: ...s_043@oralytics.app', 46, 0, 0.13194495502088854, '09:00', A...
+                                                             ^
+
+[SQL: INSERT INTO study_data (user_id, decision_idx, action, action_prob, decision_time, state, raw_context, outcome, reward, request_timestamp, created_at) VALUES (%(user_id)s, %(decision_idx)s, %(action)s, %(action_prob)s, %(decision_time)s, %(state)s::FLOAT[], %(raw_context)s::JSON, %(outcome)s::JSON, %(reward)s, %(request_timestamp)s, %(created_at)s) RETURNING study_data.id]
+[parameters: {'user_id': 'oralytics_043@oralytics.app', 'decision_idx': 46, 'action': 0, 'action_prob': 0.13194495502088854, 'decision_time': '09:00', 'state': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], 'raw_context': 'null', 'outcome': '100', 'reward': 0.3762362470390105, 'request_timestamp': datetime.datetime(2025, 2, 25, 9, 30, 30), 'created_at': datetime.datetime(2025, 3, 18, 20, 45, 48, 251545)}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2025-03-18 20:46:13,443 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 20:46:13] "[31m[1mPOST /upload HTTP/1.1[0m" 401 -
+2025-03-18 20:47:28,048 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 20:47:28,739 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 20:47:29,242 INFO src.server MainThread : Server started
+2025-03-18 20:47:34,569 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 20:47:35,102 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 20:47:36,065 INFO src.server MainThread : Server started
+2025-03-18 20:47:43,797 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 20:47:44,335 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 20:47:44,751 INFO src.server MainThread : Server started
+2025-03-18 20:47:49,069 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 20:47:49,597 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 20:47:50,001 INFO src.server MainThread : Server started
+2025-03-18 20:47:53,769 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 20:47:54,307 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 20:47:54,712 INFO src.server MainThread : Server started
+2025-03-18 20:48:00,337 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 20:48:00,779 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 20:48:01,100 INFO src.server MainThread : Server started
+2025-03-18 20:48:01,104 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 20:48:01,104 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 20:48:07,225 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 20:48:07] "[35m[1mPOST /auth/register HTTP/1.1[0m" 201 -
+2025-03-18 20:48:11,856 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 20:48:11] "POST /auth/login HTTP/1.1" 200 -
+2025-03-18 20:48:15,422 INFO src.server Thread-3 (process_request_thread) : RegisterAPI called
+2025-03-18 20:48:15,422 INFO src.server Thread-3 (process_request_thread) : post_data: {'user_id': 'oralytics_043@oralytics.app', 'rl_start_date': '2025-02-03', 'rl_end_date': '2025-05-02', 'morning_weekday': '08:30', 'morning_weekend': '09:30', 'evening_weekday': '18:30', 'evening_weekend': '21:30'}
+2025-03-18 20:48:15,437 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 20:48:15] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2025-03-18 20:48:17,868 INFO src.server Thread-4 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 20:48:17,891 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 20:48:17] "[35m[1mPOST /actions HTTP/1.1[0m" 201 -
+2025-03-18 20:48:21,779 INFO src.server Thread-5 (process_request_thread) : UploadAPI called
+2025-03-18 20:48:21,779 INFO src.server Thread-5 (process_request_thread) : UploadAPI for User id: oralytics_043@oralytics.app
+2025-03-18 20:48:21,782 INFO src.server Thread-5 (process_request_thread) : Brushing time at 2025-02-25T16:30:34 is for decision index: 46
+2025-03-18 20:48:21,784 ERROR src.server Thread-5 (process_request_thread) : No user action found for user_id: oralytics_043@oralytics.app and decision_idx: 46
+2025-03-18 20:48:21,786 INFO src.server Thread-5 (process_request_thread) : Found user action: <Action user_id=oralytics_043@oralytics.app, decision_idx=1, decision_time=11:00, action=0, action_prob=0.027769370866097987, reward=0.8975063133174954>
+2025-03-18 20:48:21,793 INFO src.server Thread-5 (process_request_thread) : Brushing and engagement data updated successfully for user oralytics_043@oralytics.app
+2025-03-18 20:48:21,794 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 20:48:21] "[35m[1mPOST /upload HTTP/1.1[0m" 201 -
+2025-03-18 21:30:44,474 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 21:30:45,170 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 21:30:45,698 INFO src.server MainThread : Server started
+2025-03-18 21:30:58,231 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 21:30:58,891 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 21:30:59,346 INFO src.server MainThread : Server started
+2025-03-18 21:31:05,715 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 21:31:06,392 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 21:31:06,844 INFO src.server MainThread : Server started
+2025-03-18 21:31:10,763 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 21:31:11,296 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 21:31:11,803 INFO src.server MainThread : Server started
+2025-03-18 21:31:22,800 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 21:31:23,795 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 21:31:24,374 INFO src.server MainThread : Server started
+2025-03-18 21:34:41,785 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 21:34:42,562 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 21:34:43,002 INFO src.server MainThread : Server started
+2025-03-18 21:34:43,010 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 21:34:43,010 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 21:34:48,741 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 21:34:48] "[35m[1mPOST /auth/register HTTP/1.1[0m" 201 -
+2025-03-18 21:34:53,299 INFO src.server Thread-2 (process_request_thread) : RegisterAPI called
+2025-03-18 21:34:53,299 INFO src.server Thread-2 (process_request_thread) : post_data: {'user_id': 'oralytics_043@oralytics.app', 'rl_start_date': '2025-02-03', 'rl_end_date': '2025-05-02', 'morning_weekday': '08:30', 'morning_weekend': '09:30', 'evening_weekday': '18:30', 'evening_weekend': '21:30'}
+2025-03-18 21:34:53,313 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 21:34:53] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2025-03-18 21:34:57,300 INFO src.server Thread-3 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 21:34:57,324 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 21:34:57] "[35m[1mPOST /actions HTTP/1.1[0m" 201 -
+2025-03-18 21:34:59,995 INFO src.server Thread-4 (process_request_thread) : UploadAPI called
+2025-03-18 21:34:59,996 INFO src.server Thread-4 (process_request_thread) : UploadAPI for User id: oralytics_043@oralytics.app
+2025-03-18 21:34:59,999 INFO src.server Thread-4 (process_request_thread) : Brushing time at 2025-02-25T16:30:34 is for decision index: 46
+2025-03-18 21:35:00,001 ERROR src.server Thread-4 (process_request_thread) : No user action found for user_id: oralytics_043@oralytics.app and decision_idx: 46
+2025-03-18 21:35:00,007 INFO src.server Thread-4 (process_request_thread) : Found user action: <Action user_id=oralytics_043@oralytics.app, decision_idx=1, decision_time=11:00, action=1, action_prob=0.704121116137422, reward=0.2426338820594166>
+2025-03-18 21:35:00,015 INFO src.server Thread-4 (process_request_thread) : Brushing and engagement data updated successfully for user oralytics_043@oralytics.app
+2025-03-18 21:35:00,016 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 21:35:00] "[35m[1mPOST /upload HTTP/1.1[0m" 201 -
+2025-03-18 21:35:29,644 INFO src.server Thread-5 (process_request_thread) : UpdatePosteriorAPI called
+2025-03-18 21:35:29,648 ERROR src.server Thread-5 (process_request_thread) : Error inserting into UpdateTable: (psycopg2.ProgrammingError) can't adapt type 'builtin_function_or_method'
+[SQL: INSERT INTO updates (id, call_timestamp, status) VALUES (%(id)s, %(call_timestamp)s, %(status)s)]
+[parameters: {'id': <built-in function id>, 'call_timestamp': '2025-01-25T09:30:30', 'status': 'Updating start'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-03-18 21:35:29,662 ERROR src.server Thread-5 (process_request_thread) : Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.ProgrammingError: can't adapt type 'builtin_function_or_method'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/UpdatePosteriorAPI.py", line 80, in update_parameters
+    db.session.commit()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/scoping.py", line 599, in commit
+    return self._proxied.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4353, in flush
+    self._flush(objects)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4488, in _flush
+    with util.safe_reraise():
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4449, in _flush
+    flush_context.execute()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 1048, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.ProgrammingError) can't adapt type 'builtin_function_or_method'
+[SQL: INSERT INTO updates (id, call_timestamp, status) VALUES (%(id)s, %(call_timestamp)s, %(status)s)]
+[parameters: {'id': <built-in function id>, 'call_timestamp': '2025-01-25T09:30:30', 'status': 'Updating start'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+2025-03-18 21:35:29,662 ERROR src.server Thread-5 (process_request_thread) : Error updating hyper-parameters: (psycopg2.ProgrammingError) can't adapt type 'builtin_function_or_method'
+[SQL: INSERT INTO updates (id, call_timestamp, status) VALUES (%(id)s, %(call_timestamp)s, %(status)s)]
+[parameters: {'id': <built-in function id>, 'call_timestamp': '2025-01-25T09:30:30', 'status': 'Updating start'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-03-18 21:35:29,663 ERROR src.server Thread-5 (process_request_thread) : Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.ProgrammingError: can't adapt type 'builtin_function_or_method'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/UpdatePosteriorAPI.py", line 109, in post
+    self.update_parameters(request_timestamp)
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/UpdatePosteriorAPI.py", line 80, in update_parameters
+    db.session.commit()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/scoping.py", line 599, in commit
+    return self._proxied.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4353, in flush
+    self._flush(objects)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4488, in _flush
+    with util.safe_reraise():
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4449, in _flush
+    flush_context.execute()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 1048, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.ProgrammingError) can't adapt type 'builtin_function_or_method'
+[SQL: INSERT INTO updates (id, call_timestamp, status) VALUES (%(id)s, %(call_timestamp)s, %(status)s)]
+[parameters: {'id': <built-in function id>, 'call_timestamp': '2025-01-25T09:30:30', 'status': 'Updating start'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+2025-03-18 21:35:29,664 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 21:35:29] "[35m[1mPOST /update_parameters HTTP/1.1[0m" 500 -
+2025-03-18 21:42:13,541 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 21:42:14,153 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 21:42:14,626 INFO src.server MainThread : Server started
+2025-03-18 21:42:14,641 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 21:42:14,642 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 21:42:22,619 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 21:42:22] "[35m[1mPOST /auth/register HTTP/1.1[0m" 202 -
+2025-03-18 21:42:25,605 ERROR src.server Thread-2 (process_request_thread) : Client not found. Invalid Authentication token!
+2025-03-18 21:42:25,606 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 21:42:25] "[31m[1mPOST /register HTTP/1.1[0m" 401 -
+2025-03-18 21:42:29,350 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 21:42:29] "POST /auth/login HTTP/1.1" 200 -
+2025-03-18 21:42:31,781 INFO src.server Thread-4 (process_request_thread) : RegisterAPI called
+2025-03-18 21:42:31,782 INFO src.server Thread-4 (process_request_thread) : post_data: {'user_id': 'oralytics_043@oralytics.app', 'rl_start_date': '2025-02-03', 'rl_end_date': '2025-05-02', 'morning_weekday': '08:30', 'morning_weekend': '09:30', 'evening_weekday': '18:30', 'evening_weekend': '21:30'}
+2025-03-18 21:42:31,786 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 21:42:31] "[35m[1mPOST /register HTTP/1.1[0m" 202 -
+2025-03-18 21:42:35,950 INFO src.server Thread-5 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 21:42:35,958 ERROR src.server Thread-5 (process_request_thread) : Duplicate action request for user oralytics_043@oralytics.app and decision index 1
+2025-03-18 21:42:35,961 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 21:42:35] "[35m[1mPOST /actions HTTP/1.1[0m" 202 -
+2025-03-18 21:42:39,202 INFO src.server Thread-6 (process_request_thread) : UploadAPI called
+2025-03-18 21:42:39,203 INFO src.server Thread-6 (process_request_thread) : UploadAPI for User id: oralytics_043@oralytics.app
+2025-03-18 21:42:39,206 INFO src.server Thread-6 (process_request_thread) : Brushing time at 2025-02-25T16:30:34 is for decision index: 46
+2025-03-18 21:42:39,209 ERROR src.server Thread-6 (process_request_thread) : No user action found for user_id: oralytics_043@oralytics.app and decision_idx: 46
+2025-03-18 21:42:39,212 INFO src.server Thread-6 (process_request_thread) : Found user action: <Action user_id=oralytics_043@oralytics.app, decision_idx=1, decision_time=11:00, action=1, action_prob=0.704121116137422, reward=0.2426338820594166>
+2025-03-18 21:42:39,219 INFO src.server Thread-6 (process_request_thread) : Brushing and engagement data updated successfully for user oralytics_043@oralytics.app
+2025-03-18 21:42:39,219 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 21:42:39] "[35m[1mPOST /upload HTTP/1.1[0m" 201 -
+2025-03-18 21:42:43,816 INFO src.server Thread-7 (process_request_thread) : UpdatePosteriorAPI called
+2025-03-18 21:42:43,819 ERROR src.server Thread-7 (process_request_thread) : Error inserting into UpdateTable: (psycopg2.ProgrammingError) can't adapt type 'builtin_function_or_method'
+[SQL: INSERT INTO updates (id, call_timestamp, status) VALUES (%(id)s, %(call_timestamp)s, %(status)s)]
+[parameters: {'id': <built-in function id>, 'call_timestamp': datetime.datetime(2025, 1, 25, 9, 30, 30), 'status': 'Updating start'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-03-18 21:42:43,833 ERROR src.server Thread-7 (process_request_thread) : Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.ProgrammingError: can't adapt type 'builtin_function_or_method'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/UpdatePosteriorAPI.py", line 93, in update_parameters
+    db.session.commit()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/scoping.py", line 599, in commit
+    return self._proxied.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4353, in flush
+    self._flush(objects)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4488, in _flush
+    with util.safe_reraise():
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4449, in _flush
+    flush_context.execute()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 1048, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.ProgrammingError) can't adapt type 'builtin_function_or_method'
+[SQL: INSERT INTO updates (id, call_timestamp, status) VALUES (%(id)s, %(call_timestamp)s, %(status)s)]
+[parameters: {'id': <built-in function id>, 'call_timestamp': datetime.datetime(2025, 1, 25, 9, 30, 30), 'status': 'Updating start'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+2025-03-18 21:42:43,833 ERROR src.server Thread-7 (process_request_thread) : Error updating hyper-parameters: (psycopg2.ProgrammingError) can't adapt type 'builtin_function_or_method'
+[SQL: INSERT INTO updates (id, call_timestamp, status) VALUES (%(id)s, %(call_timestamp)s, %(status)s)]
+[parameters: {'id': <built-in function id>, 'call_timestamp': datetime.datetime(2025, 1, 25, 9, 30, 30), 'status': 'Updating start'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-03-18 21:42:43,835 ERROR src.server Thread-7 (process_request_thread) : Traceback (most recent call last):
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.ProgrammingError: can't adapt type 'builtin_function_or_method'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/UpdatePosteriorAPI.py", line 122, in post
+    self.update_parameters(request_timestamp)
+  File "/Users/bhanuteja/Documents/oralytics-phase2-rl/src/server/UpdatePosteriorAPI.py", line 93, in update_parameters
+    db.session.commit()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/scoping.py", line 599, in commit
+    return self._proxied.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4353, in flush
+    self._flush(objects)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4488, in _flush
+    with util.safe_reraise():
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4449, in _flush
+    flush_context.execute()
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 1048, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/bhanuteja/anaconda3/envs/oralytics/lib/python3.11/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.ProgrammingError) can't adapt type 'builtin_function_or_method'
+[SQL: INSERT INTO updates (id, call_timestamp, status) VALUES (%(id)s, %(call_timestamp)s, %(status)s)]
+[parameters: {'id': <built-in function id>, 'call_timestamp': datetime.datetime(2025, 1, 25, 9, 30, 30), 'status': 'Updating start'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+2025-03-18 21:42:43,836 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 21:42:43] "[35m[1mPOST /update_parameters HTTP/1.1[0m" 500 -
+2025-03-18 21:44:56,830 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 21:44:57,563 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 21:44:58,125 INFO src.server MainThread : Server started
+2025-03-18 21:45:03,898 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 21:45:04,505 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 21:45:05,045 INFO src.server MainThread : Server started
+2025-03-18 21:45:10,850 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 21:45:11,393 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 21:45:11,796 INFO src.server MainThread : Server started
+2025-03-18 21:45:18,951 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 21:45:19,491 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 21:45:19,908 INFO src.server MainThread : Server started
+2025-03-18 21:45:24,449 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 21:45:24,979 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 21:45:25,385 INFO src.server MainThread : Server started
+2025-03-18 21:45:43,091 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-18 21:45:43,871 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-18 21:45:44,342 INFO src.server MainThread : Server started
+2025-03-18 21:45:44,348 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-18 21:45:44,348 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-18 21:45:49,491 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 21:45:49] "[35m[1mPOST /auth/register HTTP/1.1[0m" 201 -
+2025-03-18 21:45:54,133 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 21:45:54] "POST /auth/login HTTP/1.1" 200 -
+2025-03-18 21:45:57,769 INFO src.server Thread-3 (process_request_thread) : RegisterAPI called
+2025-03-18 21:45:57,769 INFO src.server Thread-3 (process_request_thread) : post_data: {'user_id': 'oralytics_043@oralytics.app', 'rl_start_date': '2025-02-03', 'rl_end_date': '2025-05-02', 'morning_weekday': '08:30', 'morning_weekend': '09:30', 'evening_weekday': '18:30', 'evening_weekend': '21:30'}
+2025-03-18 21:45:57,785 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 21:45:57] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2025-03-18 21:46:00,491 INFO src.server Thread-4 (process_request_thread) : Actions API called for user oralytics_043@oralytics.app
+2025-03-18 21:46:00,517 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 21:46:00] "[35m[1mPOST /actions HTTP/1.1[0m" 201 -
+2025-03-18 21:46:03,536 INFO src.server Thread-5 (process_request_thread) : UploadAPI called
+2025-03-18 21:46:03,537 INFO src.server Thread-5 (process_request_thread) : UploadAPI for User id: oralytics_043@oralytics.app
+2025-03-18 21:46:03,539 INFO src.server Thread-5 (process_request_thread) : Brushing time at 2025-02-25T16:30:34 is for decision index: 46
+2025-03-18 21:46:03,542 ERROR src.server Thread-5 (process_request_thread) : No user action found for user_id: oralytics_043@oralytics.app and decision_idx: 46
+2025-03-18 21:46:03,544 INFO src.server Thread-5 (process_request_thread) : Found user action: <Action user_id=oralytics_043@oralytics.app, decision_idx=1, decision_time=10:00, action=0, action_prob=0.3197798940577887, reward=0.6591343106287171>
+2025-03-18 21:46:03,557 INFO src.server Thread-5 (process_request_thread) : Brushing and engagement data updated successfully for user oralytics_043@oralytics.app
+2025-03-18 21:46:03,558 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 21:46:03] "[35m[1mPOST /upload HTTP/1.1[0m" 201 -
+2025-03-18 21:46:06,185 INFO src.server Thread-6 (process_request_thread) : UpdatePosteriorAPI called
+2025-03-18 21:46:06,193 INFO src.server Thread-6 (process_request_thread) : Created new entry in UpdateTable: Updating start
+2025-03-18 21:46:06,195 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 21:46:06] "[35m[1mPOST /update_parameters HTTP/1.1[0m" 201 -
+2025-03-18 21:46:13,884 INFO src.server Thread-7 (process_request_thread) : UpdatePosteriorAPI called
+2025-03-18 21:46:13,887 INFO src.server Thread-7 (process_request_thread) : Created new entry in UpdateTable: Updating start
+2025-03-18 21:46:13,888 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [18/Mar/2025 21:46:13] "[35m[1mPOST /update_parameters HTTP/1.1[0m" 201 -

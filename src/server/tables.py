@@ -66,6 +66,26 @@ class UserStatus(db.Model):
         self.study_phase = study_phase
         self.current_decision_index = current_decision_index
 
+class Update(db.Model):
+    __tablename__ = "updates"
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    call_timestamp = db.Column(db.DateTime, nullable=False)
+    status= db.Column(db.String, nullable=False)
+    def __init__(
+        self,
+        call_timestamp: datetime.datetime,
+        status: str,
+    ):
+        self.call_timestamp = call_timestamp
+        self.status = status
+
+    def __repr__(self):
+        return (
+            f"<Column id={self.id}"
+            f"call_timestamp={self.call_timestamp} "
+            f"status={self.status}"
+        )
 
 class Action(db.Model):
     """Action Model for storing action-related details"""
@@ -75,7 +95,7 @@ class Action(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     user_id = db.Column(db.String, nullable=False)
     decision_idx = db.Column(db.Integer, nullable=True)
-    decision_time = db.Column(db.Integer, nullable=True)
+    decision_time = db.Column(db.String, nullable=False)
     action = db.Column(db.Integer, nullable=False, default=0)
     action_prob = db.Column(db.Float, nullable=False, default=0.5)
     random_state = db.Column(db.Integer, nullable=True)
@@ -131,7 +151,7 @@ class StudyData(db.Model):
     decision_idx = db.Column(db.Integer, nullable=False)
     action = db.Column(db.Integer, nullable=False)
     action_prob = db.Column(db.Float, nullable=False)
-    decision_time = db.Column(db.Integer, nullable=False)
+    decision_time = db.Column(db.String, nullable=False)
     state = db.Column(ARRAY(db.Float), nullable=False)
     raw_context = db.Column(db.JSON, nullable=False)
     outcome = db.Column(db.JSON, nullable=False)
@@ -145,7 +165,7 @@ class StudyData(db.Model):
         decision_idx: int,
         action: int,
         action_prob: float,
-        decision_time: int,
+        decision_time: str,
         state: list,
         raw_context: dict,
         outcome: dict,

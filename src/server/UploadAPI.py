@@ -41,37 +41,28 @@ class UploadAPI(MethodView):
         if not post_data.get("user_id"):
             return False, "Please provide a valid user id.", 200
         
-        # Validate upload_timestamp
-        upload_timestamp = post_data.get("upload_timestamp")
-        if not isinstance(upload_timestamp, (str, datetime)):
-            return False, "Upload timestamp must be a string or datetime object.", 201
+        # Convert timestamps to datetime
+        for timestamp_key in ["upload_timestamp", "previous_upload_timestamp"]:
+            timestamp_value = post_data.get(timestamp_key)
+            
+            if isinstance(timestamp_value, str):
+                try:
+                    post_data[timestamp_key] = datetime.strptime(timestamp_value, "%Y-%m-%dT%H:%M:%S")
+                except ValueError:
+                    return False, f"Invalid {timestamp_key} format. Must be ISO 8601.", 201 if timestamp_key == "upload_timestamp" else 202
+            elif not isinstance(timestamp_value, datetime):
+                return False, f"{timestamp_key} must be a valid string or datetime object.", 201 if timestamp_key == "upload_timestamp" else 202
 
-        # Validate previous_upload_timestamp
-        previous_upload_timestamp = post_data.get("previous_upload_timestamp")
-        if not isinstance(previous_upload_timestamp, (str, datetime)):
-            return False, "Previous upload timestamp must be a string or datetime object.", 202
 
-        # Convert upload_timestamp and previous_upload_timestamp to datetime if they are strings
-        if isinstance(upload_timestamp, str):
-            try:
-                upload_timestamp = datetime.strptime(upload_timestamp, "%Y-%m-%dT%H:%M:%S")
-            except ValueError:
-                return False, "Invalid upload timestamp format. Must be ISO 8601.", 201
-
-        if isinstance(previous_upload_timestamp, str):
-            try:
-                previous_upload_timestamp = datetime.strptime(previous_upload_timestamp, "%Y-%m-%dT%H:%M:%S")
-            except ValueError:
-                return False, "Invalid previous upload timestamp format. Must be ISO 8601.", 202
-
-        # Check if previous_upload_timestamp is not after upload_timestamp
-        if previous_upload_timestamp > upload_timestamp:
+        # Ensure `previous_upload_timestamp` is not later than `upload_timestamp`
+        if post_data["previous_upload_timestamp"] > post_data["upload_timestamp"]:
             return False, "Previous upload timestamp cannot be greater than upload timestamp.", 203
+
 
         # Validate data
         data = post_data.get("brushing_data")
 
-        print(data)
+        print(f"brushing data={data}")
         if not isinstance(data, list):
             return False, "Data must be a list of items.", 204
 
@@ -80,7 +71,7 @@ class UploadAPI(MethodView):
         seen_datetimes = set()
         for item in data:
             if not isinstance(item, list) or len(item) != 2:
-                return False, "Each item in data must be a list of two elements.", 205
+                return False, "Each item in data must be a list of two elements.(Brushing Time, Brushing quality)", 205
             
             dt, value = item
             if isinstance(dt, str):
@@ -91,8 +82,8 @@ class UploadAPI(MethodView):
             elif not isinstance(dt, datetime):
                 return False, f"Invalid type for datetime in data item: {item}. Must be a string or datetime.", 206
             
-            if not isinstance(value, int):
-                return False, f"Invalid type for value in data item: {item}. Must be an integer.", 207
+            if not isinstance(value, int) or value<0:
+                return False, f"Invalid type for value in data item: {item}. Must be a positive integer.", 207
             
             # Check for duplicates
             if dt in seen_datetimes:
@@ -108,7 +99,9 @@ class UploadAPI(MethodView):
 
     @staticmethod
     def compute_decisionidx_number(user, decision_window_start, actions_per_day=2) -> int:
-        user_start_date = user.rl_start_date + timedelta(hours=4)
+        #user_start_date = user.rl_start_date + timedelta(hours=4)
+        user_start_date = datetime.combine(user.rl_start_date, datetime.min.time()) + timedelta(hours=4)
+        print(type(user_start_date),type(decision_window_start))
         time_diff = (decision_window_start - user_start_date).total_seconds() // 3600
         return int(time_diff // (24 / actions_per_day)) + 1
 
@@ -145,7 +138,7 @@ class UploadAPI(MethodView):
             for item in brushing_data:
                 dt, value = item
                 print(user.rl_start_date,dt,user.rl_end_date)
-                if dt < user.rl_start_date or dt > user.rl_end_date:
+                if dt.date() < user.rl_start_date or dt.date() > user.rl_end_date:
                     app.logger.error("Brushing Datetime not within user's study phase.")
                     return return_fail_response(
                         message="BrushingDatetime not within user's study phase.",
@@ -159,6 +152,7 @@ class UploadAPI(MethodView):
                         code=202,
                         error_code=302
                     )
+                print(f"dt:{dt},type dt:{type(dt)}")
                 decision_idx=self.compute_decisionidx_number(user, dt)
                 print(f"decision_idx:{decision_idx}")
                 app.logger.info("Brushing time at %s is for decision index: %s", dt.isoformat(), decision_idx)
@@ -170,11 +164,12 @@ class UploadAPI(MethodView):
                         user_id,
                         decision_idx
                     )
-                    return return_fail_response(
-                        message="No user action found for the given decision index.",
-                        code=202,
-                        error_code=303
-                    )
+                    user_action=Action.query.filter_by(user_id=user_id).first()
+                    # return return_fail_response(
+                    #     message="No user action found for the given decision index.",
+                    #     code=202,
+                    #     error_code=303
+                    
 
                 # Log and print the found user action
                 app.logger.info("Found user action: %s", user_action)

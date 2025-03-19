@@ -55,15 +55,27 @@ class ActionsAPI(MethodView):
         except ValueError as e:
             return False, f"Invalid date format: {e}", 111
 
-        return True, "All fields are valid.",post_data, 200
-
+        return True, "All fields are valid.", 200
+    
+    @staticmethod
+    def compute_timedelta(user,idx) -> timedelta:
+        if idx < 1:
+            raise ValueError("Index must be >= 1")
+        hours = 4 + (idx - 1) * 12
+        return datetime.combine(user.rl_start_date, datetime.min.time())+timedelta(hours=hours)
 
 
     @staticmethod
     def compute_decisionidx_number(user, decision_window_start, actions_per_day=2) -> int:
-        user_start_date = user.rl_start_date + timedelta(hours=4)
+
+        
+
+        user_start_date = datetime.combine(user.rl_start_date, datetime.min.time()) + timedelta(hours=4)
+        print(type(decision_window_start),type(user_start_date),"Asda")
         time_diff = (decision_window_start - user_start_date).total_seconds() // 3600
         return int(time_diff // (24 / actions_per_day)) + 1
+
+
 
     @staticmethod
     def get_user_action(post_data: dict, decision_idx: int) -> tuple[bool, str, int, float, int, int, float, int]:
@@ -88,6 +100,11 @@ class ActionsAPI(MethodView):
             return False, "Requested decision time is not 4 AM or 4 PM", 203, None, None, None, None, None
 
         reward = random.random()
+
+        hours = int(decision_time)
+        minutes = round((decision_time - hours) * 60)
+        decision_time=f"{hours:02}:{minutes:02}"
+
         return True, None, None, action_prob, action, decision_time, reward, random_seed
 
     @token_required
@@ -101,7 +118,7 @@ class ActionsAPI(MethodView):
             return return_fail_response(f"User {user_id} does not exist.", 202, 203)
 
         try:
-            status, message,post_data, ec = self.check_all_fields_present(post_data)
+            status, message, ec = self.check_all_fields_present(post_data)
             if not status:
                 return return_fail_response(message, 202, ec)
 
@@ -120,6 +137,14 @@ class ActionsAPI(MethodView):
             user_status = UserStatus.query.filter_by(user_id=user_id).first()
             if user_status.study_phase == UserStudyPhaseEnum.REGISTERED:
                 user_status.study_phase = UserStudyPhaseEnum.STARTED
+
+            if(decision_idx!=user_status.current_decision_index+1):
+                ttime=self.compute_timedelta(user,user_status.current_decision_index+1).strftime("%Y-%m-%d %H:%M:%S")
+                return return_fail_response(
+                    f"Requesting action for an incorrect date. Next action should be for {ttime}",
+                    202,
+                    304
+                )
 
             user_status.current_decision_index = decision_idx
 
@@ -150,8 +175,9 @@ class ActionsAPI(MethodView):
             return make_response(
                 jsonify({
                     "status": "success",
-                    "message": f"Action taken for user {user_id}!",
-                    "decision": f"action {user_action}, decision hour {user_decision_time}"
+                    "message": f"action {user_action}, decision hour {user_decision_time} for user {user_id}",
+                    "action":user_action,
+                    "decision_hour":user_decision_time
                 }),
                 201
             )
