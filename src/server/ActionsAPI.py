@@ -70,8 +70,8 @@ class ActionsAPI(MethodView):
 
         
 
-        user_start_date = datetime.combine(user.rl_start_date, datetime.min.time()) + timedelta(hours=4)+timedelta(days=7)
-        print((decision_window_start),(user_start_date),"Asda")
+        user_start_date = datetime.combine(user.rl_start_date, datetime.min.time()) + timedelta(hours=4)
+        print((decision_window_start),(user_start_date),"computing decision index")
         time_diff = (decision_window_start - user_start_date).total_seconds() // 3600
         if time_diff<0:
             return -1
@@ -129,7 +129,7 @@ class ActionsAPI(MethodView):
 
             if decision_idx==-1:
                 return return_fail_response(
-                    f"Requesting action for an incorrect date. Next action should be for {user.rl_start_date+timedelta(days=7)} due to warm start period = 7 days",
+                    f"Requesting action for a date prior to start_date. Next action should be for {user.rl_start_date}",
                     202,
                     304
                 )
