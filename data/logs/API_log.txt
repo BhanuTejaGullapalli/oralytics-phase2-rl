@@ -8008,3 +8008,79 @@ sqlalchemy.exc.ProgrammingError: (psycopg2.ProgrammingError) can't adapt type 'b
 2025-03-19 15:44:44,825 INFO src.server Thread-11 (process_request_thread) : UpdatePosteriorAPI called
 2025-03-19 15:44:44,831 INFO src.server Thread-11 (process_request_thread) : Created new entry in UpdateTable: Updating start
 2025-03-19 15:44:44,832 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [19/Mar/2025 15:44:44] "[35m[1mPOST /update_parameters HTTP/1.1[0m" 201 -
+2025-03-26 14:43:12,118 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-26 14:43:17,036 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-26 14:43:18,113 INFO src.server MainThread : Server started
+2025-03-26 14:43:23,190 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-26 14:43:23,651 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-26 14:43:23,999 INFO src.server MainThread : Server started
+2025-03-26 14:43:28,838 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-26 14:43:29,315 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-26 14:43:29,667 INFO src.server MainThread : Server started
+2025-03-26 14:43:37,939 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-26 14:43:38,393 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-26 14:43:38,723 INFO src.server MainThread : Server started
+2025-03-26 14:43:42,339 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-26 14:43:42,686 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-26 14:43:42,925 INFO src.server MainThread : Server started
+2025-03-26 14:43:54,296 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-26 14:43:54,750 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-26 14:43:55,004 INFO src.server MainThread : Server started
+2025-03-26 14:43:55,008 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-26 14:43:55,008 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-26 14:44:22,303 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [26/Mar/2025 14:44:22] "[35m[1mPOST /auth/register HTTP/1.1[0m" 201 -
+2025-03-26 14:44:47,856 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [26/Mar/2025 14:44:47] "POST /auth/login HTTP/1.1" 200 -
+2025-03-26 14:45:12,523 INFO src.server Thread-3 (process_request_thread) : RegisterAPI called
+2025-03-26 14:45:12,524 INFO src.server Thread-3 (process_request_thread) : post_data: {'user_id': 'oralytics_127@oralytics.app', 'rl_start_date': '2025-1-20', 'rl_end_date': '2025-12-20', 'morning_weekday': '04:30', 'morning_weekend': '06:30', 'evening_weekday': '3:30', 'evening_weekend': '21:30'}
+2025-03-26 14:45:12,550 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [26/Mar/2025 14:45:12] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2025-03-26 14:45:26,968 INFO src.server Thread-4 (process_request_thread) : Actions API called for user oralytics_128@oralytics.app
+2025-03-26 14:45:26,971 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [26/Mar/2025 14:45:26] "[35m[1mPOST /actions HTTP/1.1[0m" 202 -
+2025-03-26 14:45:35,748 INFO src.server Thread-5 (process_request_thread) : Actions API called for user oralytics_127@oralytics.app
+2025-03-26 14:45:35,752 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [26/Mar/2025 14:45:35] "[35m[1mPOST /actions HTTP/1.1[0m" 202 -
+2025-03-26 14:45:46,318 INFO src.server Thread-6 (process_request_thread) : Actions API called for user oralytics_127@oralytics.app
+2025-03-26 14:45:46,321 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [26/Mar/2025 14:45:46] "[35m[1mPOST /actions HTTP/1.1[0m" 202 -
+2025-03-26 14:45:50,913 INFO src.server Thread-7 (process_request_thread) : Actions API called for user oralytics_127@oralytics.app
+2025-03-26 14:45:50,941 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [26/Mar/2025 14:45:50] "[35m[1mPOST /actions HTTP/1.1[0m" 201 -
+2025-03-26 14:45:57,724 INFO src.server Thread-8 (process_request_thread) : Actions API called for user oralytics_127@oralytics.app
+2025-03-26 14:45:57,728 ERROR src.server Thread-8 (process_request_thread) : Duplicate action request for user oralytics_127@oralytics.app and decision index 1
+2025-03-26 14:45:57,730 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [26/Mar/2025 14:45:57] "[35m[1mPOST /actions HTTP/1.1[0m" 202 -
+2025-03-26 14:46:44,773 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-26 14:46:45,215 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-26 14:46:45,471 INFO src.server MainThread : Server started
+2025-03-26 14:46:45,474 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-26 14:46:45,474 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-26 14:46:57,527 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [26/Mar/2025 14:46:57] "[35m[1mPOST /auth/register HTTP/1.1[0m" 202 -
+2025-03-26 14:47:00,680 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [26/Mar/2025 14:47:00] "POST /auth/login HTTP/1.1" 200 -
+2025-03-26 14:47:06,486 INFO src.server Thread-3 (process_request_thread) : RegisterAPI called
+2025-03-26 14:47:06,486 INFO src.server Thread-3 (process_request_thread) : post_data: {'user_id': 'oralytics_128@oralytics.app', 'rl_start_date': '2025-1-20', 'rl_end_date': '2025-12-20', 'morning_weekday': '04:30', 'morning_weekend': '06:30', 'evening_weekday': '3:30', 'evening_weekend': '21:30'}
+2025-03-26 14:47:06,505 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [26/Mar/2025 14:47:06] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2025-03-26 14:47:16,505 INFO src.server Thread-4 (process_request_thread) : Actions API called for user oralytics_128@oralytics.app
+2025-03-26 14:47:16,511 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [26/Mar/2025 14:47:16] "[35m[1mPOST /actions HTTP/1.1[0m" 202 -
+2025-03-26 14:47:21,416 INFO src.server Thread-5 (process_request_thread) : Actions API called for user oralytics_128@oralytics.app
+2025-03-26 14:47:21,431 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [26/Mar/2025 14:47:21] "[35m[1mPOST /actions HTTP/1.1[0m" 201 -
+2025-03-26 14:47:22,834 INFO src.server Thread-6 (process_request_thread) : Actions API called for user oralytics_128@oralytics.app
+2025-03-26 14:47:22,844 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [26/Mar/2025 14:47:22] "[35m[1mPOST /actions HTTP/1.1[0m" 202 -
+2025-03-26 14:47:41,561 INFO src.server Thread-7 (process_request_thread) : Actions API called for user oralytics_128@oralytics.app
+2025-03-26 14:47:41,567 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [26/Mar/2025 14:47:41] "[35m[1mPOST /actions HTTP/1.1[0m" 202 -
+2025-03-26 14:49:57,465 INFO numexpr.utils MainThread : NumExpr defaulting to 8 threads.
+2025-03-26 14:49:57,849 DEBUG jax._src.path MainThread : etils.epath was not found. Using pathlib for file I/O.
+2025-03-26 14:49:58,113 INFO src.server MainThread : Server started
+2025-03-26 14:49:58,115 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-26 14:49:58,115 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-03-26 14:50:04,716 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [26/Mar/2025 14:50:04] "POST /auth/login HTTP/1.1" 200 -
+2025-03-26 14:50:08,867 INFO src.server Thread-2 (process_request_thread) : RegisterAPI called
+2025-03-26 14:50:08,869 INFO src.server Thread-2 (process_request_thread) : post_data: {'user_id': 'oralytics_129@oralytics.app', 'rl_start_date': '2025-1-20', 'rl_end_date': '2025-12-20', 'morning_weekday': '04:30', 'morning_weekend': '06:30', 'evening_weekday': '3:30', 'evening_weekend': '21:30'}
+2025-03-26 14:50:08,893 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [26/Mar/2025 14:50:08] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2025-03-26 14:50:16,388 INFO src.server Thread-3 (process_request_thread) : Actions API called for user oralytics_129@oralytics.app
+2025-03-26 14:50:16,409 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [26/Mar/2025 14:50:16] "[35m[1mPOST /actions HTTP/1.1[0m" 201 -
+2025-03-26 14:50:19,352 INFO src.server Thread-4 (process_request_thread) : Actions API called for user oralytics_129@oralytics.app
+2025-03-26 14:50:19,362 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [26/Mar/2025 14:50:19] "[35m[1mPOST /actions HTTP/1.1[0m" 201 -
+2025-03-26 14:50:20,812 INFO src.server Thread-5 (process_request_thread) : Actions API called for user oralytics_129@oralytics.app
+2025-03-26 14:50:20,823 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [26/Mar/2025 14:50:20] "[35m[1mPOST /actions HTTP/1.1[0m" 201 -
+2025-03-26 14:50:22,068 INFO src.server Thread-6 (process_request_thread) : Actions API called for user oralytics_129@oralytics.app
+2025-03-26 14:50:22,079 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [26/Mar/2025 14:50:22] "[35m[1mPOST /actions HTTP/1.1[0m" 201 -
+2025-03-26 14:50:29,945 INFO src.server Thread-7 (process_request_thread) : Actions API called for user oralytics_129@oralytics.app
+2025-03-26 14:50:29,951 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [26/Mar/2025 14:50:29] "[35m[1mPOST /actions HTTP/1.1[0m" 202 -

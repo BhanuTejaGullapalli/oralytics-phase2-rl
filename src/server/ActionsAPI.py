@@ -70,9 +70,11 @@ class ActionsAPI(MethodView):
 
         
 
-        user_start_date = datetime.combine(user.rl_start_date, datetime.min.time()) + timedelta(hours=4)
-        print(type(decision_window_start),type(user_start_date),"Asda")
+        user_start_date = datetime.combine(user.rl_start_date, datetime.min.time()) + timedelta(hours=4)+timedelta(days=7)
+        print((decision_window_start),(user_start_date),"Asda")
         time_diff = (decision_window_start - user_start_date).total_seconds() // 3600
+        if time_diff<0:
+            return -1
         return int(time_diff // (24 / actions_per_day)) + 1
 
 
@@ -125,23 +127,37 @@ class ActionsAPI(MethodView):
             decision_window_start = post_data["decision_window_start"]
             decision_idx = self.compute_decisionidx_number(user, decision_window_start)
 
-            existing_action = Action.query.filter_by(user_id=user_id, decision_idx=decision_idx).first()
-            if existing_action:
-                app.logger.error(f"Duplicate action request for user {user_id} and decision index {decision_idx}")
+            if decision_idx==-1:
                 return return_fail_response(
-                    f"Action already exists for user {user_id} at decision index {decision_idx}.",
+                    f"Requesting action for an incorrect date. Next action should be for {user.rl_start_date+timedelta(days=7)} due to warm start period = 7 days",
                     202,
                     304
                 )
+
+            existing_action = Action.query.filter_by(user_id=user_id, decision_idx=decision_idx).first()
+            # if existing_action:
+            #     app.logger.error(f"Duplicate action request for user {user_id} and decision index {decision_idx}")
+            #     return return_fail_response(
+            #         f"Action already exists for user {user_id} at decision index {decision_idx}.",
+            #         202,
+            #         304
+            #     )
 
             user_status = UserStatus.query.filter_by(user_id=user_id).first()
             if user_status.study_phase == UserStudyPhaseEnum.REGISTERED:
                 user_status.study_phase = UserStudyPhaseEnum.STARTED
 
-            if(decision_idx!=user_status.current_decision_index+1):
+            # if(decision_idx!=user_status.current_decision_index+1):
+            #     ttime=self.compute_timedelta(user,user_status.current_decision_index+1).strftime("%Y-%m-%d %H:%M:%S")
+            #     return return_fail_response(
+            #         f"Requesting action for an incorrect date. Next action should be for {ttime}",
+            #         202,
+            #         304
+            #     )
+            if(decision_idx > user_status.current_decision_index+1):
                 ttime=self.compute_timedelta(user,user_status.current_decision_index+1).strftime("%Y-%m-%d %H:%M:%S")
                 return return_fail_response(
-                    f"Requesting action for an incorrect date. Next action should be for {ttime}",
+                    f"Requesting action for an incorrect date. Next new action should be for {ttime}",
                     202,
                     304
                 )

@@ -155,6 +155,7 @@ class StudyData(db.Model):
     state = db.Column(ARRAY(db.Float), nullable=False)
     raw_context = db.Column(db.JSON, nullable=False)
     outcome = db.Column(db.JSON, nullable=False)
+    brushing_time=db.Column(db.DateTime, nullable=False)
     reward = db.Column(db.Float, nullable=True)
     request_timestamp = db.Column(db.DateTime, nullable=False)
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.datetime.now)
@@ -169,6 +170,7 @@ class StudyData(db.Model):
         state: list,
         raw_context: dict,
         outcome: dict,
+        brushing_time: datetime.datetime,
         reward: float,
         request_timestamp: datetime.datetime,
         created_at: datetime.datetime = datetime.datetime.now(),
@@ -181,6 +183,7 @@ class StudyData(db.Model):
         self.state = state
         self.raw_context = raw_context
         self.outcome = outcome
+        self.brushing_time = brushing_time
         self.reward = reward
         self.request_timestamp = request_timestamp
         self.created_at = created_at
