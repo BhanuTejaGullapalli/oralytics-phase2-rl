@@ -183,6 +183,7 @@ class UploadAPI(MethodView):
                     state=user_action.state,
                     raw_context=None,
                     outcome=value,
+                    brushing_time=dt,
                     reward=user_action.reward,
                     request_timestamp=post_data.get("upload_timestamp"),
 
