@@ -154,13 +154,13 @@ class ActionsAPI(MethodView):
             #         202,
             #         304
             #     )
-            if(decision_idx > user_status.current_decision_index+1):
-                ttime=self.compute_timedelta(user,user_status.current_decision_index+1).strftime("%Y-%m-%d %H:%M:%S")
-                return return_fail_response(
-                    f"Requesting action for an incorrect date. Next new action should be for {ttime}",
-                    202,
-                    304
-                )
+            # if(decision_idx > user_status.current_decision_index+1):
+            #     ttime=self.compute_timedelta(user,user_status.current_decision_index+1).strftime("%Y-%m-%d %H:%M:%S")
+            #     return return_fail_response(
+            #         f"Requesting action for an incorrect date. Next new action should be for {ttime}",
+            #         202,
+            #         304
+            #     )
 
             user_status.current_decision_index = decision_idx
 
